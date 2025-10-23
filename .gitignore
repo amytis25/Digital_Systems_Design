@@ -33,7 +33,6 @@ incremental_db/
 *.sdc
 *.tcl
 *.html
-*.txt
 *.xml
 *.log
 *.bak
