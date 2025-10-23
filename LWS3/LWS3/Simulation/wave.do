@@ -3,6 +3,8 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate -divider {DUT Signals}
 add wave -noupdate -height 45 -label {X (input)} -radix hexadecimal /tboddparity/TBX
 add wave -noupdate -height 45 -label IsOdd /tboddparity/TBisOdd
+add wave -noupdate -divider {Test Signals}
+add wave -noupdate -height 45 -label TBtrueIsOdd /tboddparity/TBtrueIsOdd
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {329 ps} 0}
 quietly wave cursor active 1

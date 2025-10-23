@@ -10,25 +10,25 @@ z2
 cModel Technology
 dC:/Users/ses16/Documents/GitHub/ENSC-350/LWS4
 Een_oddparity
-Z0 w1759975631
+Z0 w1761259186
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 43
+!i122 85
 Z4 dC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation
-Z5 8C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd
-Z6 FC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd
+Z5 8../SourceCode/EN_OddParity.vhd
+Z6 F../SourceCode/EN_OddParity.vhd
 l0
 L6 1
-VH7U?YTU]F>PdK7]PWjjNg0
-!s100 :K_<jf^YTQc:ee>fdmXiB1
+VP]6az91Z8o3f=l`8_l]f=3
+!s100 DHagQ76HK4M3l[bgI<SA20
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1760656838
+Z8 !s110 1761260999
 !i10b 1
-Z9 !s108 1760656838.000000
-Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd|
-Z11 !s107 C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd|
+Z9 !s108 1761260999.000000
+Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/EN_OddParity.vhd|
+Z11 !s107 ../SourceCode/EN_OddParity.vhd|
 !i113 1
 Z12 o-work work -2008 -explicit
 Z13 tExplicit 1 CvgOpt 0
@@ -36,12 +36,12 @@ Atree
 R1
 R2
 R3
-Z14 DEx4 work 12 en_oddparity 0 22 H7U?YTU]F>PdK7]PWjjNg0
-!i122 43
-l21
-Z15 L13 32
-Z16 VaUPjW;?_BBECPABk0NVEI1
-Z17 !s100 ocDjXHY6bebLHV1N75CRL2
+Z14 DEx4 work 12 en_oddparity 0 22 P]6az91Z8o3f=l`8_l]f=3
+!i122 85
+l62
+L54 32
+VJ08YmhWWj1G_:X;B6_=jo0
+!s100 AJSWRNNES3QRhKLS@[<h72
 R7
 33
 R8
@@ -52,15 +52,117 @@ R11
 !i113 1
 R12
 R13
-Etboddparity
-Z18 w1760656836
+Aprimtree
+Z15 DEx4 work 6 en_xor 0 22 RgK8YKoejS[n8:n2_dmMM3
 R1
 R2
 R3
-!i122 42
+R14
+!i122 85
+l25
+L13 38
+VX2Q@MY;WCnN_dNBcmW95Y3
+!s100 ;1mS@Z9=S:5;^fHEnefXW3
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Achain
+R2
+R3
+Z16 DEx4 work 12 en_oddparity 0 22 ojl:S=[8kBE7X2KW`>;2B0
+!i122 70
+l34
+L29 15
+VhibZ7>0>2lz[oSER<j7]a1
+!s100 Dj=7HF[k0OTPY@10m@JRA0
+R7
+33
+Z17 !s110 1761259033
+!i10b 1
+Z18 !s108 1761259033.000000
+R10
+R11
+!i113 1
+R12
+R13
+Z19 w1761258784
+Achain_prim
+R2
+R3
+R16
+!i122 70
+l18
+L10 18
+VmUjFmhjLlTVc;_Y<<AaKn3
+!s100 XCkS[d;4P@MZWf5ZhOTV:2
+R7
+33
+R17
+!i10b 1
+R18
+R10
+R11
+!i113 1
+R12
+R13
+R19
+Een_xor
+Z20 w1761260992
+R2
+R3
+!i122 86
 R4
-Z19 8C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd
-Z20 FC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd
+Z21 8../SourceCode/EN_xor.vhd
+Z22 F../SourceCode/EN_xor.vhd
+l0
+L4 1
+VRgK8YKoejS[n8:n2_dmMM3
+!s100 LIkaj=A>:[SBiGl]5zc3`0
+R7
+33
+R8
+!i10b 1
+R9
+Z23 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/EN_xor.vhd|
+Z24 !s107 ../SourceCode/EN_xor.vhd|
+!i113 1
+R12
+R13
+Alogic
+R2
+R3
+R15
+!i122 86
+l14
+L12 6
+VMFX4hB?EM6>[z1ciCn4d43
+!s100 LfaeEhFRLijHf5B:8TiVY3
+R7
+33
+R8
+!i10b 1
+R9
+R23
+R24
+!i113 1
+R12
+R13
+Etboddparity
+Z25 w1761260844
+R1
+R2
+R3
+!i122 87
+R4
+Z26 8TBOddParity.vhd
+Z27 FTBOddParity.vhd
 l0
 L6 1
 VC^M0PUag=QXYzFBP<F2WX3
@@ -70,8 +172,8 @@ R7
 R8
 !i10b 1
 R9
-Z21 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd|
-Z22 !s107 C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd|
+Z28 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|TBOddParity.vhd|
+Z29 !s107 TBOddParity.vhd|
 !i113 1
 R12
 R13
@@ -80,19 +182,19 @@ R14
 R1
 R2
 R3
-DEx4 work 11 tboddparity 0 22 C^M0PUag=QXYzFBP<F2WX3
-!i122 42
-l50
-L12 88
-Vg]3eJ;VZU2;G^:?4j]16N3
-!s100 >n:Q<@C56>]^D9A77Z:lE3
+Z30 DEx4 work 11 tboddparity 0 22 C^M0PUag=QXYzFBP<F2WX3
+!i122 87
+l52
+Z31 L12 98
+Z32 V55eil_ihXiUn7F6`4FORS0
+Z33 !s100 9FM0Zjn7:X3K8keYYfj9S1
 R7
 33
 R8
 !i10b 1
 R9
-R21
-R22
+R28
+R29
 !i113 1
 R12
 R13

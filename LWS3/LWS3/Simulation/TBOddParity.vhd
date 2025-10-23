@@ -15,6 +15,8 @@ architecture sim of TBOddParity is
 	  signal TBX   : std_logic_vector(N-1 downto 0);
 	  signal TBisOdd : std_logic;
 	  signal TBtrueIsOdd : std_logic;
+	  constant PREPTIME : time := 40 ps;
+  	  constant MEASTIME : time := 200 ps;
 
 	  -- record
 	  type TestVectorOP is record
@@ -50,7 +52,7 @@ architecture sim of TBOddParity is
 	begin
 
 	  -- Direct entity instantiation
-	  DUT : entity work.EN_OddParity(Tree)
+	  DUT : entity work.EN_OddParity(PrimTree)
 		generic map (
 		  N => N
 		)
@@ -58,42 +60,51 @@ architecture sim of TBOddParity is
 		  X   => TBX,
 		  isOdd => TBisOdd
 		);
-	  
-	  MAIN : process
-		constant PREPTIME : time := 40 ps;
-		constant MEASTIME : time := 200 ps;
-		variable MeasurementIndex : integer := 1;
-		
-	  begin
-		-- initialize index
-		TBX <= (others => 'X');    -- all unknowns
-		wait for PREPTIME;
-		MeasurementIndex := 1;
-		while MeasurementIndex <= 5 loop
-		
-			TBX <= Table1(MeasurementIndex).X;
-			TBtrueIsOdd <= Table1(MeasurementIndex).isOdd;
-			wait for MEASTIME;
-			MeasurementIndex := MeasurementIndex + 1;
-		-- initialization
-		--TBX <= (others => 'X');    -- all unknowns
-		--wait for PREPTIME;
+	   MAIN : process
+            variable MeasurementIndex : integer := 1;
+            variable error_count : integer := 0;
+    
+ 		 begin
+   		 -- Initialize with unknowns
+   			 TBX <= (others => 'X');
+   			 TBtrueIsOdd <= 'X';
+			 wait for PREPTIME;
+    
+   		 MeasurementIndex := 1;
+    
+    		while MeasurementIndex <= 5 loop
+    		  -- Apply stimulus from table
+     			 TBX <= Table1(MeasurementIndex).X;
+    			 TBtrueIsOdd <= Table1(MeasurementIndex).isOdd;
+     			 wait for MEASTIME;
+      
+      		-- ASSERTION 
+      		assert TBisOdd = TBtrueIsOdd
+        		report "ERROR at measurement " & integer'image(MeasurementIndex) & 
+              			 ": Input=" & to_hstring(TBX) & 
+              			 " Expected=" & std_logic'image(TBtrueIsOdd) & 
+             			 " Got=" & std_logic'image(TBisOdd)
+      			 severity error;
+      
+     		 -- Count errors for summary
+    		  if TBisOdd /= TBtrueIsOdd then
+      		  error_count := error_count + 1;
+     		  end if;
+      
+    		  MeasurementIndex := MeasurementIndex + 1;
+   		 end loop;
+    
+   		 -- Final summary report
+    		if error_count = 0 then
+    		  report "SUCCESS: All " & integer'image(MeasurementIndex-1) & " tests passed!" severity note;
+   		else
+     		 report "FAILURE: " & integer'image(error_count) & " errors out of " & 
+            	 integer'image(MeasurementIndex-1) & " tests" severity error;
+ 		  end if;
+    
 
-		-- first stimulus: all zeros
-		--TBX <= (others => '0');
-		--wait for MEASTIME;
-
-		-- more stimulus patterns can be added here
-		--TBX <= (others => '1');    -- all ones
-		--wait for MEASTIME;
-
-		--TBX <= "1010101010101000"; -- alternating pattern
-		--wait for MEASTIME;
-
-		-- stop simulation
-		--wait;
-		end loop;
-		wait; 
-	  end process MAIN;
+    wait;
+  end process MAIN;
 
 end architecture sim;
+
