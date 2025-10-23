@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Oct 16 14:42:14 2025
+Analysis & Synthesis Status : Successful - Thu Oct 16 18:20:22 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : DP1
 Top-level Entity Name : EN_Adder
 Family : Cyclone IV E
-Total logic elements : 271
-    Total combinational functions : 271
+Total logic elements : 5
+    Total combinational functions : 5
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 195
+Total pins : 9
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
