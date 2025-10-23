@@ -5,7 +5,7 @@ use std.textio.all;
 
 
 entity EN_Adder is 
-	generic (N: natural := 2);
+	generic (N: natural := 4);
 	port (
 		A, B  : in std_logic_vector (N-1 downto 0);
 		S : out std_logic_vector (N-1 downto 0);
@@ -14,22 +14,24 @@ entity EN_Adder is
 	);
 end EN_Adder;
 
-/*architecture ripple of EN_Adder is
+architecture ripple of EN_Adder is
 	signal C : std_logic_vector (N downto 0);
 	signal P,G : std_logic_vector (N-1 downto 0);
 	
 	begin
 	------
+	/*
 	c(0) <= '0';
 	g <= a and b;
 	p <= a xor b;
 	c(N downto 1) <= g or (p and c(N-1 downto 0));
 	s <= p xor c(n-1 downto 0);
+	*/
 	--------
-	--P(0) <= A(0) xor B(0);
-	--G(0) <= A(0) and B(0);
-	--S(0) <= P(0) xor Cin;
-	--C(0) <= G(0) or (P(0) and Cin);
+	P(0) <= A(0) xor B(0);
+	G(0) <= A(0) and B(0);
+	S(0) <= P(0) xor Cin;
+	C(0) <= G(0) or (P(0) and Cin);
 	
 	rippleNetwork: for i in 1 to N-1 generate
 		P(i) <= A(i) xor B(i);
@@ -37,13 +39,13 @@ end EN_Adder;
 		S(i) <= P(i) xor C(i-1);
 		C(i) <= G(i) or (P(i) and C(i-1));
 	end generate;
-	--Cout <= C(N-1);
-	--Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
+	Cout <= C(N-1);
+	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
 	
 	
 end ripple;
 
-architecture FastRipple of EN_Adder is
+/*architecture FastRipple of EN_Adder is
 
 signal temp : unsigned(N downto 0);
 	begin
@@ -55,7 +57,7 @@ signal temp : unsigned(N downto 0);
 		S    <= std_logic_vector(temp(N-1 downto 0));
     Cout <= temp(N);
 	 Ovfl <= (temp(N) xor temp(N-1));
-end FastRipple;*/
+end FastRipple;
 
 architecture CSA of EN_Adder is 
 	constant N_half : integer := N / 2; 
@@ -120,4 +122,4 @@ architecture CSA of EN_Adder is
 
 
 			
-end CSA;
+end CSA;*/
