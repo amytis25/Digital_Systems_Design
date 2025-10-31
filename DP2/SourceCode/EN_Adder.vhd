@@ -112,10 +112,38 @@ architecture CSA of EN_Adder is
 			
 end CSA;
 
--- LATA : Look Ahead Tree Adder 
-architecture LATA of EN_Adder is 
+-- LATA : Look Ahead Carry Adder 
+architecture LACA of EN_Adder is 
+	component EN_LACG4
+        Port ( 
+			Gin, Pin  : in std_logic_vector (N-1 downto 0);
+			Gout, Pout  : out std_logic_vector (N-1 downto 0);
+			Cin : in std_logic;
+			C : out std_logic_vector (N downto 1));
+			end component;
+		constant N_quart : integer := N / 4; 
+		constant N_half : integer := N / 2; 
+		constant N_3quart : integer := 3*(N / 4); 
+		signal Pin, Pout, Gin, Gout : std_logic_vector (N-1 downto 0);
+		signal C : std_logic_vector (N downto 0);
+	
+	begin 
+	-- Generate and propogates 
+		C(0) <= Cin;
+		Pin <= A xor B;
+		Gin <= A and B;
+		
+	-- base case (i.e carry network)
+	leaf: if N = 4 generate
+		U0: EN_LACG4 port map ( Gin => Gin, Pin => Pin, Gout => Gout, Pout => Pout, C => C(N downto 1), Cin => Cin);		
+	end generate leaf;
+	
+	-- form sum bits and Cout
+	S <= Pin xor C(N-1 downto 0);
+	Cout <= C(N);
+	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
 
-end LATA;
+end LACA;
 
 -- BKA : Brent-Kung Adder
 architecture BKA of EN_Adder is 
