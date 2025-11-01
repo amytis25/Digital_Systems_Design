@@ -26,7 +26,7 @@ begin
   --------------------------------------------------------------------
   -- Device Under Test
   --------------------------------------------------------------------
-  dut: entity work.EN_Adder(ripple)
+  dut: entity work.EN_Adder(RCA)
     generic map (N => N)
     port map (
       A => TBA,
