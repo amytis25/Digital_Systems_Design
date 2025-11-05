@@ -1,132 +1,149 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;      -- for unsigned arithmetic and to_hstring
--- std.textio not required here
+use ieee.numeric_std.all;
+use std.textio.all;
 
---========================
--- Testbench Entity
---========================
+
 entity TB_Adder is
-end entity TB_Adder;
+end TB_Adder;
 
---========================
--- Architecture
---========================
-architecture sim of TB_Adder is
-  -- Parameters
-  constant N            : integer := 4;
-  constant PreStimTime  : time    := 1 ns;   -- settle after init
-  constant PostStimTime : time    := 10 ns;  -- allow DUT to respond
+architecture behavior of TB_Adder is
+  constant N : integer := 64;
 
   -- DUT ports
   signal TBA, TBB : std_logic_vector(N-1 downto 0) := (others => '0');
   signal TBCin    : std_logic := '0';
   signal TBS      : std_logic_vector(N-1 downto 0);
   signal TBCout   : std_logic;
+  signal TBOvfl   : std_logic;
 
-  --========================
-  -- Device Under Test
-  --========================
-  -- Your Adder from the prompt
-  component Adder is
-    generic (N : natural := 4);
-    port (
-      A, B  : in  std_logic_vector(N-1 downto 0);
-      S     : out std_logic_vector(N-1 downto 0);
-      Cin   : in  std_logic;
-      Cout  : out std_logic
-    );
-  end component;
-
-  --========================
-  -- Test vectors
-  --========================
-  type TestVector is record
-    A   : std_logic_vector(N-1 downto 0);
-    B   : std_logic_vector(N-1 downto 0);
-    Cin : std_logic;
-  end record;
-
-  -- A small set that hits carry/no-carry, Cin=0/1, edges
-  type TestTable is array (natural range <>) of TestVector;
-  constant V : TestTable := (
-    (A => std_logic_vector(to_unsigned(0,  N)), B => std_logic_vector(to_unsigned(0,  N)), Cin => '0'),
-    (A => std_logic_vector(to_unsigned(1,  N)), B => std_logic_vector(to_unsigned(1,  N)), Cin => '0'),
-    (A => std_logic_vector(to_unsigned(2,  N)), B => std_logic_vector(to_unsigned(3,  N)), Cin => '1'),
-    (A => std_logic_vector(to_unsigned(7,  N)), B => std_logic_vector(to_unsigned(8,  N)), Cin => '0'),
-    (A => std_logic_vector(to_unsigned(15, N)), B => std_logic_vector(to_unsigned(1,  N)), Cin => '0'), -- overflow on 4 bits
-    (A => std_logic_vector(to_unsigned(9,  N)), B => std_logic_vector(to_unsigned(6,  N)), Cin => '1'),
-    (A => std_logic_vector(to_unsigned(5,  N)), B => std_logic_vector(to_unsigned(10, N)), Cin => '1'),
-    (A => std_logic_vector(to_unsigned(15, N)), B => std_logic_vector(to_unsigned(15, N)), Cin => '1')  -- max + max + 1
-  );
+  -- Test-vector file
+  constant TestVectorFile : string := "TestVectors/Adder00.tvs";
+  constant PreStimTime    : time   := 1 ns;
+  constant PostStimTime   : time   := 100 ns;  -- adjust after experimenting
 
 begin
-  -- DUT instantiation (use your LATA architecture)
-  DUT: entity work.Adder(LATA)
-    generic map ( N => N )
+  --------------------------------------------------------------------
+  -- Device Under Test
+  --------------------------------------------------------------------
+  dut: entity work.EN_Adder(structure)
+    --generic map (N => N)
     port map (
-      A    => TBA,
-      B    => TBB,
-      S    => TBS,
-      Cin  => TBCin,
-      Cout => TBCout
+      A => TBA,
+      B => TBB,
+      Cin => TBCin,
+      S => TBS,
+      Cout => TBCout,
+      Ovfl => TBOvfl
     );
 
-  --========================
-  -- Main stimulus & checks
-  --========================
-  MAIN : process
-    variable error_count : integer := 0;
-    variable total_tests : integer := 0;
-
-    -- local helpers
-    variable uA, uB  : unsigned(N-1 downto 0);
-    variable uSumExt : unsigned(N downto 0);  -- N+1 bits to capture carry
-    variable expS    : std_logic_vector(N-1 downto 0);
-    variable expCout : std_logic;
-    variable cin_int : integer;
+  --------------------------------------------------------------------
+  -- Stimulus Process with per-vector line printing
+  --------------------------------------------------------------------
+  stimulus : process
+    file      tvf : text;
+    variable  L, L2 : line;
+    constant  MAXLEN : natural := 2048;
+    variable  s : string(1 to MAXLEN);
+    variable  vA, vB, vS : std_logic_vector(N-1 downto 0);
+    variable  vCin, vCout, vOvfl : std_logic;
+    variable  skip_line  : boolean;
+    variable  idx        : natural := 0;   -- measurement index
+    variable  pass       : boolean;
+    variable  OUTL       : line;          -- for printing one summary line
   begin
-    -- initialize
-    TBA   <= (others => 'X');
-    TBB   <= (others => 'X');
-    TBCin <= 'X';
-    wait for PreStimTime;
+    file_open(tvf, TestVectorFile, read_mode);
+    report "Using test vectors from file: " & TestVectorFile;
 
-    for i in V'range loop
-      -- apply inputs
-      TBA   <= V(i).A;
-      TBB   <= V(i).B;
-      TBCin <= V(i).Cin;
+    while not endfile(tvf) loop
+      readline(tvf, L);
 
-      -- compute expected using numeric_std (avoids manual mistakes)
-      uA := unsigned(V(i).A);
-      uB := unsigned(V(i).B);
-      cin_int := (1) when V(i).Cin = '1' else 0;
-      uSumExt := ('0' & uA) + ('0' & uB) + to_unsigned(cin_int, N+1);
-
-      expS    := std_logic_vector(uSumExt(N-1 downto 0));
-      expCout := std_logic(uSumExt(N));
-
-      wait for PostStimTime;  -- let the DUT propagate
-
-      total_tests := total_tests + 1;
-
-      -- Assertions for S and Cout (separate so we see which part failed)
- 
-
-      if (TBS /= expS) or (TBCout /= expCout) then
-        error_count := error_count + 1;
+      -- Skip blank or comment lines (comments start with "--")
+      if L'length = 0 then
+        next;
       end if;
+
+      skip_line := false;
+
+      if L'length > MAXLEN then
+        report "Input line exceeds MAXLEN=" & integer'image(MAXLEN) severity failure;
+      end if;
+
+      s := (others => ' ');
+      s(1 to L'length) := L.all;  -- length-safe copy
+
+      -- Check if the first two non-space characters are "--"
+      for i in s'range loop
+        if s(i) > ' ' then
+          if i < s'high and s(i) = '-' and s(i + 1) = '-' then
+            skip_line := true;
+          end if;
+          exit;
+        end if;
+      end loop;
+      if skip_line then
+        next;
+      end if;
+
+      -- Rebuild the line to parse values
+      L2 := null;
+      write(L2, s(1 to L'length));
+
+      -- Parse: A B Cin S Cout Ovfl
+      HREAD(L2, vA);
+      HREAD(L2, vB);
+      read (L2, vCin);
+      HREAD(L2, vS);
+      read (L2, vCout);
+      read (L2, vOvfl);
+
+      -- 1) Drive 'X' for PreStimTime (per spec)
+      TBA   <= (others => 'X');
+      TBB   <= (others => 'X');
+      TBCin <= 'X';
+      wait for PreStimTime;
+
+      -- 2) Apply inputs
+      TBA   <= vA;
+      TBB   <= vB;
+      TBCin <= vCin;
+
+      -- 3) Wait for outputs to settle (experiment to choose PostStimTime)
+      wait for PostStimTime;
+
+      -- 4) Compute pass/fail and (optionally) assert
+      pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
+
+      assert pass
+        report "Mismatch: i=" & integer'image(idx) &
+               " A=" & to_hstring(TBA) &
+               " B=" & to_hstring(TBB) &
+               " Cin=" & std_logic'image(TBCin) &
+               "  got S=" & to_hstring(TBS) & " Cout=" & std_logic'image(TBCout) & " Ovfl=" & std_logic'image(TBOvfl) &
+               "  exp S=" & to_hstring(vS)  & " Cout=" & std_logic'image(vCout)  & " Ovfl=" & std_logic'image(vOvfl)
+        severity error;
+
+      -- 5) Print one concise summary line (goes to ModelSim transcript)
+      OUTL := null;
+      write(OUTL, idx);
+      write(OUTL, string'(" A="));              write(OUTL, to_hstring(TBA));
+      write(OUTL, string'(" B="));              write(OUTL, to_hstring(TBB));
+      write(OUTL, string'(" Cin="));            write(OUTL, TBCin);
+      write(OUTL, string'("  |  S="));          write(OUTL, to_hstring(TBS));
+      write(OUTL, string'(" Cout="));           write(OUTL, TBCout);
+      write(OUTL, string'(" Ovfl="));           write(OUTL, TBOvfl);
+      write(OUTL, string'("  status="));
+      if pass then write(OUTL, string'("PASS"));
+               else write(OUTL, string'("FAIL"));
+      end if;
+      writeline(output, OUTL);
+
+      idx := idx + 1;
     end loop;
 
-    if error_count = 0 then
-      report "SUCCESS: All " & integer'image(total_tests) & " tests passed!" severity note;
-    else
-      report "FAILURE: " & integer'image(error_count) & " errors out of " &
-             integer'image(total_tests) & " tests" severity error;
-    end if;
-
+    report "Simulation completed: reached end of " & TestVectorFile;
+    file_close(tvf);
     wait;
-  end process MAIN;
+  end process;
+end architecture;
 
-end architecture sim;
