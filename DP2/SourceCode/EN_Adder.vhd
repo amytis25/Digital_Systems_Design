@@ -295,29 +295,27 @@ end LACGT;
 -- BKA : Brent-Kung Adder
 architecture BKA of EN_Adder is 
 
-    constant W : natural := N;
-
 	-- Bitwise propagate / generate
-	signal P0, G0 : std_logic_vector(W-1 downto 0);
+	signal P0, G0 : std_logic_vector(N-1 downto 0);
 
 	-- Stage signals (prefix)
-	signal P1, G1 : std_logic_vector(W-1 downto 0);
-	signal P2, G2 : std_logic_vector(W-1 downto 0);
-	signal P3, G3 : std_logic_vector(W-1 downto 0);
-	signal P4, G4 : std_logic_vector(W-1 downto 0);
-	signal P5, G5 : std_logic_vector(W-1 downto 0);
+	signal P1, G1 : std_logic_vector(N-1 downto 0);
+	signal P2, G2 : std_logic_vector(N-1 downto 0);
+	signal P3, G3 : std_logic_vector(N-1 downto 0);
+	signal P4, G4 : std_logic_vector(N-1 downto 0);
+	signal P5, G5 : std_logic_vector(N-1 downto 0);
 
 	-- Final after last stage
-	signal Pf, Gf : std_logic_vector(W-1 downto 0);
+	signal Pf, Gf : std_logic_vector(N-1 downto 0);
 
 	-- Carries
-	signal C : std_logic_vector(W downto 0);
+	signal C : std_logic_vector(N downto 0);
 	
 	begin
 	---------------------------------------------------------------------------
 	-- 1) Bitwise propagate / generate
 	---------------------------------------------------------------------------
-	gen_pg : for i in 0 to W-1 generate
+	gen_pg : for i in 0 to N-1 generate
 		P0(i) <= A(i) xor B(i);
 		G0(i) <= A(i) and B(i);
 	end generate;
@@ -330,78 +328,78 @@ architecture BKA of EN_Adder is
 	-- Stage 0: distance = 1
 	G1(0) <= G0(0);
 	P1(0) <= P0(0);
-	gen_s0_rest_en : if W > 1 generate
-		gen_s0_rest : for i in 1 to W-1 generate
+	gen_s0_rest_en : if N > 1 generate
+		gen_s0_rest : for i in 1 to N-1 generate
 			G1(i) <= G0(i) or (P0(i) and G0(i-1));
 			P1(i) <= P0(i) and P0(i-1);
 		end generate;
 	end generate;
 
 	-- Stage 1: distance = 2
-	gen_s1_pass_en : if W >= 2 generate
+	gen_s1_pass_en : if N >= 2 generate
 		gen_s1_pass : for i in 0 to 1 generate
 			G2(i) <= G1(i);
 			P2(i) <= P1(i);
 		end generate;
 	end generate;
-	gen_s1_rest_en : if W > 2 generate
-		gen_s1_rest : for i in 2 to W-1 generate
+	gen_s1_rest_en : if N > 2 generate
+		gen_s1_rest : for i in 2 to N-1 generate
 			G2(i) <= G1(i) or (P1(i) and G1(i-2));
 			P2(i) <= P1(i) and P1(i-2);
 		end generate;
 	end generate;
 
 	-- Stage 2: distance = 4
-	gen_s2_pass_en : if W >= 4 generate
+	gen_s2_pass_en : if N >= 4 generate
 		gen_s2_pass : for i in 0 to 3 generate
 			G3(i) <= G2(i);
 			P3(i) <= P2(i);
 		end generate;
 	end generate;
-	gen_s2_rest_en : if W > 4 generate
-		gen_s2_rest : for i in 4 to W-1 generate
+	gen_s2_rest_en : if N > 4 generate
+		gen_s2_rest : for i in 4 to N-1 generate
 			G3(i) <= G2(i) or (P2(i) and G2(i-4));
 			P3(i) <= P2(i) and P2(i-4);
 		end generate;
 	end generate;
 
 	-- Stage 3: distance = 8
-	gen_s3_pass_en : if W >= 8 generate
+	gen_s3_pass_en : if N >= 8 generate
 		gen_s3_pass : for i in 0 to 7 generate
 			G4(i) <= G3(i);
 			P4(i) <= P3(i);
 		end generate;
 	end generate;
-	gen_s3_rest_en : if W > 8 generate
-		gen_s3_rest : for i in 8 to W-1 generate
+	gen_s3_rest_en : if N > 8 generate
+		gen_s3_rest : for i in 8 to N-1 generate
 			G4(i) <= G3(i) or (P3(i) and G3(i-8));
 			P4(i) <= P3(i) and P3(i-8);
 		end generate;
 	end generate;
 
 	-- Stage 4: distance = 16
-	gen_s4_pass_en : if W >= 16 generate
+	gen_s4_pass_en : if N >= 16 generate
 		gen_s4_pass : for i in 0 to 15 generate
 			G5(i) <= G4(i);
 			P5(i) <= P4(i);
 		end generate;
 	end generate;
-	gen_s4_rest_en : if W > 16 generate
-		gen_s4_rest : for i in 16 to W-1 generate
+	gen_s4_rest_en : if N > 16 generate
+		gen_s4_rest : for i in 16 to N-1 generate
 			G5(i) <= G4(i) or (P4(i) and G4(i-16));
 			P5(i) <= P4(i) and P4(i-16);
 		end generate;
 	end generate;
 
 	-- Stage 5: distance = 32
-	gen_s5_pass_en : if W >= 32 generate
+	gen_s5_pass_en : if N >= 32 generate
 		gen_s5_pass : for i in 0 to 31 generate
 			Gf(i) <= G5(i);
 			Pf(i) <= P5(i);
 		end generate;
 	end generate;
-	gen_s5_rest_en : if W > 32 generate
-		gen_s5_rest : for i in 32 to W-1 generate
+	gen_s5_rest_en : if N > 32 generate
+		gen_s5_rest : for i in 32 to N-1 generate
 			Gf(i) <= G5(i) or (P5(i) and G5(i-32));
 			Pf(i) <= P5(i) and P5(i-32);
 		end generate;
@@ -412,16 +410,16 @@ architecture BKA of EN_Adder is
 	---------------------------------------------------------------------------
 	C(0) <= Cin;
 
-	gen_c : for i in 0 to W-1 generate
+	gen_c : for i in 0 to N-1 generate
 		C(i+1) <= Gf(i) or (Pf(i) and Cin);
 	end generate;
 
-	gen_s : for i in 0 to W-1 generate
+	gen_s : for i in 0 to N-1 generate
 		S(i) <= P0(i) xor C(i);
 	end generate;
 
-	Cout <= C(W);
-	Ovfl <= C(W) xor C(W-1);
+	Cout <= C(N);
+	Ovfl <= C(N) xor C(N-1);
 end architecture BKA;
 
 /*
