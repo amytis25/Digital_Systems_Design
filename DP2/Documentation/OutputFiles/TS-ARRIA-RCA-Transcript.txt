@@ -2,23 +2,12 @@
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity EN_LACG4
-# -- Compiling architecture LACN4 of EN_LACG4
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package arriaii_atom_pack
+# -- Loading package arriaii_components
 # -- Compiling entity EN_Adder
-# -- Compiling architecture RCA of EN_Adder
-# -- Compiling architecture CSA of EN_Adder
-# -- Loading entity EN_Adder
-# -- Compiling architecture LACGT of EN_Adder
-# -- Loading entity EN_Adder
-# -- Loading entity EN_LACG4
-# -- Compiling architecture BKA of EN_Adder
-# -- Loading entity EN_Adder
+# -- Compiling architecture structure of EN_Adder
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -34,6 +23,10 @@
 # -- Loading package NUMERIC_STD
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package arriaii_atom_pack
+# -- Loading package arriaii_components
 # -- Loading entity EN_Adder
 # -- Compiling configuration CFG_FUNC_CSA
 # -- Loading entity TB_Adder
@@ -47,37 +40,41 @@
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_RCA
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_CSA
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_LACGT
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_BKA
+# -- Compiling configuration CFG_TIMING
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
 # Starting functional simulation...
-# End time: 18:33:04 on Nov 12,2025, Elapsed time: 0:00:12
-# Errors: 0, Warnings: 1
-# vsim -t 100ps -gui work.CFG_FUNC_RCA 
-# Start time: 18:33:04 on Nov 12,2025
+# End time: 19:00:26 on Nov 12,2025, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 2
+# vsim -t 100ps -gui -sdftyp "/TB_ADDER/DUT=ModelSim/Questa/ARRIA_RCA.sdo" work.CFG_TIMING 
+# Start time: 19:00:26 on Nov 12,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.cfg_func_rca
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading arriaii.arriaii_atom_pack(body)
+# Loading arriaii.arriaii_components
+# Loading work.cfg_timing
+# SDF 2020.1 Compiler 2020.02 Feb 28 2020
+# 
 # Loading work.tb_adder(behavior)
-# Loading work.en_adder(rca)
+# Loading work.en_adder(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading arriaii.arriaii_io_obuf(arch)
+# Loading arriaii.arriaii_io_ibuf(arch)
+# Loading arriaii.arriaii_lcell_comb(vital_lcell_comb)
+# Loading instances from ModelSim/Questa/ARRIA_RCA.sdo
+# Loading timing data from ModelSim/Questa/ARRIA_RCA.sdo
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
+# ** Warning: Design size of 42626 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_adder File: TB_Adder.vhd
 # 
 # echo "Running functional simulation..."
 # Running functional simulation...
@@ -209,4 +206,4 @@
 # 
 # transcript off
 # === Functional Simulation Complete ===
-do TS_CYC_LACGT.do
+do TS_ARRIA_CSA.do
