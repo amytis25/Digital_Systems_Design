@@ -44,11 +44,11 @@
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
-# Starting functional simulation...
-# End time: 18:58:41 on Nov 12,2025, Elapsed time: 0:13:47
+# Starting timing simulation...
+# End time: 19:23:59 on Nov 12,2025, Elapsed time: 0:00:10
 # Errors: 0, Warnings: 2
 # vsim -t 100ps -gui -sdftyp "/TB_ADDER/DUT=ModelSim/Questa/ARRIA_BKA.sdo" work.CFG_TIMING 
-# Start time: 18:58:41 on Nov 12,2025
+# Start time: 19:23:59 on Nov 12,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -58,8 +58,6 @@
 # Loading arriaii.arriaii_atom_pack(body)
 # Loading arriaii.arriaii_components
 # Loading work.cfg_timing
-# SDF 2020.1 Compiler 2020.02 Feb 28 2020
-# 
 # Loading work.tb_adder(behavior)
 # Loading work.en_adder(structure)
 # Loading ieee.std_logic_arith(body)
@@ -76,8 +74,8 @@
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /tb_adder File: TB_Adder.vhd
 # 
-# echo "Running functional simulation..."
-# Running functional simulation...
+# echo "Running timing simulation..."
+# Running timing simulation...
 # run -all
 # ** Note: Using test vectors from file: TestVectors/Adder00.tvs
 #    Time: 0 ps  Iteration: 0  Instance: /tb_adder
@@ -205,5 +203,6 @@
 #    Time: 12120 ns  Iteration: 0  Instance: /tb_adder
 # 
 # transcript off
-# === Functional Simulation Complete ===
-do TS_ARRIA_RCA.do
+# === timing Simulation Complete ===
+# End time: 19:24:32 on Nov 12,2025, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 2

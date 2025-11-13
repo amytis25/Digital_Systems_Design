@@ -47,27 +47,15 @@
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_RCA
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_CSA
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_LACGT
-# -- Loading entity TB_Adder
-# -- Loading architecture behavior of TB_Adder
-# -- Loading entity EN_Adder
-# -- Compiling configuration CFG_TIMING_BKA
+# -- Compiling configuration CFG_TIMING
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
 # Starting functional simulation...
-# End time: 18:32:21 on Nov 12,2025, Elapsed time: 0:06:13
-# Errors: 0, Warnings: 7
+# End time: 19:19:53 on Nov 12,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1
 # vsim -t 100ps -gui work.CFG_FUNC_BKA 
-# Start time: 18:32:21 on Nov 12,2025
+# Start time: 19:19:53 on Nov 12,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -209,4 +197,4 @@
 # 
 # transcript off
 # === Functional Simulation Complete ===
-do FS_CSA.do
+do TS_run.do
