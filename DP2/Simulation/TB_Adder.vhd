@@ -20,30 +20,8 @@ architecture behavior of TB_Adder is
     constant TestVectorFile : string := "TestVectors/Adder00.tvs";
     constant PreStimTime    : time   := 1 ns;
     constant PostStimTime   : time   := 100 ns;
+    constant StableTime     : time   := 2 ns;  -- Time to consider signal stable
     
-    -- Propagation delay measurement signals
-    signal StartTime_S    : time := 0 ns;
-    signal StartTime_Cout : time := 0 ns;
-    signal StartTime_Ovfl : time := 0 ns;
-    
-    signal EndTime_S      : time := 0 ns;
-    signal EndTime_Cout   : time := 0 ns;
-    signal EndTime_Ovfl   : time := 0 ns;
-    
-    signal PropDelay_S    : time := 0 ns;
-    signal PropDelay_Cout : time := 0 ns;
-    signal PropDelay_Ovfl : time := 0 ns;
-    
-    signal MaxDelay_S     : time := 0 ns;
-    signal MaxDelay_Cout  : time := 0 ns;
-    signal MaxDelay_Ovfl  : time := 0 ns;
-    
-    signal MinDelay_S     : time := time'high;
-    signal MinDelay_Cout  : time := time'high;
-    signal MinDelay_Ovfl  : time := time'high;
-    
-    signal MeasurementDone : boolean := false;
-
     -- Component declaration 
     component TestUnit is
         port (
@@ -53,7 +31,14 @@ architecture behavior of TB_Adder is
             Cout, Ovfl : out std_logic
         );
     end component;
+    
+    -- Signal array for monitoring all outputs together
+    signal DUTout : std_logic_vector(N+1 downto 0);
+    
 begin
+    -- Group all outputs for stability checking
+    DUTout <= TBS & TBCout & TBOvfl;
+
     --------------------------------------------------------------------
     -- Device Under Test
     --------------------------------------------------------------------
@@ -68,79 +53,7 @@ begin
         );
 
     --------------------------------------------------------------------
-    -- Input Change Detection Process (Starts timing measurement)
-    --------------------------------------------------------------------
-    input_monitor : process(TBA, TBB, TBCin)
-    begin
-        -- Record the time when inputs change (after PreStimTime)
-        StartTime_S <= now;
-        StartTime_Cout <= now;
-        StartTime_Ovfl <= now;
-    end process;
-
-    --------------------------------------------------------------------
-    -- Output Change Detection Processes (End timing measurement)
-    --------------------------------------------------------------------
-    
-    -- S output delay measurement
-    S_delay_measure : process(TBS)
-    begin
-        if now > 0 ns then  -- Avoid initial transient
-            EndTime_S <= now;
-            PropDelay_S <= EndTime_S - StartTime_S;
-            
-            -- Update min/max delays
-            if PropDelay_S > 0 ns then
-                if PropDelay_S > MaxDelay_S then
-                    MaxDelay_S <= PropDelay_S;
-                end if;
-                if PropDelay_S < MinDelay_S then
-                    MinDelay_S <= PropDelay_S;
-                end if;
-            end if;
-        end if;
-    end process;
-
-    -- Cout output delay measurement
-    Cout_delay_measure : process(TBCout)
-    begin
-        if now > 0 ns then  -- Avoid initial transient
-            EndTime_Cout <= now;
-            PropDelay_Cout <= EndTime_Cout - StartTime_Cout;
-            
-            -- Update min/max delays
-            if PropDelay_Cout > 0 ns then
-                if PropDelay_Cout > MaxDelay_Cout then
-                    MaxDelay_Cout <= PropDelay_Cout;
-                end if;
-                if PropDelay_Cout < MinDelay_Cout then
-                    MinDelay_Cout <= PropDelay_Cout;
-                end if;
-            end if;
-        end if;
-    end process;
-
-    -- Ovfl output delay measurement
-    Ovfl_delay_measure : process(TBOvfl)
-    begin
-        if now > 0 ns then  -- Avoid initial transient
-            EndTime_Ovfl <= now;
-            PropDelay_Ovfl <= EndTime_Ovfl - StartTime_Ovfl;
-            
-            -- Update min/max delays
-            if PropDelay_Ovfl > 0 ns then
-                if PropDelay_Ovfl > MaxDelay_Ovfl then
-                    MaxDelay_Ovfl <= PropDelay_Ovfl;
-                end if;
-                if PropDelay_Ovfl < MinDelay_Ovfl then
-                    MinDelay_Ovfl <= PropDelay_Ovfl;
-                end if;
-            end if;
-        end if;
-    end process;
-
-    --------------------------------------------------------------------
-    -- Stimulus Process with Propagation Delay Reporting
+    -- Stimulus Process with propagation delay measurement
     --------------------------------------------------------------------
     stimulus : process
         file      tvf : text;
@@ -154,13 +67,16 @@ begin
         variable  pass       : boolean;
         variable  OUTL       : line;
         
-        -- Delay measurement variables
-        variable vec_delay_S, vec_delay_Cout, vec_delay_Ovfl : time;
-        variable delay_measured : boolean;
+        -- Timing measurement variables
+        variable StartTime, EndTime : time;
+        variable PropDelay_S   : time;
+        variable PropDelay_Cout : time;
+        variable PropDelay_Ovfl : time;
+        variable MaxPropDelay  : time;
+        
     begin
         file_open(tvf, TestVectorFile, read_mode);
         report "Using test vectors from file: " & TestVectorFile;
-        report "Starting propagation delay measurement...";
 
         while not endfile(tvf) loop
             readline(tvf, L);
@@ -179,11 +95,11 @@ begin
             s := (others => ' ');
             s(1 to L'length) := L.all;
 
-            -- Check for comment lines
+            -- Check for comments
             for i in s'range loop
                 if s(i) > ' ' then
                     if i < s'high and s(i) = '-' and s(i + 1) = '-' then
-                    skip_line := true;
+                        skip_line := true;
                     end if;
                     exit;
                 end if;
@@ -211,27 +127,31 @@ begin
             TBCin <= 'X';
             wait for PreStimTime;
 
-            -- Reset delay measurements for this vector
-            vec_delay_S := 0 ns;
-            vec_delay_Cout := 0 ns;
-            vec_delay_Ovfl := 0 ns;
-            delay_measured := false;
-
-            -- 2) Apply inputs (this triggers the input_monitor process)
+            -- 2) Apply inputs and record start time
             TBA   <= vA;
             TBB   <= vB;
             TBCin <= vCin;
+            StartTime := now;
 
-            -- 3) Wait for outputs to settle and measure delays
-            wait for PostStimTime;
+            -- 3) Wait for outputs to become stable
+            wait until DUTout'stable(StableTime);
+            EndTime := now;
 
-            -- Capture the measured delays for this vector
-            vec_delay_S := PropDelay_S;
-            vec_delay_Cout := PropDelay_Cout;
-            vec_delay_Ovfl := PropDelay_Ovfl;
-            delay_measured := true;
+            -- 4) Calculate individual propagation delays
+            PropDelay_S := TBS'last_event;
+            PropDelay_Cout := TBCout'last_event;
+            PropDelay_Ovfl := TBOvfl'last_event;
+            
+            -- Find maximum propagation delay
+            MaxPropDelay := PropDelay_S;
+            if PropDelay_Cout > MaxPropDelay then
+                MaxPropDelay := PropDelay_Cout;
+            end if;
+            if PropDelay_Ovfl > MaxPropDelay then
+                MaxPropDelay := PropDelay_Ovfl;
+            end if;
 
-            -- 4) Compute pass/fail and assert
+            -- 5) Compute pass/fail and (optionally) assert
             pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
 
             assert pass
@@ -243,7 +163,7 @@ begin
                     "  exp S=" & to_hstring(vS)  & " Cout=" & std_logic'image(vCout)  & " Ovfl=" & std_logic'image(vOvfl)
             severity error;
 
-            -- 5) Print comprehensive summary line with delay information
+            -- 6) Print one concise summary line with timing information
             OUTL := null;
             write(OUTL, idx);
             write(OUTL, string'(" A="));              write(OUTL, to_hstring(TBA));
@@ -252,18 +172,10 @@ begin
             write(OUTL, string'("  |  S="));          write(OUTL, to_hstring(TBS));
             write(OUTL, string'(" Cout="));           write(OUTL, TBCout);
             write(OUTL, string'(" Ovfl="));           write(OUTL, TBOvfl);
-            
-            -- Add delay information
-            if delay_measured then
-                write(OUTL, string'("  Delays(S="));
-                write(OUTL, vec_delay_S);
-                write(OUTL, string'(" Cout="));
-                write(OUTL, vec_delay_Cout);
-                write(OUTL, string'(" Ovfl="));
-                write(OUTL, vec_delay_Ovfl);
-                write(OUTL, string'(")"));
-            end if;
-            
+            write(OUTL, string'("  Delays(S/Cout/Ovfl)="));
+            write(OUTL, PropDelay_S);   write(OUTL, string'("/"));
+            write(OUTL, PropDelay_Cout);write(OUTL, string'("/"));
+            write(OUTL, PropDelay_Ovfl);
             write(OUTL, string'("  status="));
             if pass then 
                 write(OUTL, string'("PASS"));
@@ -275,15 +187,12 @@ begin
             idx := idx + 1;
         end loop;
 
-        -- Final delay statistics report
-        report "=== PROPAGATION DELAY STATISTICS ===";
-        report "S output:    Min=" & time'image(MinDelay_S) & ", Max=" & time'image(MaxDelay_S);
-        report "Cout output: Min=" & time'image(MinDelay_Cout) & ", Max=" & time'image(MaxDelay_Cout);
-        report "Ovfl output: Min=" & time'image(MinDelay_Ovfl) & ", Max=" & time'image(MaxDelay_Ovfl);
+        -- Report worst-case delays at the end
         report "Simulation completed: reached end of " & TestVectorFile;
-        
+        report "Worst-case propagation delays - S: " & time'image(PropDelay_S) & 
+               ", Cout: " & time'image(PropDelay_Cout) & 
+               ", Ovfl: " & time'image(PropDelay_Ovfl);
         file_close(tvf);
-        MeasurementDone <= true;
         wait;
     end process;
 end architecture;
