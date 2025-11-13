@@ -142,6 +142,7 @@ incremental_db/
 *.wlf
 *.vstf
 *.ucdb
+*.csd
 cov*/
 _temp/
 _@*/
