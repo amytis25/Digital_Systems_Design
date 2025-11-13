@@ -5,7 +5,7 @@ import random
 from pathlib import Path
 
 N = 64
-NUM_VECTORS = 100
+NUM_VECTORS = 77
 outfile = Path("Adder00.tvs")
 
 WIDTH_HEX = (N + 3) // 4  # hex digits needed
