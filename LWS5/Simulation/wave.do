@@ -10,7 +10,7 @@ add wave -noupdate -height 45 -label EQ_true /tb_magcomp/TBEQ_true
 add wave -noupdate -height 45 -label GT_true /tb_magcomp/TBGT_true
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-quietly wave cursor active 0
+quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -25,4 +25,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1 ns}
+WaveRestoreZoom {0 ps} {357700 ps}
