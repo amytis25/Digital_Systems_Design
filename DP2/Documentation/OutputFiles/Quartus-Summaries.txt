@@ -3,19 +3,23 @@ Quartus Fit and Synthesize Summary
 ---------------------
 ; Table of Contents ;
 ---------------------
-1. Baseline Device (Ripple Adder Architecture on Cyclone IV FPGA) Fitter Summary
-2. Ripple Adder Architecture on ARRIA II FPGA Fitter Summary
-3. Conditional Sum Adder Architecture on Cyclone IV FPGA Fitter Summary
-4. Conditional Sum Adder Architecture on ARRIA II FPGA Fitter Summary
+1. Baseline Device (Ripple-Carry Adder (RCA) Architecture on Cyclone IV FPGA) Fitter Summary
+2. Ripple-Carry Adder (RCA) Architecture on ARRIA II FPGA Fitter Summary
+3. Conditional Sum Adder (CSA) Architecture on Cyclone IV FPGA Fitter Summary
+4. Conditional Sum Adder (CSA) Architecture on ARRIA II FPGA Fitter Summary
+5. Look-Ahead Carry Generate Tree Adder (LACGT) Architecture on Cyclone IV FPGA Fitter Summary
+6. Look-Ahead Carry Generate Tree Adder (LACGT) Architecture on ARRIA II FPGA Fitter Summary
+7. Brent-Kung Adder (BKA) Architecture on Cyclone IV FPGA Fitter Summary
+8. Brent-Kung Adder (BKA) Architecture on ARRIA II FPGA Fitter Summary
+9. ____________ Architecture on Cyclone IV FPGA Fitter Summary
+10. ___________ Architecture on ARRIA II FPGA Fitter Summary
 
-
-
-+-------------------------------------------------------------------------------------+
-; Baseline Device (Ripple Adder Architecture on Cyclone IV FPGA) Fitter Summary       ;
++-------------------------------------------------------------------------------------+ 
+; Baseline Device (RCA Architecture on Cyclone IV FPGA) Fitter Summary                ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 10 20:46:09 2025          ;
+; Fitter Status                      ; Successful - Wed Nov 12 16:34:14 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                      ; DP1                                            ;
+; Revision Name                      ; DP2                                            ;
 ; Top-level Entity Name              ; EN_Adder                                       ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
@@ -31,13 +35,12 @@ Quartus Fit and Synthesize Summary
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
 
-
 +------------------------------------------------------------------------------------+
-; Ripple Adder Architecture on ARRIA II FPGA Fitter Summary                          ;
+; Ripple-Carry Adder (RCA) Architecture on ARRIA II FPGA Fitter Summary              ;
 +-----------------------------------+------------------------------------------------+
-; Fitter Status                     ; Successful - Fri Oct 10 20:43:44 2025          ;
+; Fitter Status                     ; Successful - Wed Nov 12 16:52:05 2025          ;
 ; Quartus Prime Version             ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                     ; DP1                                            ;
+; Revision Name                     ; DP2                                            ;
 ; Top-level Entity Name             ; EN_Adder                                       ;
 ; Family                            ; Arria II GX                                    ;
 ; Device                            ; EP2AGX45DF29C6                                 ;
@@ -59,13 +62,12 @@ Quartus Fit and Synthesize Summary
 ; Total DLLs                        ; 0 / 2 ( 0 % )                                  ;
 +-----------------------------------+------------------------------------------------+
 
-
 +-------------------------------------------------------------------------------------+
-; Conditional Sum Adder Architecture on Cyclone IV FPGA Fitter Summary                ;
+; Conditional Sum Adder (CSA) Architecture on Cyclone IV FPGA Fitter Summary          ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 10 18:52:35 2025          ;
+; Fitter Status                      ; Successful - Wed Nov 12 16:36:35 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                      ; DP1                                            ;
+; Revision Name                      ; DP2                                            ;
 ; Top-level Entity Name              ; EN_Adder                                       ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
@@ -81,19 +83,114 @@ Quartus Fit and Synthesize Summary
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
 
-
 +------------------------------------------------------------------------------------+
-; Conditional Sum Adder Architecture on ARRIA II FPGA Fitter Summary                 ;
+; Conditional Sum Adder (CSA) Architecture on ARRIA II FPGA Fitter Summary           ;
 +-----------------------------------+------------------------------------------------+
-; Fitter Status                     ; Successful - Fri Oct 10 19:04:32 2025          ;
+; Fitter Status                     ; Successful - Wed Nov 12 16:47:39 2025          ;
 ; Quartus Prime Version             ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                     ; DP1                                            ;
+; Revision Name                     ; DP2                                            ;
 ; Top-level Entity Name             ; EN_Adder                                       ;
 ; Family                            ; Arria II GX                                    ;
 ; Device                            ; EP2AGX45DF29C6                                 ;
 ; Timing Models                     ; Final                                          ;
 ; Logic utilization                 ; < 1 %                                          ;
 ;     Combinational ALUTs           ; 188 / 36,100 ( < 1 % )                         ;
+;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                             ;
+;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                             ;
+; Total registers                   ; 0                                              ;
+; Total pins                        ; 195 / 404 ( 48 % )                             ;
+; Total virtual pins                ; 0                                              ;
+; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                          ;
+; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                                ;
+; Total GXB Receiver Channel PCS    ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Receiver Channel PMA    ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Transmitter Channel PCS ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Transmitter Channel PMA ; 0 / 8 ( 0 % )                                  ;
+; Total PLLs                        ; 0 / 4 ( 0 % )                                  ;
+; Total DLLs                        ; 0 / 2 ( 0 % )                                  ;
++-----------------------------------+------------------------------------------------+
+
++---------------------------------------------------------------------------------------------+
+; Look-Ahead Carry Generate Tree Adder (LACGT) Architecture on Cyclone IV FPGA Fitter Summary ;
++------------------------------------+--------------------------------------------------------+
+; Fitter Status                      ; Successful - Wed Nov 12 16:37:58 2025          	      ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition 	      ;
+; Revision Name                      ; DP2                                            	      ;
+; Top-level Entity Name              ; EN_Adder                                       	      ;
+; Family                             ; Cyclone IV E                                   	      ;
+; Device                             ; EP4CE115F29C7                                  	      ;
+; Timing Models                      ; Final                                          	      ;
+; Total logic elements               ; 296 / 114,480 ( < 1 % )                        	      ;
+;     Total combinational functions  ; 296 / 114,480 ( < 1 % )                        	      ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                            	      ;
+; Total registers                    ; 0                                              	      ;
+; Total pins                         ; 195 / 529 ( 37 % )                             	      ;
+; Total virtual pins                 ; 0                                              	      ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          	      ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                	      ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  	      ;
++------------------------------------+--------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------+
+; Look-Ahead Carry Generate Tree Adder (LACGT) Architecture on ARRIA II FPGA Fitter Summary ;
++-----------------------------------+-------------------------------------------------------+
+; Fitter Status                     ; Successful - Wed Nov 12 16:43:43 2025                 ;
+; Quartus Prime Version             ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition        ;
+; Revision Name                     ; DP2                                                   ;
+; Top-level Entity Name             ; EN_Adder                                              ;
+; Family                            ; Arria II GX                                           ;
+; Device                            ; EP2AGX45DF29C6                                        ;
+; Timing Models                     ; Final                                                 ;
+; Logic utilization                 ; < 1 %                                                 ;
+;     Combinational ALUTs           ; 231 / 36,100 ( < 1 % )                                ;
+;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                                    ;
+;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                                    ;
+; Total registers                   ; 0                                                     ;
+; Total pins                        ; 195 / 404 ( 48 % )                                    ;
+; Total virtual pins                ; 0                                                     ;
+; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                                 ;
+; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                                       ;
+; Total GXB Receiver Channel PCS    ; 0 / 8 ( 0 % )                                         ;
+; Total GXB Receiver Channel PMA    ; 0 / 8 ( 0 % )                                         ;
+; Total GXB Transmitter Channel PCS ; 0 / 8 ( 0 % )                                         ;
+; Total GXB Transmitter Channel PMA ; 0 / 8 ( 0 % )                                         ;
+; Total PLLs                        ; 0 / 4 ( 0 % )                                         ;
+; Total DLLs                        ; 0 / 2 ( 0 % )                                         ;
++-----------------------------------+-------------------------------------------------------+
+
++-------------------------------------------------------------------------------------+
+; Brent-Kung Adder (BKA) Architecture on Cyclone IV FPGA Fitter Summary               ;
++------------------------------------+------------------------------------------------+
+; Fitter Status                      ; Successful - Wed Nov 12 16:39:36 2025          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; DP2                                            ;
+; Top-level Entity Name              ; EN_Adder                                       ;
+; Family                             ; Cyclone IV E                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 574 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 574 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                            ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 195 / 529 ( 37 % )                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Brent-Kung Adder (BKA) Architecture on ARRIA II FPGA Fitter Summary                ;
++-----------------------------------+------------------------------------------------+
+; Fitter Status                     ; Successful - Wed Nov 12 16:41:26 2025          ;
+; Quartus Prime Version             ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                     ; DP2                                            ;
+; Top-level Entity Name             ; EN_Adder                                       ;
+; Family                            ; Arria II GX                                    ;
+; Device                            ; EP2AGX45DF29C6                                 ;
+; Timing Models                     ; Final                                          ;
+; Logic utilization                 ; 2 %                                            ;
+;     Combinational ALUTs           ; 543 / 36,100 ( 2 % )                           ;
 ;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                             ;
 ;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                             ;
 ; Total registers                   ; 0                                              ;
