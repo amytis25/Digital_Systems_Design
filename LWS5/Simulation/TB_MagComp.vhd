@@ -18,7 +18,7 @@ architecture sim of TB_MagComp is
 	  signal TBGT : std_logic;
 	  signal TBEQ_true : std_logic;
 	  signal TBGT_true : std_logic;
-	  constant PREPTIME : time := 40 ns;
+	  constant PREPTIME : time := 10 ns;
   	  constant MEASTIME : time := 100 ns;
 
 	  -- Timing measurement signals
@@ -43,7 +43,7 @@ architecture sim of TB_MagComp is
 		5 => (X => std_logic_vector(to_unsigned(1, N)), Y => std_logic_vector(to_unsigned(0, N)), EQ => '0', GT => '1')
 	);  
 
-	-- Component declaration (REQUIRED for configurations)
+	-- Component declaration 
 	component TestUnit is
 		port (
 			X, Y : in std_logic_vector(N-1 downto 0);
