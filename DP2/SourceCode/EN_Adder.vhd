@@ -629,3 +629,92 @@ architecture LFA of EN_Adder is
 	Ovfl   <= Cout_i xor C_block(G-1)(4);
 end LFA;
 
+architecture CBA of EN_Adder is
+    -- Component declaration for the 4-bit lookahead carry generator
+    component EN_LACG4 is 
+        generic (N: natural := 4);
+        port (
+            Gin, Pin  : in std_logic_vector (N-1 downto 0);
+            Gout, Pout  : out std_logic;
+            Cin : in std_logic;
+            C : out std_logic_vector (N-1 downto 1)
+        );
+    end component;
+
+    -- Constants and signals
+    constant BLOCK_SIZE : natural := 4;
+    constant NUM_BLOCKS : natural := N / BLOCK_SIZE;
+    
+    -- Block propagate and generate signals
+    signal P_block, G_block : std_logic_vector(NUM_BLOCKS-1 downto 0);
+    
+    -- Block carry signals
+    signal block_carry_in : std_logic_vector(NUM_BLOCKS downto 0);
+    signal block_carry_out : std_logic_vector(NUM_BLOCKS-1 downto 0);
+    signal block_carry_ripple : std_logic_vector(NUM_BLOCKS-1 downto 0);
+    
+    -- Individual bit propagate and generate signals
+    signal P, G : std_logic_vector(N-1 downto 0);
+    
+    -- Internal carry signals for each bit
+    type carry_array is array (0 to NUM_BLOCKS-1) of std_logic_vector(BLOCK_SIZE-1 downto 1);
+    signal C_internal : carry_array;
+    
+    -- Individual sum signals
+    signal S_internal : std_logic_vector(N-1 downto 0);
+
+begin
+    -- Initialize the first block carry input
+    block_carry_in(0) <= Cin;
+    
+    -- Generate all the propagate and generate signals for individual bits
+    GEN_PG: for i in 0 to N-1 generate
+        P(i) <= A(i) xor B(i);
+        G(i) <= A(i) and B(i);
+    end generate GEN_PG;
+    
+    -- Generate the 4-bit lookahead blocks
+    GEN_BLOCKS: for i in 0 to NUM_BLOCKS-1 generate
+        -- Instantiate the 4-bit lookahead carry generator for each block
+        LACG_INST: EN_LACG4 
+            generic map (N => BLOCK_SIZE)
+            port map (
+                Gin => G((i+1)*BLOCK_SIZE-1 downto i*BLOCK_SIZE),
+                Pin => P((i+1)*BLOCK_SIZE-1 downto i*BLOCK_SIZE),
+                Gout => G_block(i),
+                Pout => P_block(i),
+                Cin => block_carry_in(i),
+                C => C_internal(i)
+            );
+        
+        -- Calculate the ripple carry output for this block (normal lookahead output)
+        block_carry_ripple(i) <= G_block(i) or (P_block(i) and block_carry_in(i));
+        
+        -- Skip logic: multiplexer to choose between ripple path and skip path
+        block_carry_out(i) <= block_carry_in(i) when P_block(i) = '1' else block_carry_ripple(i);
+        
+        -- Connect carry output to next block's carry input
+        block_carry_in(i+1) <= block_carry_out(i);
+        
+        -- Generate sum bits for this block
+        GEN_SUM_BITS: for j in 0 to BLOCK_SIZE-1 generate
+            -- For bit 0 in each block, use the block carry input
+            BIT0: if j = 0 generate
+                S_internal(i*BLOCK_SIZE + j) <= P(i*BLOCK_SIZE + j) xor block_carry_in(i);
+            end generate BIT0;
+            
+            -- For bits 1-3 in each block, use the internal carry from lookahead
+            OTHER_BITS: if j > 0 generate
+                S_internal(i*BLOCK_SIZE + j) <= P(i*BLOCK_SIZE + j) xor C_internal(i)(j);
+            end generate OTHER_BITS;
+        end generate GEN_SUM_BITS;
+    end generate GEN_BLOCKS;
+    
+    -- Connect outputs
+    S <= S_internal;
+    Cout <= block_carry_in(NUM_BLOCKS);
+    
+    -- Overflow detection for signed arithmetic
+	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
+    
+end architecture CBA;
