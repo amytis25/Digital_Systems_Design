@@ -196,3 +196,7 @@
 # echo "=== timing Simulation for Brent-Kung Adder on ARRIA II Complete ==="
 # === timing Simulation for Brent-Kung Adder on ARRIA II Complete ===
 # transcript off
+# Project file C:/Users/asa414/ENSC-350/DP2/Simulation/DP2.mpf is write protected, data cannot be saved.
+# Unable to save project.
+# End time: 17:35:07 on Nov 13,2025, Elapsed time: 0:13:34
+# Errors: 1, Warnings: 1
