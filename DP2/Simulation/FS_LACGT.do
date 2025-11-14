@@ -1,8 +1,8 @@
 # ===========================
-# FS_RCA.do
+# FS_LACGT.do
 # ===========================
 
-transcript file ../Documentation/OutputFiles/FS-RCA-Transcript.txt
+transcript file ../Documentation/OutputFiles/FS-LACGT-Transcript.txt
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_LACG4.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Adder.vhd
@@ -11,7 +11,7 @@ vcom -work work -2008 -explicit -stats=none Config_Adder.vhd
 
 # Start simulation using configuration
 echo "Starting functional simulation..."
-vsim -t 100ps -gui work.CFG_FUNC_CBA
+vsim -t 100ps -gui work.CFG_FUNC_LACGT
 
 transcript off
 do FS_wave.do
