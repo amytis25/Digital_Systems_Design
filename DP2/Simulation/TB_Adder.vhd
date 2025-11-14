@@ -39,7 +39,9 @@ begin
     -- Group all outputs for stability checking
     DUTout <= TBS & TBCout & TBOvfl;
 
-    -- Device Under Test (DUT)
+    --------------------------------------------------------------------
+    -- Device Under Test
+    --------------------------------------------------------------------
     DUT: TestUnit
         port map (
             A => TBA,
@@ -50,15 +52,17 @@ begin
             Ovfl => TBOvfl
         );
 
+    --------------------------------------------------------------------
     -- Stimulus Process with propagation delay measurement
+    --------------------------------------------------------------------
     stimulus : process
-		-- Simulation Variables
         file      tvf : text;
-        variable  L, L_parse : line;
+        variable  L, L2 : line;
         constant  MAXLEN : natural := 2048;
         variable  s : string(1 to MAXLEN);
         variable  vA, vB, vS : std_logic_vector(N-1 downto 0);
         variable  vCin, vCout, vOvfl : std_logic;
+        variable  skip_line  : boolean;
         variable  idx        : natural := 0;
         variable  pass       : boolean;
         variable  OUTL       : line;
@@ -71,21 +75,19 @@ begin
         variable MaxPropDelay  : time;
         
     begin
-		-- open test vector file
         file_open(tvf, TestVectorFile, read_mode);
-		
-		-- report file name
         report "Using test vectors from file: " & TestVectorFile;
 
         while not endfile(tvf) loop
             readline(tvf, L);
 
-            -- Skip blank lines
+            -- Skip blank or comment lines
             if L'length = 0 then
                 next;
             end if;
 
-			-- check if line is too long 
+            skip_line := false;
+
             if L'length > MAXLEN then
                 report "Input line exceeds MAXLEN=" & integer'image(MAXLEN) severity failure;
             end if;
@@ -97,26 +99,27 @@ begin
             for i in s'range loop
                 if s(i) > ' ' then
                     if i < s'high and s(i) = '-' and s(i + 1) = '-' then
-						-- skip commented lines
-                        next;
+                        skip_line := true;
                     end if;
                     exit;
                 end if;
             end loop;
             
-            
+            if skip_line then
+                next;
+            end if;
 
             -- Rebuild the line to parse values
-            L_parse := null;
-            write(L_parse, s(1 to L'length));
+            L2 := null;
+            write(L2, s(1 to L'length));
 
             -- Parse: A B Cin S Cout Ovfl
-            HREAD(L_parse, vA);
-            HREAD(L_parse, vB);
-            read (L_parse, vCin);
-            HREAD(L_parse, vS);
-            read (L_parse, vCout);
-            read (L_parse, vOvfl);
+            HREAD(L2, vA);
+            HREAD(L2, vB);
+            read (L2, vCin);
+            HREAD(L2, vS);
+            read (L2, vCout);
+            read (L2, vOvfl);
 
             -- 1) Drive 'X' for PreStimTime
             TBA   <= (others => 'X');
@@ -131,11 +134,11 @@ begin
             StartTime := now;
 
             -- 3) Wait for outputs to become stable
-            wait until DUTout'stable(StableTime); -- returns a true if DUTout has been stable for StableTime
+            wait until DUTout'stable(StableTime);
             EndTime := now;
 
             -- 4) Calculate individual propagation delays
-            PropDelay_S := TBS'last_event; -- 'last_event: returns time elapsed since the last event on a signal 
+            PropDelay_S := TBS'last_event;
             PropDelay_Cout := TBCout'last_event;
             PropDelay_Ovfl := TBOvfl'last_event;
             
@@ -148,10 +151,9 @@ begin
                 MaxPropDelay := PropDelay_Ovfl;
             end if;
 
-            -- define pass condition
+            -- 5) Compute pass/fail and (optionally) assert
             pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
-			
-			-- 5) Compute pass/fail and assert
+
             assert pass
                 report "Mismatch: i=" & integer'image(idx) &
                     " A=" & to_hstring(TBA) &
@@ -181,8 +183,7 @@ begin
                 write(OUTL, string'("FAIL"));
             end if;
             writeline(output, OUTL);
-			
-			-- increase index 
+
             idx := idx + 1;
         end loop;
 
@@ -191,8 +192,6 @@ begin
         report "Worst-case propagation delays - S: " & time'image(PropDelay_S) & 
                ", Cout: " & time'image(PropDelay_Cout) & 
                ", Ovfl: " & time'image(PropDelay_Ovfl);
-			   
-		-- close test vector file
         file_close(tvf);
         wait;
     end process;
