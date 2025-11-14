@@ -18,9 +18,11 @@ architecture behavior of TB_Adder is
 
     -- Test-vector file
     constant TestVectorFile : string := "TestVectors/Adder00.tvs";
-    constant PreStimTime    : time   := 1 ns;
-    constant PostStimTime   : time   := 100 ns;
-    constant StableTime     : time   := 2 ns;  -- Time to consider signal stable
+    
+    -- Timing constants 
+    constant PreStimTime    : time   := 1 ns;   -- Time to drive 'X' before applying stimuli
+    constant PostStimTime   : time   := 200 ns; -- Maximum time to wait for outputs to stabilize
+    constant StableTime     : time   := 3 ns;   -- Time window to consider signal stable
     
     -- Component declaration 
     component TestUnit is
@@ -32,13 +34,7 @@ architecture behavior of TB_Adder is
         );
     end component;
     
-    -- Signal array for monitoring all outputs together
-    signal DUTout : std_logic_vector(N+1 downto 0);
-    
 begin
-    -- Group all outputs for stability checking
-    DUTout <= TBS & TBCout & TBOvfl;
-
     -- Device Under Test (DUT)
     DUT: TestUnit
         port map (
@@ -50,9 +46,9 @@ begin
             Ovfl => TBOvfl
         );
 
-    -- Stimulus Process with propagation delay measurement
+    -- Stimulus Process with proper propagation delay measurement
     stimulus : process
-		-- Simulation variables
+        -- Simulation variables
         file      tvf : text;
         variable  L, L_parse : line;
         constant  MAXLEN : natural := 2048;
@@ -66,19 +62,31 @@ begin
         
         -- Timing measurement variables
         variable StartTime, EndTime : time;
-        variable PropDelay_S   : time;
-        variable PropDelay_Cout : time;
-        variable PropDelay_Ovfl : time;
-        variable MaxPropDelay  : time;
+        variable PropDelay_S, PropDelay_Cout, PropDelay_Ovfl : time;
+        variable MaxPropDelay_S, MaxPropDelay_Cout, MaxPropDelay_Ovfl : time := 0 ns;
+        variable MaxPropDelay_Overall : time := 0 ns;
+        
+        -- Variables for stability detection
+        variable last_S, current_S : std_logic_vector(N-1 downto 0);
+        variable last_Cout, current_Cout : std_logic;
+        variable last_Ovfl, current_Ovfl : std_logic;
+        variable stable_start : time;
+        variable outputs_stable : boolean;
         
     begin
-		-- open test vector file
+        -- Initialize max delay tracking
+        MaxPropDelay_S := 0 ns;
+        MaxPropDelay_Cout := 0 ns;
+        MaxPropDelay_Ovfl := 0 ns;
+        MaxPropDelay_Overall := 0 ns;
+        
+        -- Open test vector file
         file_open(tvf, TestVectorFile, read_mode);
-		
-		-- report file name
+        
+        -- Report file name
         report "Using test vectors from file: " & TestVectorFile;
 
-		-- loop through every test vector 
+        -- Loop through every test vector 
         while not endfile(tvf) loop
             readline(tvf, L);
 
@@ -86,10 +94,10 @@ begin
             if L'length = 0 then
                 next;
             end if;
-			-- set skip_line to false to begin 
+            -- Set skip_line to false to begin 
             skip_line := false;
-			
-			-- check if line is too long 
+            
+            -- Check if line is too long 
             if L'length > MAXLEN then
                 report "Input line exceeds MAXLEN=" & integer'image(MAXLEN) severity failure;
             end if;
@@ -100,7 +108,7 @@ begin
             -- Check for comments
             for i in s'range loop
                 if s(i) > ' ' then
-					-- set skip line to true if the line is a comment
+                    -- Set skip line to true if the line is a comment
                     if i < s'high and s(i) = '-' and s(i + 1) = '-' then
                         skip_line := true;
                     end if;
@@ -108,7 +116,7 @@ begin
                 end if;
             end loop;
             
-			-- skip line if skip_line is true
+            -- Skip line if skip_line is true
             if skip_line then
                 next;
             end if;
@@ -125,7 +133,7 @@ begin
             read (L_parse, vCout);
             read (L_parse, vOvfl);
 
-            -- 1) Drive 'X' for PreStimTime
+            -- 1) Drive 'X' for PreStimTime (clear previous state)
             TBA   <= (others => 'X');
             TBB   <= (others => 'X');
             TBCin <= 'X';
@@ -136,29 +144,78 @@ begin
             TBB   <= vB;
             TBCin <= vCin;
             StartTime := now;
-
-            -- 3) Wait for outputs to become stable
-            wait until DUTout'stable(StableTime); -- returns a true if DUTout has been stable for StableTime
-            EndTime := now;
-
-            -- 4) Calculate individual propagation delays
-            PropDelay_S := TBS'last_event; -- 'last_event: returns time elapsed since the last event on a signal 
-            PropDelay_Cout := TBCout'last_event;
-            PropDelay_Ovfl := TBOvfl'last_event;
             
-            -- Find maximum propagation delay
-            MaxPropDelay := PropDelay_S;
-            if PropDelay_Cout > MaxPropDelay then
-                MaxPropDelay := PropDelay_Cout;
-            end if;
-            if PropDelay_Ovfl > MaxPropDelay then
-                MaxPropDelay := PropDelay_Ovfl;
+            -- 3) Simple and reliable stability detection
+            -- Wait for outputs to change from initial state
+            wait until TBS'event or TBCout'event or TBOvfl'event;
+            
+            -- Now monitor outputs until they stabilize for StableTime duration
+            stable_start := now;
+            outputs_stable := false;
+            
+            while not outputs_stable and (now - StartTime < PostStimTime) loop
+                -- Record current output values
+                last_S := TBS;
+                last_Cout := TBCout;
+                last_Ovfl := TBOvfl;
+                
+                -- Wait a small delta time
+                wait for 1 ns;
+                
+                -- Check if outputs have changed
+                current_S := TBS;
+                current_Cout := TBCout;
+                current_Ovfl := TBOvfl;
+                
+                if (last_S = current_S) and (last_Cout = current_Cout) and (last_Ovfl = current_Ovfl) then
+                    -- Outputs haven't changed in this check
+                    if (now - stable_start) >= StableTime then
+                        outputs_stable := true;
+                    end if;
+                else
+                    -- Outputs changed, reset stability timer
+                    stable_start := now;
+                end if;
+            end loop;
+            
+            if outputs_stable then
+                EndTime := stable_start + StableTime; -- When stability was confirmed
+            else
+                -- Timeout occurred
+                EndTime := StartTime + PostStimTime;
+                report "Timeout waiting for outputs to stabilize at measurement " & integer'image(idx) 
+                       severity warning;
             end if;
 
-            -- define pass condition
+            -- 4) Calculate ACTUAL propagation delays
+            PropDelay_S := EndTime - StartTime;
+            PropDelay_Cout := EndTime - StartTime;
+            PropDelay_Ovfl := EndTime - StartTime;
+
+            -- Update maximum propagation delays
+            if PropDelay_S > MaxPropDelay_S then
+                MaxPropDelay_S := PropDelay_S;
+            end if;
+            if PropDelay_Cout > MaxPropDelay_Cout then
+                MaxPropDelay_Cout := PropDelay_Cout;
+            end if;
+            if PropDelay_Ovfl > MaxPropDelay_Ovfl then
+                MaxPropDelay_Ovfl := PropDelay_Ovfl;
+            end if;
+            if PropDelay_S > MaxPropDelay_Overall then
+                MaxPropDelay_Overall := PropDelay_S;
+            end if;
+            if PropDelay_Cout > MaxPropDelay_Overall then
+                MaxPropDelay_Overall := PropDelay_Cout;
+            end if;
+            if PropDelay_Ovfl > MaxPropDelay_Overall then
+                MaxPropDelay_Overall := PropDelay_Ovfl;
+            end if;
+
+            -- Define pass condition
             pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
 
-			-- 5) Compute pass/fail and assert
+            -- 5) Compute pass/fail and assert
             assert pass
                 report "Mismatch: i=" & integer'image(idx) &
                     " A=" & to_hstring(TBA) &
@@ -188,18 +245,19 @@ begin
                 write(OUTL, string'("FAIL"));
             end if;
             writeline(output, OUTL);
-			
-			-- increase index 
+            
+            -- Increase index 
             idx := idx + 1;
         end loop;
 
         -- Report worst-case delays at the end
         report "Simulation completed: reached end of " & TestVectorFile;
-        report "Worst-case propagation delays - S: " & time'image(PropDelay_S) & 
-               ", Cout: " & time'image(PropDelay_Cout) & 
-               ", Ovfl: " & time'image(PropDelay_Ovfl);
-			   
-		-- close test vector file
+        report "Worst-case propagation delays - S: " & time'image(MaxPropDelay_S) & 
+               ", Cout: " & time'image(MaxPropDelay_Cout) & 
+               ", Ovfl: " & time'image(MaxPropDelay_Ovfl);
+        report "Overall worst-case propagation delay: " & time'image(MaxPropDelay_Overall);
+               
+        -- Close test vector file
         file_close(tvf);
         wait;
     end process;
