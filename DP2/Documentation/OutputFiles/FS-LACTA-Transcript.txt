@@ -55,24 +55,27 @@
 # -- Loading entity TB_Adder
 # -- Loading architecture behavior of TB_Adder
 # -- Loading entity EN_Adder
-# echo "Starting functional simulation for Ripple-Carry Adder..."
-# Starting functional simulation for Ripple-Carry Adder...
+# echo "Starting functional simulation for Look-Ahead Carry Tree Adder..."
+# Starting functional simulation for Look-Ahead Carry Tree Adder...
 # transcript off
-# vsim -t 100ps -gui work.CFG_FUNC_RCA 
-# Start time: 17:19:32 on Nov 13,2025
+# End time: 17:20:15 on Nov 13,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
+# vsim -t 100ps -gui work.CFG_FUNC_LACTA 
+# Start time: 17:20:15 on Nov 13,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.cfg_func_rca
+# Loading work.cfg_func_lacta
 # Loading work.tb_adder(behavior)
-# Loading work.en_adder(rca)
+# Loading work.en_adder(lacta)
+# Loading work.en_lacg4(lacn4)
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
 # 
-# echo "Running functional simulation for Ripple-Carry Adder..."
-# Running functional simulation for Ripple-Carry Adder...
+# echo "Running functional simulation for Look-Ahead Carry Tree Adder..."
+# Running functional simulation for Look-Ahead Carry Tree Adder...
 # transcript off
 # ** Note: Using test vectors from file: TestVectors/Adder00.tvs
 #    Time: 0 ps  Iteration: 0  Instance: /tb_adder
@@ -182,6 +185,6 @@
 # ** Note: Worst-case propagation delays - S: 2000 ps, Cout: 2000 ps, Ovfl: 2000 ps
 #    Time: 303 ns  Iteration: 0  Instance: /tb_adder
 # 
-# echo "=== Functional Simulation for Ripple-Carry Adder Complete ===" 
-# === Functional Simulation for Ripple-Carry Adder Complete ===
+# echo "=== Functional Simulation for Look-Ahead Carry Tree Adder Complete ==="
+# === Functional Simulation for Look-Ahead Carry Tree Adder Complete ===
 # transcript off

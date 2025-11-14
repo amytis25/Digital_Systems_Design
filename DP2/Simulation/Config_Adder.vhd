@@ -20,9 +20,9 @@ configuration CFG_FUNC_CSA of TB_Adder is
   end for;
 end configuration;
 
-configuration CFG_FUNC_LACGT of TB_Adder is
+configuration CFG_FUNC_LACTA of TB_Adder is
   for behavior
-    for DUT : TestUnit use entity work.EN_Adder(LACGT); end for;
+    for DUT : TestUnit use entity work.EN_Adder(LACTA); end for;
   end for;
 end configuration;
 
