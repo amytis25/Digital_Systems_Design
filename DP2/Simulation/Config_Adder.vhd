@@ -32,12 +32,6 @@ configuration CFG_FUNC_BKA of TB_Adder is
   end for;
 end configuration;
 
-configuration CFG_FUNC_CBA of TB_Adder is
-  for behavior
-    for DUT : TestUnit use entity work.EN_Adder(CBA); end for;
-  end for;
-end configuration;
-
 
 
 -- Timing verification 
