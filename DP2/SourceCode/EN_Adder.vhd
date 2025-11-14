@@ -29,7 +29,7 @@ signal temp : unsigned(N downto 0);
     Cout <= temp(N);
 	 Ovfl <= (temp(N) xor temp(N-1));
 end FastRipple;*/
-/*
+
 -- RCA : Ripple Carry Adder
 architecture RCA of EN_Adder is 
 	signal C : std_logic_vector (N downto 0);
@@ -181,7 +181,7 @@ architecture LACTA of EN_Adder is
 				Ovfl <= (not (A(3) xor B(3))) and (A(3) xor S(3));
 		end generate;
 
-		-- Generate Recursive case N>4
+		-- Generate Recursive case N > 4
 		
 		recur: if N > 4 generate
 			constant Q : integer := N/4;
@@ -457,7 +457,7 @@ architecture BKA of EN_Adder is
 	Ovfl <= C(N) xor C(N-1);
 end architecture BKA;
 
-*/
+/*
 -- LFA : Ladner Fischer Adder
 architecture LFA of EN_Adder is 
 	signal Cout_i : std_logic;
@@ -628,7 +628,7 @@ architecture LFA of EN_Adder is
 	Cout   <= Cout_i;
 	Ovfl   <= Cout_i xor C_block(G-1)(4);
 end LFA;
-
+*/
 architecture CBA of EN_Adder is
     -- Component declaration for the 4-bit lookahead carry generator
     component EN_LACG4 is 
