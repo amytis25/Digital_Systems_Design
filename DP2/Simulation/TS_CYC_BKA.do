@@ -2,6 +2,7 @@
 # TS_CYC_BKA.do
 # ===========================
 
+transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ModelSim/Questa/CYC_BKA.vho
 vcom -work work -2008 -explicit -stats=none TB_Adder.vhd

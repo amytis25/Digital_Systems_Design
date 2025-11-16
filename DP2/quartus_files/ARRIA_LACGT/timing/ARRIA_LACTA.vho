@@ -1,4 +1,4 @@
--- Copyright (C) 2024  Intel Corporation. All rights reserved.
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
 -- and other software and tools, and any partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -15,16 +15,16 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
+-- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/12/2025 16:43:51"
+-- DATE "11/15/2025 16:05:45"
 
 -- 
 -- Device: Altera EP2AGX45DF29C6 Package FBGA780
 -- 
 
 -- 
--- This VHDL file should be used for Questa Intel FPGA (VHDL) only
+-- This VHDL file should be used for ModelSim (VHDL) only
 -- 
 
 LIBRARY ARRIAII;
@@ -487,7 +487,7 @@ SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\ : std_logic;
 SIGNAL \B[35]~input_o\ : std_logic;
 SIGNAL \A[35]~input_o\ : std_logic;
-SIGNAL \recur:UQ2|P[3]~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:P0[3]~0_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ : std_logic;
 SIGNAL \B[36]~input_o\ : std_logic;
@@ -626,330 +626,330 @@ SIGNAL \Cout~4_combout\ : std_logic;
 SIGNAL \Cout~5_combout\ : std_logic;
 SIGNAL \Ovfl~0_combout\ : std_logic;
 SIGNAL \recur:UQ0|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ0|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ0|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
-SIGNAL \recur:UQ1|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ0|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ0|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ1|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ3|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \ALT_INV_A[15]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[18]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[19]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[10]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[13]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[22]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[9]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[14]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[20]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[8]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[23]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[13]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[16]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[15]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[17]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[7]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[21]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[9]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[22]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[18]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[19]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[24]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[25]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[6]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[17]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[16]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[7]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[6]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[12]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[20]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[23]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[8]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[24]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[25]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[26]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[26]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[27]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[14]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[12]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[21]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[27]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_Cin~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[10]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[11]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[11]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[34]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[35]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[37]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[48]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[33]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[45]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[51]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[33]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[36]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[37]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[39]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[39]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[43]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[45]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[51]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[53]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[47]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[54]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[32]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[53]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[55]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[55]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[29]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[41]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[44]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[56]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[56]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[28]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[36]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[46]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[57]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[41]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[44]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[38]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[48]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[30]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[38]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[28]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[46]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[49]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[50]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[52]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[57]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[58]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[50]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[58]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[59]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[30]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[47]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[32]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[42]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[52]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[54]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[59]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[35]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[42]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[40]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[31]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[29]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[34]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[40]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[43]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[49]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[31]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[62]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[60]~input_o\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \ALT_INV_B[63]~input_o\ : std_logic;
-SIGNAL \ALT_INV_A[62]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[60]~input_o\ : std_logic;
-SIGNAL \ALT_INV_B[61]~input_o\ : std_logic;
 SIGNAL \ALT_INV_A[63]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[62]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[62]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[61]~input_o\ : std_logic;
 SIGNAL \ALT_INV_A[61]~input_o\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~2_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q0_GRP|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ0|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q0_GRP|ALT_INV_Gout~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Gout~1_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ3|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|ALT_INV_P[3]~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ1|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ0|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(2 DOWNTO 1);
-SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \recur:UQ1|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ1|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
-SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
-SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
+SIGNAL \ALT_INV_B[60]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[60]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[59]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[59]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[58]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[58]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[57]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[57]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[56]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[56]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[55]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[55]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[54]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[54]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[53]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[53]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[52]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[52]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[51]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[51]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[50]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[50]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[49]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[49]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[48]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[48]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[47]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[47]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[46]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[46]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[45]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[45]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[44]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[44]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[43]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[43]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[42]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[42]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[41]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[41]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[40]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[40]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[39]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[39]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[38]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[38]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[37]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[37]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[36]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[36]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[35]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[35]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[34]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[34]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[33]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[33]~input_o\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \ALT_INV_Ovfl~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Cout~4_combout\ : std_logic;
+SIGNAL \ALT_INV_Cout~3_combout\ : std_logic;
+SIGNAL \ALT_INV_Cout~2_combout\ : std_logic;
+SIGNAL \ALT_INV_Cout~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C\ : std_logic_vector(3 DOWNTO 3);
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~2_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ3|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Cout~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~4_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~3_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~1_combout\ : std_logic;
 SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Gout~1_combout\ : std_logic;
-SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
 SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(2 DOWNTO 1);
+SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \ALT_INV_Cout~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~2_combout\ : std_logic;
-SIGNAL \ALT_INV_Cout~3_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \ALT_INV_Ovfl~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
-SIGNAL \ALT_INV_Cout~2_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \ALT_INV_Cout~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
-SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~3_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C\ : std_logic_vector(3 DOWNTO 3);
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~4_combout\ : std_logic;
-SIGNAL \ALT_INV_Cout~4_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
-SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ1|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ0|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ3|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ2|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ1|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~2_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q1_GRP|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:UQ0|ALT_INV_P\ : std_logic_vector(2 DOWNTO 2);
+SIGNAL \recur:combine_q16:Q0_GRP|ALT_INV_Gout~1_combout\ : std_logic;
+SIGNAL \recur:combine_q16:Q0_GRP|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~2_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \ALT_INV_B[32]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[32]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[31]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[31]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[30]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[30]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[29]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[29]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[28]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[28]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[27]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[27]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[26]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[26]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[25]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[25]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[24]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[24]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[23]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[23]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[22]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[22]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[21]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[21]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[20]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[20]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[19]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[19]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[18]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[18]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[17]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[17]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[16]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[16]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[15]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[15]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[14]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[14]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[13]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[13]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[12]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[12]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[11]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[11]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[10]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[10]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[9]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[9]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[8]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[8]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[7]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[7]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_B[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_A[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_Cin~input_o\ : std_logic;
 
 BEGIN
 
@@ -962,301 +962,301 @@ Ovfl <= ww_Ovfl;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ALT_INV_A[15]~input_o\ <= NOT \A[15]~input_o\;
-\ALT_INV_A[18]~input_o\ <= NOT \A[18]~input_o\;
-\ALT_INV_B[19]~input_o\ <= NOT \B[19]~input_o\;
-\ALT_INV_B[10]~input_o\ <= NOT \B[10]~input_o\;
-\ALT_INV_A[3]~input_o\ <= NOT \A[3]~input_o\;
-\ALT_INV_B[13]~input_o\ <= NOT \B[13]~input_o\;
-\ALT_INV_B[22]~input_o\ <= NOT \B[22]~input_o\;
-\ALT_INV_B[5]~input_o\ <= NOT \B[5]~input_o\;
-\ALT_INV_A[9]~input_o\ <= NOT \A[9]~input_o\;
-\ALT_INV_B[14]~input_o\ <= NOT \B[14]~input_o\;
-\ALT_INV_A[20]~input_o\ <= NOT \A[20]~input_o\;
-\ALT_INV_A[8]~input_o\ <= NOT \A[8]~input_o\;
-\ALT_INV_A[23]~input_o\ <= NOT \A[23]~input_o\;
-\ALT_INV_A[13]~input_o\ <= NOT \A[13]~input_o\;
-\ALT_INV_A[16]~input_o\ <= NOT \A[16]~input_o\;
-\ALT_INV_B[15]~input_o\ <= NOT \B[15]~input_o\;
-\ALT_INV_A[17]~input_o\ <= NOT \A[17]~input_o\;
-\ALT_INV_B[4]~input_o\ <= NOT \B[4]~input_o\;
-\ALT_INV_B[7]~input_o\ <= NOT \B[7]~input_o\;
-\ALT_INV_B[21]~input_o\ <= NOT \B[21]~input_o\;
-\ALT_INV_B[9]~input_o\ <= NOT \B[9]~input_o\;
-\ALT_INV_A[22]~input_o\ <= NOT \A[22]~input_o\;
-\ALT_INV_B[1]~input_o\ <= NOT \B[1]~input_o\;
-\ALT_INV_B[18]~input_o\ <= NOT \B[18]~input_o\;
-\ALT_INV_A[19]~input_o\ <= NOT \A[19]~input_o\;
-\ALT_INV_B[24]~input_o\ <= NOT \B[24]~input_o\;
-\ALT_INV_A[25]~input_o\ <= NOT \A[25]~input_o\;
-\ALT_INV_A[4]~input_o\ <= NOT \A[4]~input_o\;
-\ALT_INV_B[6]~input_o\ <= NOT \B[6]~input_o\;
-\ALT_INV_B[2]~input_o\ <= NOT \B[2]~input_o\;
-\ALT_INV_B[17]~input_o\ <= NOT \B[17]~input_o\;
-\ALT_INV_B[16]~input_o\ <= NOT \B[16]~input_o\;
-\ALT_INV_A[0]~input_o\ <= NOT \A[0]~input_o\;
-\ALT_INV_A[7]~input_o\ <= NOT \A[7]~input_o\;
-\ALT_INV_A[6]~input_o\ <= NOT \A[6]~input_o\;
-\ALT_INV_B[12]~input_o\ <= NOT \B[12]~input_o\;
-\ALT_INV_B[20]~input_o\ <= NOT \B[20]~input_o\;
-\ALT_INV_B[23]~input_o\ <= NOT \B[23]~input_o\;
-\ALT_INV_B[8]~input_o\ <= NOT \B[8]~input_o\;
-\ALT_INV_A[24]~input_o\ <= NOT \A[24]~input_o\;
-\ALT_INV_B[25]~input_o\ <= NOT \B[25]~input_o\;
-\ALT_INV_A[5]~input_o\ <= NOT \A[5]~input_o\;
-\ALT_INV_A[26]~input_o\ <= NOT \A[26]~input_o\;
-\ALT_INV_B[26]~input_o\ <= NOT \B[26]~input_o\;
-\ALT_INV_A[27]~input_o\ <= NOT \A[27]~input_o\;
-\ALT_INV_A[14]~input_o\ <= NOT \A[14]~input_o\;
-\ALT_INV_A[12]~input_o\ <= NOT \A[12]~input_o\;
-\ALT_INV_A[21]~input_o\ <= NOT \A[21]~input_o\;
-\ALT_INV_A[2]~input_o\ <= NOT \A[2]~input_o\;
-\ALT_INV_B[27]~input_o\ <= NOT \B[27]~input_o\;
-\ALT_INV_B[0]~input_o\ <= NOT \B[0]~input_o\;
-\ALT_INV_A[1]~input_o\ <= NOT \A[1]~input_o\;
-\ALT_INV_Cin~input_o\ <= NOT \Cin~input_o\;
-\ALT_INV_B[3]~input_o\ <= NOT \B[3]~input_o\;
-\ALT_INV_A[10]~input_o\ <= NOT \A[10]~input_o\;
-\ALT_INV_A[11]~input_o\ <= NOT \A[11]~input_o\;
-\ALT_INV_B[11]~input_o\ <= NOT \B[11]~input_o\;
-\ALT_INV_B[34]~input_o\ <= NOT \B[34]~input_o\;
-\ALT_INV_B[35]~input_o\ <= NOT \B[35]~input_o\;
-\ALT_INV_B[37]~input_o\ <= NOT \B[37]~input_o\;
-\ALT_INV_B[48]~input_o\ <= NOT \B[48]~input_o\;
-\ALT_INV_B[33]~input_o\ <= NOT \B[33]~input_o\;
-\ALT_INV_B[45]~input_o\ <= NOT \B[45]~input_o\;
-\ALT_INV_A[51]~input_o\ <= NOT \A[51]~input_o\;
-\ALT_INV_A[33]~input_o\ <= NOT \A[33]~input_o\;
-\ALT_INV_B[36]~input_o\ <= NOT \B[36]~input_o\;
-\ALT_INV_A[37]~input_o\ <= NOT \A[37]~input_o\;
-\ALT_INV_A[39]~input_o\ <= NOT \A[39]~input_o\;
-\ALT_INV_B[39]~input_o\ <= NOT \B[39]~input_o\;
-\ALT_INV_B[43]~input_o\ <= NOT \B[43]~input_o\;
-\ALT_INV_A[45]~input_o\ <= NOT \A[45]~input_o\;
-\ALT_INV_B[51]~input_o\ <= NOT \B[51]~input_o\;
-\ALT_INV_A[53]~input_o\ <= NOT \A[53]~input_o\;
-\ALT_INV_A[47]~input_o\ <= NOT \A[47]~input_o\;
-\ALT_INV_A[54]~input_o\ <= NOT \A[54]~input_o\;
-\ALT_INV_A[32]~input_o\ <= NOT \A[32]~input_o\;
-\ALT_INV_B[53]~input_o\ <= NOT \B[53]~input_o\;
-\ALT_INV_A[55]~input_o\ <= NOT \A[55]~input_o\;
-\ALT_INV_B[55]~input_o\ <= NOT \B[55]~input_o\;
-\ALT_INV_B[29]~input_o\ <= NOT \B[29]~input_o\;
-\ALT_INV_A[41]~input_o\ <= NOT \A[41]~input_o\;
-\ALT_INV_B[44]~input_o\ <= NOT \B[44]~input_o\;
-\ALT_INV_A[56]~input_o\ <= NOT \A[56]~input_o\;
-\ALT_INV_B[56]~input_o\ <= NOT \B[56]~input_o\;
-\ALT_INV_B[28]~input_o\ <= NOT \B[28]~input_o\;
-\ALT_INV_A[36]~input_o\ <= NOT \A[36]~input_o\;
-\ALT_INV_B[46]~input_o\ <= NOT \B[46]~input_o\;
-\ALT_INV_A[57]~input_o\ <= NOT \A[57]~input_o\;
-\ALT_INV_B[41]~input_o\ <= NOT \B[41]~input_o\;
-\ALT_INV_A[44]~input_o\ <= NOT \A[44]~input_o\;
-\ALT_INV_B[38]~input_o\ <= NOT \B[38]~input_o\;
-\ALT_INV_A[48]~input_o\ <= NOT \A[48]~input_o\;
-\ALT_INV_A[30]~input_o\ <= NOT \A[30]~input_o\;
-\ALT_INV_A[38]~input_o\ <= NOT \A[38]~input_o\;
-\ALT_INV_A[28]~input_o\ <= NOT \A[28]~input_o\;
-\ALT_INV_A[46]~input_o\ <= NOT \A[46]~input_o\;
-\ALT_INV_A[49]~input_o\ <= NOT \A[49]~input_o\;
-\ALT_INV_A[50]~input_o\ <= NOT \A[50]~input_o\;
-\ALT_INV_A[52]~input_o\ <= NOT \A[52]~input_o\;
-\ALT_INV_B[57]~input_o\ <= NOT \B[57]~input_o\;
-\ALT_INV_A[58]~input_o\ <= NOT \A[58]~input_o\;
-\ALT_INV_B[50]~input_o\ <= NOT \B[50]~input_o\;
-\ALT_INV_B[58]~input_o\ <= NOT \B[58]~input_o\;
-\ALT_INV_A[59]~input_o\ <= NOT \A[59]~input_o\;
-\ALT_INV_B[30]~input_o\ <= NOT \B[30]~input_o\;
-\ALT_INV_B[47]~input_o\ <= NOT \B[47]~input_o\;
-\ALT_INV_B[32]~input_o\ <= NOT \B[32]~input_o\;
-\ALT_INV_A[42]~input_o\ <= NOT \A[42]~input_o\;
-\ALT_INV_B[52]~input_o\ <= NOT \B[52]~input_o\;
-\ALT_INV_B[54]~input_o\ <= NOT \B[54]~input_o\;
-\ALT_INV_B[59]~input_o\ <= NOT \B[59]~input_o\;
-\ALT_INV_A[35]~input_o\ <= NOT \A[35]~input_o\;
-\ALT_INV_B[42]~input_o\ <= NOT \B[42]~input_o\;
-\ALT_INV_A[40]~input_o\ <= NOT \A[40]~input_o\;
-\ALT_INV_B[31]~input_o\ <= NOT \B[31]~input_o\;
-\ALT_INV_A[29]~input_o\ <= NOT \A[29]~input_o\;
-\ALT_INV_A[34]~input_o\ <= NOT \A[34]~input_o\;
-\ALT_INV_B[40]~input_o\ <= NOT \B[40]~input_o\;
-\ALT_INV_A[43]~input_o\ <= NOT \A[43]~input_o\;
-\ALT_INV_B[49]~input_o\ <= NOT \B[49]~input_o\;
-\ALT_INV_A[31]~input_o\ <= NOT \A[31]~input_o\;
-\ALT_INV_B[62]~input_o\ <= NOT \B[62]~input_o\;
-\ALT_INV_A[60]~input_o\ <= NOT \A[60]~input_o\;
 \ALT_INV_B[63]~input_o\ <= NOT \B[63]~input_o\;
-\ALT_INV_A[62]~input_o\ <= NOT \A[62]~input_o\;
-\ALT_INV_B[60]~input_o\ <= NOT \B[60]~input_o\;
-\ALT_INV_B[61]~input_o\ <= NOT \B[61]~input_o\;
 \ALT_INV_A[63]~input_o\ <= NOT \A[63]~input_o\;
+\ALT_INV_B[62]~input_o\ <= NOT \B[62]~input_o\;
+\ALT_INV_A[62]~input_o\ <= NOT \A[62]~input_o\;
+\ALT_INV_B[61]~input_o\ <= NOT \B[61]~input_o\;
 \ALT_INV_A[61]~input_o\ <= NOT \A[61]~input_o\;
-\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C~0_combout\;
-\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~2_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int~2_combout\;
-\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|C~0_combout\;
-\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int\(1);
-\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
-\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|C~0_combout\;
-\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C[3]~1_combout\;
-\recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:TOP_FANOUT|C~0_combout\;
-\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~2_combout\;
-\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C[3]~2_combout\;
-\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|Pout~combout\;
-\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
-\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int[2]~1_combout\;
-\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
-\recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q0:3:Q0_BLK|Pout~combout\;
-\recur:blk_q0:3:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q0:3:Q0_BLK|g_int~0_combout\;
-\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
-\recur:combine_q16:Q0_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q0_GRP|Gout~0_combout\;
-\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C[3]~2_combout\;
-\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C~0_combout\;
-\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:combine_q16:Q1_GRP|ALT_INV_Pout~0_combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~0_combout\;
-\recur:UQ1|recur:UQ0|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ0|P\(2);
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~0_combout\;
-\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~combout\;
-\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C~0_combout\;
-\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
-\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C[3]~1_combout\;
-\recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q0:3:Q0_BLK|Pout~0_combout\;
-\recur:combine_q16:Q0_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q0_GRP|Gout~1_combout\;
-\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~1_combout\;
-\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\;
-\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\;
-\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int[2]~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int[2]~1_combout\;
-\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|Pout~combout\;
-\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|g_int~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int[2]~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~1_combout\;
-\recur:combine_q16:Q1_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q1_GRP|Gout~1_combout\;
-\recur:combine_q16:Q1_GRP|ALT_INV_Pout~1_combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~1_combout\;
-\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|C~0_combout\;
-\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|C~0_combout\;
-\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
-\recur:UQ1|recur:UQ3|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ3|P\(2);
-\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~2_combout\;
-\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|g_int~0_combout\;
-\recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~0_combout\;
-\recur:UQ2|ALT_INV_P[3]~0_combout\ <= NOT \recur:UQ2|P[3]~0_combout\;
-\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ1|recur:UQ1|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ1|P\(2);
-\recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q1:3:Q1_BLK|Pout~0_combout\;
-\recur:UQ2|recur:UQ0|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ0|P\(2);
-\recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\;
-\recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q1:3:Q1_BLK|Pout~combout\;
-\recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
-\recur:blk_q1:3:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q1:3:Q1_BLK|g_int~0_combout\;
-\recur:combine_q16:Q1_GRP|ALT_INV_Pout~combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~combout\;
-\recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:TOP_FANOUT|g_int\(1);
-\recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
-\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
-\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int\(1);
-\recur:UQ1|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ2|P\(2);
-\recur:combine_q16:Q1_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q1_GRP|Gout~0_combout\;
-\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
-\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|C~0_combout\;
-\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~0_combout\;
-\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|g_int~0_combout\;
-\recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:TOP_FANOUT|C~1_combout\;
-\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~0_combout\;
-\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~combout\;
-\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
-\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q0:0:Q0_BLK|g_int~0_combout\;
-\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~0_combout\;
-\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\;
-\recur:combine_q16:Q2_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q2_GRP|Gout~0_combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~1_combout\;
-\recur:UQ2|recur:UQ1|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ1|P\(2);
-\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~1_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~1_combout\;
-\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~1_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C~1_combout\;
-\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|C~0_combout\;
-\recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:TOP_FANOUT|C~2_combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int\(1);
-\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
-\recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ2|leaf:U_LEAF|C~0_combout\;
-\recur:combine_q16:Q2_GRP|ALT_INV_Pout~1_combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~1_combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~2_combout\;
-\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~combout\;
-\recur:combine_q16:Q2_GRP|ALT_INV_Pout~combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~combout\;
-\recur:blk_q2:3:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|g_int~0_combout\;
-\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
-\recur:TOP_FANOUT|ALT_INV_g_int\(2) <= NOT \recur:TOP_FANOUT|g_int\(2);
-\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
-\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C~0_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~1_combout\;
-\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ3|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~0_combout\;
-\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|g_int~0_combout\;
-\recur:UQ2|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ2|P\(2);
-\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
-\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
-\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|C~0_combout\;
-\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int[2]~1_combout\;
-\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~0_combout\;
-\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int[2]~0_combout\;
+\ALT_INV_B[60]~input_o\ <= NOT \B[60]~input_o\;
+\ALT_INV_A[60]~input_o\ <= NOT \A[60]~input_o\;
+\ALT_INV_B[59]~input_o\ <= NOT \B[59]~input_o\;
+\ALT_INV_A[59]~input_o\ <= NOT \A[59]~input_o\;
+\ALT_INV_B[58]~input_o\ <= NOT \B[58]~input_o\;
+\ALT_INV_A[58]~input_o\ <= NOT \A[58]~input_o\;
+\ALT_INV_B[57]~input_o\ <= NOT \B[57]~input_o\;
+\ALT_INV_A[57]~input_o\ <= NOT \A[57]~input_o\;
+\ALT_INV_B[56]~input_o\ <= NOT \B[56]~input_o\;
+\ALT_INV_A[56]~input_o\ <= NOT \A[56]~input_o\;
+\ALT_INV_B[55]~input_o\ <= NOT \B[55]~input_o\;
+\ALT_INV_A[55]~input_o\ <= NOT \A[55]~input_o\;
+\ALT_INV_B[54]~input_o\ <= NOT \B[54]~input_o\;
+\ALT_INV_A[54]~input_o\ <= NOT \A[54]~input_o\;
+\ALT_INV_B[53]~input_o\ <= NOT \B[53]~input_o\;
+\ALT_INV_A[53]~input_o\ <= NOT \A[53]~input_o\;
+\ALT_INV_B[52]~input_o\ <= NOT \B[52]~input_o\;
+\ALT_INV_A[52]~input_o\ <= NOT \A[52]~input_o\;
+\ALT_INV_B[51]~input_o\ <= NOT \B[51]~input_o\;
+\ALT_INV_A[51]~input_o\ <= NOT \A[51]~input_o\;
+\ALT_INV_B[50]~input_o\ <= NOT \B[50]~input_o\;
+\ALT_INV_A[50]~input_o\ <= NOT \A[50]~input_o\;
+\ALT_INV_B[49]~input_o\ <= NOT \B[49]~input_o\;
+\ALT_INV_A[49]~input_o\ <= NOT \A[49]~input_o\;
+\ALT_INV_B[48]~input_o\ <= NOT \B[48]~input_o\;
+\ALT_INV_A[48]~input_o\ <= NOT \A[48]~input_o\;
+\ALT_INV_B[47]~input_o\ <= NOT \B[47]~input_o\;
+\ALT_INV_A[47]~input_o\ <= NOT \A[47]~input_o\;
+\ALT_INV_B[46]~input_o\ <= NOT \B[46]~input_o\;
+\ALT_INV_A[46]~input_o\ <= NOT \A[46]~input_o\;
+\ALT_INV_B[45]~input_o\ <= NOT \B[45]~input_o\;
+\ALT_INV_A[45]~input_o\ <= NOT \A[45]~input_o\;
+\ALT_INV_B[44]~input_o\ <= NOT \B[44]~input_o\;
+\ALT_INV_A[44]~input_o\ <= NOT \A[44]~input_o\;
+\ALT_INV_B[43]~input_o\ <= NOT \B[43]~input_o\;
+\ALT_INV_A[43]~input_o\ <= NOT \A[43]~input_o\;
+\ALT_INV_B[42]~input_o\ <= NOT \B[42]~input_o\;
+\ALT_INV_A[42]~input_o\ <= NOT \A[42]~input_o\;
+\ALT_INV_B[41]~input_o\ <= NOT \B[41]~input_o\;
+\ALT_INV_A[41]~input_o\ <= NOT \A[41]~input_o\;
+\ALT_INV_B[40]~input_o\ <= NOT \B[40]~input_o\;
+\ALT_INV_A[40]~input_o\ <= NOT \A[40]~input_o\;
+\ALT_INV_B[39]~input_o\ <= NOT \B[39]~input_o\;
+\ALT_INV_A[39]~input_o\ <= NOT \A[39]~input_o\;
+\ALT_INV_B[38]~input_o\ <= NOT \B[38]~input_o\;
+\ALT_INV_A[38]~input_o\ <= NOT \A[38]~input_o\;
+\ALT_INV_B[37]~input_o\ <= NOT \B[37]~input_o\;
+\ALT_INV_A[37]~input_o\ <= NOT \A[37]~input_o\;
+\ALT_INV_B[36]~input_o\ <= NOT \B[36]~input_o\;
+\ALT_INV_A[36]~input_o\ <= NOT \A[36]~input_o\;
+\ALT_INV_B[35]~input_o\ <= NOT \B[35]~input_o\;
+\ALT_INV_A[35]~input_o\ <= NOT \A[35]~input_o\;
+\ALT_INV_B[34]~input_o\ <= NOT \B[34]~input_o\;
+\ALT_INV_A[34]~input_o\ <= NOT \A[34]~input_o\;
+\ALT_INV_B[33]~input_o\ <= NOT \B[33]~input_o\;
+\ALT_INV_A[33]~input_o\ <= NOT \A[33]~input_o\;
+\recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ <= NOT \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~1_combout\;
+\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|C[3]~1_combout\;
+\recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ <= NOT \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\;
+\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|C[3]~1_combout\;
+\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\;
+\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|C[3]~1_combout\;
+\ALT_INV_Ovfl~0_combout\ <= NOT \Ovfl~0_combout\;
+\ALT_INV_Cout~4_combout\ <= NOT \Cout~4_combout\;
+\ALT_INV_Cout~3_combout\ <= NOT \Cout~3_combout\;
+\ALT_INV_Cout~2_combout\ <= NOT \Cout~2_combout\;
+\ALT_INV_Cout~1_combout\ <= NOT \Cout~1_combout\;
+\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C\(3) <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|C\(3);
+\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~2_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int~2_combout\;
+\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|C~0_combout\;
+\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ3|recur:UQ3|ALT_INV_P\(2) <= NOT \recur:UQ3|recur:UQ3|P\(2);
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|g_int[2]~0_combout\;
+\ALT_INV_Cout~0_combout\ <= NOT \Cout~0_combout\;
+\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~4_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~4_combout\;
+\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|Pout~combout\;
+\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
+\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|C~0_combout\;
+\recur:UQ3|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ3|recur:UQ2|P\(2);
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ3|recur:TOP_FANOUT|g_int\(1);
+\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
+\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~3_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~3_combout\;
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~2_combout\;
+\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~1_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Pout~1_combout\;
 \recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
-\recur:combine_q16:Q2_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q2_GRP|Gout~1_combout\;
-\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
+\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|C~0_combout\;
+\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
+\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ3|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
+\recur:UQ3|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q0:0:Q0_BLK|g_int~0_combout\;
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~1_combout\;
+\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~0_combout\;
 \recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~1_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C~1_combout\;
+\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C~0_combout\;
+\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:TOP_FANOUT|ALT_INV_g_int\(2) <= NOT \recur:TOP_FANOUT|g_int\(2);
+\recur:combine_q16:Q2_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q2_GRP|Gout~1_combout\;
+\recur:combine_q16:Q2_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q2_GRP|Gout~0_combout\;
+\recur:blk_q2:3:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|g_int~0_combout\;
+\recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:TOP_FANOUT|C~2_combout\;
+\recur:combine_q16:Q2_GRP|ALT_INV_Pout~combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~combout\;
+\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~combout\;
+\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~1_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~1_combout\;
+\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|C~0_combout\;
+\recur:blk_q2:3:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q2:3:Q2_BLK|Pout~0_combout\;
+\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int[2]~1_combout\;
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int[2]~0_combout\;
+\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~2_combout\;
+\recur:combine_q16:Q2_GRP|ALT_INV_Pout~1_combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~1_combout\;
+\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~combout\;
+\recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
 \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
 \recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:UQ2|leaf:U_LEAF|g_int~0_combout\;
-\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~1_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Pout~1_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|g_int[2]~0_combout\;
-\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|C~0_combout\;
-\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
-\recur:UQ3|recur:UQ3|ALT_INV_P\(2) <= NOT \recur:UQ3|recur:UQ3|P\(2);
-\ALT_INV_Cout~1_combout\ <= NOT \Cout~1_combout\;
-\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
-\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~2_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int~2_combout\;
-\ALT_INV_Cout~3_combout\ <= NOT \Cout~3_combout\;
-\recur:UQ3|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
-\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
-\ALT_INV_Ovfl~0_combout\ <= NOT \Ovfl~0_combout\;
-\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|Pout~combout\;
-\ALT_INV_Cout~2_combout\ <= NOT \Cout~2_combout\;
-\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|C[3]~1_combout\;
-\ALT_INV_Cout~0_combout\ <= NOT \Cout~0_combout\;
-\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
-\recur:UQ3|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ3|recur:TOP_FANOUT|g_int\(1);
-\recur:UQ3|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ3|recur:UQ1|leaf:U_LEAF|C[3]~1_combout\;
-\recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ <= NOT \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\;
-\recur:UQ3|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ3|recur:UQ2|P\(2);
-\recur:UQ2|recur:UQ3|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ2|recur:UQ3|leaf:U_LEAF|C[3]~1_combout\;
-\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|C~0_combout\;
-\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~3_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~3_combout\;
-\recur:UQ3|recur:UQ3|leaf:U_LEAF|ALT_INV_C\(3) <= NOT \recur:UQ3|recur:UQ3|leaf:U_LEAF|C\(3);
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~4_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~4_combout\;
-\ALT_INV_Cout~4_combout\ <= NOT \Cout~4_combout\;
-\recur:UQ3|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ3|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\;
-\recur:UQ3|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ3|recur:TOP_FANOUT|C~2_combout\;
-\recur:UQ3|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ3|recur:UQ2|leaf:U_LEAF|g_int~0_combout\;
-\recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~1_combout\ <= NOT \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~1_combout\;
+\recur:UQ2|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ2|leaf:U_LEAF|C~0_combout\;
+\recur:UQ2|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ2|P\(2);
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ2|recur:TOP_FANOUT|g_int\(1);
+\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
+\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~1_combout\;
+\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\;
+\recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
+\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ2|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~0_combout\;
+\recur:UQ2|recur:UQ1|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ1|P\(2);
+\recur:UQ2|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:TOP_FANOUT|C~0_combout\;
+\recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
+\recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\;
+\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ2|ALT_INV_recur:P0[3]~0_combout\ <= NOT \recur:UQ2|recur:P0[3]~0_combout\;
+\recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ2|recur:UQ0|leaf:U_LEAF|C~0_combout\;
+\recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\ <= NOT \recur:combine_q16:Q2_GRP|Pout~0_combout\;
+\recur:UQ2|recur:UQ0|ALT_INV_P\(2) <= NOT \recur:UQ2|recur:UQ0|P\(2);
+\recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:TOP_FANOUT|C~1_combout\;
+\recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:TOP_FANOUT|g_int\(1);
+\recur:combine_q16:Q1_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q1_GRP|Gout~1_combout\;
+\recur:combine_q16:Q1_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q1_GRP|Gout~0_combout\;
+\recur:blk_q1:3:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q1:3:Q1_BLK|g_int~0_combout\;
+\recur:combine_q16:Q1_GRP|ALT_INV_Pout~combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~combout\;
+\recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q1:3:Q1_BLK|Pout~combout\;
+\recur:blk_q1:3:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q1:3:Q1_BLK|Pout~0_combout\;
+\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ1|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ3|leaf:U_LEAF|C~0_combout\;
+\recur:UQ1|recur:UQ3|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ3|P\(2);
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int[2]~1_combout\;
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int[2]~0_combout\;
+\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~2_combout\;
+\recur:combine_q16:Q1_GRP|ALT_INV_Pout~1_combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~1_combout\;
+\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|Pout~combout\;
+\recur:UQ1|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ1|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
+\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ1|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ2|leaf:U_LEAF|C~0_combout\;
+\recur:UQ1|recur:UQ2|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ2|P\(2);
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ1|recur:TOP_FANOUT|g_int\(1);
+\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
+\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~1_combout\;
+\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~combout\;
+\recur:UQ1|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
+\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|g_int~0_combout\;
+\recur:UQ1|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~0_combout\;
+\recur:UQ1|recur:UQ1|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ1|P\(2);
+\recur:UQ1|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:TOP_FANOUT|C~0_combout\;
+\recur:UQ1|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
+\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|C~0_combout\;
+\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~2_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int~2_combout\;
+\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
+\recur:combine_q16:Q1_GRP|ALT_INV_Pout~0_combout\ <= NOT \recur:combine_q16:Q1_GRP|Pout~0_combout\;
+\recur:UQ1|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ1|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ1|recur:UQ0|ALT_INV_P\(2) <= NOT \recur:UQ1|recur:UQ0|P\(2);
+\recur:combine_q16:Q0_GRP|ALT_INV_Gout~1_combout\ <= NOT \recur:combine_q16:Q0_GRP|Gout~1_combout\;
+\recur:combine_q16:Q0_GRP|ALT_INV_Gout~0_combout\ <= NOT \recur:combine_q16:Q0_GRP|Gout~0_combout\;
+\recur:blk_q0:3:Q0_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:blk_q0:3:Q0_BLK|g_int~0_combout\;
+\recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:TOP_FANOUT|C~0_combout\;
+\recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~combout\ <= NOT \recur:blk_q0:3:Q0_BLK|Pout~combout\;
+\recur:blk_q0:3:Q0_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:blk_q0:3:Q0_BLK|Pout~0_combout\;
+\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|C~0_combout\;
+\recur:UQ0|recur:UQ3|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ3|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~1_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int[2]~1_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int[2]~0_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int[2]~0_combout\;
+\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|g_int~0_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~2_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~2_combout\;
+\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|Pout~combout\;
+\recur:UQ0|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ0|recur:blk_q2:0:Q2_BLK|Pout~0_combout\;
+\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C[3]~2_combout\;
+\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C[3]~1_combout\;
+\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ0|recur:UQ2|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ2|leaf:U_LEAF|C~0_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_g_int\(1) <= NOT \recur:UQ0|recur:TOP_FANOUT|g_int\(1);
+\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Gout~0_combout\;
+\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_g_int~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|g_int~0_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~1_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~1_combout\;
+\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~combout\;
+\recur:UQ0|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~0_combout\ <= NOT \recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~0_combout\;
+\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C[3]~2_combout\;
+\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C[3]~1_combout\;
+\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ0|recur:UQ1|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ1|leaf:U_LEAF|C~0_combout\;
+\recur:UQ0|recur:TOP_FANOUT|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:TOP_FANOUT|C~0_combout\;
+\recur:UQ0|recur:blk_q0:0:Q0_BLK|ALT_INV_Gout~0_combout\ <= NOT \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~0_combout\;
+\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~2_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\;
+\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C[3]~1_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\;
+\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\;
+\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int[1]~0_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int[1]~0_combout\;
+\recur:UQ0|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\ <= NOT \recur:UQ0|recur:UQ0|leaf:U_LEAF|C~0_combout\;
+\ALT_INV_B[32]~input_o\ <= NOT \B[32]~input_o\;
+\ALT_INV_A[32]~input_o\ <= NOT \A[32]~input_o\;
+\ALT_INV_B[31]~input_o\ <= NOT \B[31]~input_o\;
+\ALT_INV_A[31]~input_o\ <= NOT \A[31]~input_o\;
+\ALT_INV_B[30]~input_o\ <= NOT \B[30]~input_o\;
+\ALT_INV_A[30]~input_o\ <= NOT \A[30]~input_o\;
+\ALT_INV_B[29]~input_o\ <= NOT \B[29]~input_o\;
+\ALT_INV_A[29]~input_o\ <= NOT \A[29]~input_o\;
+\ALT_INV_B[28]~input_o\ <= NOT \B[28]~input_o\;
+\ALT_INV_A[28]~input_o\ <= NOT \A[28]~input_o\;
+\ALT_INV_B[27]~input_o\ <= NOT \B[27]~input_o\;
+\ALT_INV_A[27]~input_o\ <= NOT \A[27]~input_o\;
+\ALT_INV_B[26]~input_o\ <= NOT \B[26]~input_o\;
+\ALT_INV_A[26]~input_o\ <= NOT \A[26]~input_o\;
+\ALT_INV_B[25]~input_o\ <= NOT \B[25]~input_o\;
+\ALT_INV_A[25]~input_o\ <= NOT \A[25]~input_o\;
+\ALT_INV_B[24]~input_o\ <= NOT \B[24]~input_o\;
+\ALT_INV_A[24]~input_o\ <= NOT \A[24]~input_o\;
+\ALT_INV_B[23]~input_o\ <= NOT \B[23]~input_o\;
+\ALT_INV_A[23]~input_o\ <= NOT \A[23]~input_o\;
+\ALT_INV_B[22]~input_o\ <= NOT \B[22]~input_o\;
+\ALT_INV_A[22]~input_o\ <= NOT \A[22]~input_o\;
+\ALT_INV_B[21]~input_o\ <= NOT \B[21]~input_o\;
+\ALT_INV_A[21]~input_o\ <= NOT \A[21]~input_o\;
+\ALT_INV_B[20]~input_o\ <= NOT \B[20]~input_o\;
+\ALT_INV_A[20]~input_o\ <= NOT \A[20]~input_o\;
+\ALT_INV_B[19]~input_o\ <= NOT \B[19]~input_o\;
+\ALT_INV_A[19]~input_o\ <= NOT \A[19]~input_o\;
+\ALT_INV_B[18]~input_o\ <= NOT \B[18]~input_o\;
+\ALT_INV_A[18]~input_o\ <= NOT \A[18]~input_o\;
+\ALT_INV_B[17]~input_o\ <= NOT \B[17]~input_o\;
+\ALT_INV_A[17]~input_o\ <= NOT \A[17]~input_o\;
+\ALT_INV_B[16]~input_o\ <= NOT \B[16]~input_o\;
+\ALT_INV_A[16]~input_o\ <= NOT \A[16]~input_o\;
+\ALT_INV_B[15]~input_o\ <= NOT \B[15]~input_o\;
+\ALT_INV_A[15]~input_o\ <= NOT \A[15]~input_o\;
+\ALT_INV_B[14]~input_o\ <= NOT \B[14]~input_o\;
+\ALT_INV_A[14]~input_o\ <= NOT \A[14]~input_o\;
+\ALT_INV_B[13]~input_o\ <= NOT \B[13]~input_o\;
+\ALT_INV_A[13]~input_o\ <= NOT \A[13]~input_o\;
+\ALT_INV_B[12]~input_o\ <= NOT \B[12]~input_o\;
+\ALT_INV_A[12]~input_o\ <= NOT \A[12]~input_o\;
+\ALT_INV_B[11]~input_o\ <= NOT \B[11]~input_o\;
+\ALT_INV_A[11]~input_o\ <= NOT \A[11]~input_o\;
+\ALT_INV_B[10]~input_o\ <= NOT \B[10]~input_o\;
+\ALT_INV_A[10]~input_o\ <= NOT \A[10]~input_o\;
+\ALT_INV_B[9]~input_o\ <= NOT \B[9]~input_o\;
+\ALT_INV_A[9]~input_o\ <= NOT \A[9]~input_o\;
+\ALT_INV_B[8]~input_o\ <= NOT \B[8]~input_o\;
+\ALT_INV_A[8]~input_o\ <= NOT \A[8]~input_o\;
+\ALT_INV_B[7]~input_o\ <= NOT \B[7]~input_o\;
+\ALT_INV_A[7]~input_o\ <= NOT \A[7]~input_o\;
+\ALT_INV_B[6]~input_o\ <= NOT \B[6]~input_o\;
+\ALT_INV_A[6]~input_o\ <= NOT \A[6]~input_o\;
+\ALT_INV_B[5]~input_o\ <= NOT \B[5]~input_o\;
+\ALT_INV_A[5]~input_o\ <= NOT \A[5]~input_o\;
+\ALT_INV_B[4]~input_o\ <= NOT \B[4]~input_o\;
+\ALT_INV_A[4]~input_o\ <= NOT \A[4]~input_o\;
+\ALT_INV_B[3]~input_o\ <= NOT \B[3]~input_o\;
+\ALT_INV_A[3]~input_o\ <= NOT \A[3]~input_o\;
+\ALT_INV_B[2]~input_o\ <= NOT \B[2]~input_o\;
+\ALT_INV_A[2]~input_o\ <= NOT \A[2]~input_o\;
+\ALT_INV_B[1]~input_o\ <= NOT \B[1]~input_o\;
+\ALT_INV_A[1]~input_o\ <= NOT \A[1]~input_o\;
+\ALT_INV_B[0]~input_o\ <= NOT \B[0]~input_o\;
+\ALT_INV_A[0]~input_o\ <= NOT \A[0]~input_o\;
+\ALT_INV_Cin~input_o\ <= NOT \Cin~input_o\;
 
 -- Location: IOOBUF_X35_Y0_N2
 \S[0]~output\ : arriaii_io_obuf
@@ -5203,9 +5203,9 @@ PORT MAP (
 	o => \A[35]~input_o\);
 
 -- Location: MLABCELL_X57_Y21_N22
-\recur:UQ2|P[3]~0\ : arriaii_lcell_comb
+\recur:UQ2|recur:P0[3]~0\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:UQ2|P[3]~0_combout\ = ( \A[35]~input_o\ & ( !\B[35]~input_o\ ) ) # ( !\A[35]~input_o\ & ( \B[35]~input_o\ ) )
+-- \recur:UQ2|recur:P0[3]~0_combout\ = ( \A[35]~input_o\ & ( !\B[35]~input_o\ ) ) # ( !\A[35]~input_o\ & ( \B[35]~input_o\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5216,13 +5216,13 @@ GENERIC MAP (
 PORT MAP (
 	datad => \ALT_INV_B[35]~input_o\,
 	datae => \ALT_INV_A[35]~input_o\,
-	combout => \recur:UQ2|P[3]~0_combout\);
+	combout => \recur:UQ2|recur:P0[3]~0_combout\);
 
 -- Location: LABCELL_X58_Y21_N12
 \recur:UQ2|recur:UQ0|S[3]\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:UQ0|S\(3) = ( \recur:UQ2|recur:UQ0|P\(2) & ( !\recur:UQ2|P[3]~0_combout\ $ (((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ & (!\recur:UQ2|recur:UQ0|leaf:U_LEAF|C~0_combout\ & !\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\)))) ) 
--- ) # ( !\recur:UQ2|recur:UQ0|P\(2) & ( !\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ $ (!\recur:UQ2|P[3]~0_combout\) ) )
+-- \recur:UQ2|recur:UQ0|S\(3) = ( \recur:UQ2|recur:UQ0|P\(2) & ( !\recur:UQ2|recur:P0[3]~0_combout\ $ (((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ & (!\recur:UQ2|recur:UQ0|leaf:U_LEAF|C~0_combout\ & 
+-- !\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\)))) ) ) # ( !\recur:UQ2|recur:UQ0|P\(2) & ( !\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ $ (!\recur:UQ2|recur:P0[3]~0_combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5234,7 +5234,7 @@ PORT MAP (
 	dataa => \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~1_combout\,
 	datab => \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_C~0_combout\,
 	datac => \recur:UQ2|recur:UQ0|leaf:U_LEAF|ALT_INV_g_int~0_combout\,
-	datad => \recur:UQ2|ALT_INV_P[3]~0_combout\,
+	datad => \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\,
 	dataf => \recur:UQ2|recur:UQ0|ALT_INV_P\(2),
 	combout => \recur:UQ2|recur:UQ0|S\(3));
 
@@ -5259,9 +5259,10 @@ PORT MAP (
 -- Location: LABCELL_X58_Y21_N18
 \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ = ( \recur:UQ2|P[3]~0_combout\ & ( \B[33]~input_o\ & ( (!\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ & ((!\recur:UQ2|recur:UQ0|P\(2)) # ((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\ & 
--- !\A[33]~input_o\)))) ) ) ) # ( !\recur:UQ2|P[3]~0_combout\ & ( \B[33]~input_o\ & ( !\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ ) ) ) # ( \recur:UQ2|P[3]~0_combout\ & ( !\B[33]~input_o\ & ( (!\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ & 
--- ((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\) # (!\recur:UQ2|recur:UQ0|P\(2)))) ) ) ) # ( !\recur:UQ2|P[3]~0_combout\ & ( !\B[33]~input_o\ & ( !\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ ) ) )
+-- \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ = ( \recur:UQ2|recur:P0[3]~0_combout\ & ( \B[33]~input_o\ & ( (!\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ & ((!\recur:UQ2|recur:UQ0|P\(2)) # ((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\ & 
+-- !\A[33]~input_o\)))) ) ) ) # ( !\recur:UQ2|recur:P0[3]~0_combout\ & ( \B[33]~input_o\ & ( !\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ ) ) ) # ( \recur:UQ2|recur:P0[3]~0_combout\ & ( !\B[33]~input_o\ & ( 
+-- (!\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ & ((!\recur:UQ2|recur:UQ0|leaf:U_LEAF|g_int~0_combout\) # (!\recur:UQ2|recur:UQ0|P\(2)))) ) ) ) # ( !\recur:UQ2|recur:P0[3]~0_combout\ & ( !\B[33]~input_o\ & ( 
+-- !\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5274,7 +5275,7 @@ PORT MAP (
 	datab => \recur:UQ2|recur:UQ0|ALT_INV_P\(2),
 	datac => \ALT_INV_A[33]~input_o\,
 	datad => \recur:UQ2|recur:blk_q0:0:Q0_BLK|ALT_INV_g_int~0_combout\,
-	datae => \recur:UQ2|ALT_INV_P[3]~0_combout\,
+	datae => \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\,
 	dataf => \ALT_INV_B[33]~input_o\,
 	combout => \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\);
 
@@ -5303,7 +5304,7 @@ PORT MAP (
 -- Location: LABCELL_X58_Y21_N2
 \recur:UQ2|recur:TOP_FANOUT|C~0\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:TOP_FANOUT|C~0_combout\ = ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|P[3]~0_combout\ & (\recur:combine_q16:Q2_GRP|Pout~0_combout\ & ((!\recur:TOP_FANOUT|g_int\(1)) # (\recur:TOP_FANOUT|C~1_combout\)))) ) )
+-- \recur:UQ2|recur:TOP_FANOUT|C~0_combout\ = ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|recur:P0[3]~0_combout\ & (\recur:combine_q16:Q2_GRP|Pout~0_combout\ & ((!\recur:TOP_FANOUT|g_int\(1)) # (\recur:TOP_FANOUT|C~1_combout\)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5313,7 +5314,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \recur:TOP_FANOUT|ALT_INV_C~1_combout\,
-	datab => \recur:UQ2|ALT_INV_P[3]~0_combout\,
+	datab => \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\,
 	datac => \recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\,
 	datad => \recur:TOP_FANOUT|ALT_INV_g_int\(1),
 	dataf => \recur:UQ2|recur:UQ0|ALT_INV_P\(2),
@@ -5669,8 +5670,8 @@ PORT MAP (
 -- Location: LABCELL_X58_Y21_N24
 \recur:UQ2|recur:TOP_FANOUT|C~1\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:TOP_FANOUT|C~1_combout\ = ( \recur:TOP_FANOUT|g_int\(1) & ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ2|P[3]~0_combout\ & (\recur:TOP_FANOUT|C~1_combout\ & 
--- \recur:combine_q16:Q2_GRP|Pout~0_combout\))) ) ) ) # ( !\recur:TOP_FANOUT|g_int\(1) & ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ2|P[3]~0_combout\ & \recur:combine_q16:Q2_GRP|Pout~0_combout\)) ) ) )
+-- \recur:UQ2|recur:TOP_FANOUT|C~1_combout\ = ( \recur:TOP_FANOUT|g_int\(1) & ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ2|recur:P0[3]~0_combout\ & (\recur:TOP_FANOUT|C~1_combout\ & 
+-- \recur:combine_q16:Q2_GRP|Pout~0_combout\))) ) ) ) # ( !\recur:TOP_FANOUT|g_int\(1) & ( \recur:UQ2|recur:UQ0|P\(2) & ( (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ2|recur:P0[3]~0_combout\ & \recur:combine_q16:Q2_GRP|Pout~0_combout\)) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5680,7 +5681,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\,
-	datab => \recur:UQ2|ALT_INV_P[3]~0_combout\,
+	datab => \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\,
 	datac => \recur:TOP_FANOUT|ALT_INV_C~1_combout\,
 	datad => \recur:combine_q16:Q2_GRP|ALT_INV_Pout~0_combout\,
 	datae => \recur:TOP_FANOUT|ALT_INV_g_int\(1),
@@ -6031,7 +6032,7 @@ PORT MAP (
 -- Location: LABCELL_X58_Y21_N0
 \recur:combine_q16:Q2_GRP|Pout~1\ : arriaii_lcell_comb
 -- Equation(s):
--- \recur:combine_q16:Q2_GRP|Pout~1_combout\ = ( \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~combout\ & ( (\recur:UQ2|P[3]~0_combout\ & \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\) ) )
+-- \recur:combine_q16:Q2_GRP|Pout~1_combout\ = ( \recur:UQ2|recur:blk_q2:0:Q2_BLK|Pout~combout\ & ( (\recur:UQ2|recur:P0[3]~0_combout\ & \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6040,7 +6041,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \recur:UQ2|ALT_INV_P[3]~0_combout\,
+	datab => \recur:UQ2|ALT_INV_recur:P0[3]~0_combout\,
 	datac => \recur:UQ2|recur:blk_q1:0:Q1_BLK|ALT_INV_Pout~combout\,
 	dataf => \recur:UQ2|recur:blk_q2:0:Q2_BLK|ALT_INV_Pout~combout\,
 	combout => \recur:combine_q16:Q2_GRP|Pout~1_combout\);

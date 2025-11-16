@@ -2,6 +2,7 @@
 # TS_ARRIA_RCA.do
 # ===========================
 
+transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ModelSim/Questa/ARRIA_RCA.vho
 vcom -work work -2008 -explicit -stats=none TB_Adder.vhd

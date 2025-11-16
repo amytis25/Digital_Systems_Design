@@ -2,6 +2,7 @@
 # TS_ARRIA_CSA.do
 # ===========================
 
+transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ModelSim/Questa/ARRIA_CSA.vho
 vcom -work work -2008 -explicit -stats=none TB_Adder.vhd

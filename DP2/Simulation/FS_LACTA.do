@@ -2,6 +2,7 @@
 # FS_LACTA.do
 # ===========================
 
+transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_LACG4.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Adder.vhd
