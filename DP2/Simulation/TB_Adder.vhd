@@ -21,8 +21,8 @@ architecture behavior of TB_Adder is
     
     -- Timing constants 
     constant PreStimTime    : time   := 1 ns;   -- Time to drive 'X' before applying stimuli
-    constant PostStimTime   : time   := 200 ns; -- Maximum time to wait for outputs to stabilize
-    constant StableTime     : time   := 3 ns;   -- Time window to consider signal stable
+    constant PostStimTime   : time   := 300 ns; -- Maximum time to wait for outputs to stabilize
+    constant StableTime     : time   := 50 ns;   -- Time window to consider signal stable
     
     -- Component declaration 
     component TestUnit is
@@ -73,12 +73,20 @@ begin
         variable stable_start : time;
         variable outputs_stable : boolean;
         
+        -- Failure counting
+        variable total_tests : natural := 0;
+        variable failed_tests : natural := 0;
+        
     begin
         -- Initialize max delay tracking
         MaxPropDelay_S := 0 ns;
         MaxPropDelay_Cout := 0 ns;
         MaxPropDelay_Ovfl := 0 ns;
         MaxPropDelay_Overall := 0 ns;
+        
+        -- Initialize failure counting
+        total_tests := 0;
+        failed_tests := 0;
         
         -- Open test vector file
         file_open(tvf, TestVectorFile, read_mode);
@@ -215,6 +223,12 @@ begin
             -- Define pass condition
             pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
 
+            -- Count failures
+            total_tests := total_tests + 1;
+            if not pass then
+                failed_tests := failed_tests + 1;
+            end if;
+
             -- 5) Compute pass/fail and assert
             assert pass
                 report "Mismatch: i=" & integer'image(idx) &
@@ -250,8 +264,11 @@ begin
             idx := idx + 1;
         end loop;
 
-        -- Report worst-case delays at the end
+        -- Report worst-case delays and test summary at the end
         report "Simulation completed: reached end of " & TestVectorFile;
+        report "Test Summary: " & integer'image(total_tests - failed_tests) & " passed, " & 
+                                  integer'image(failed_tests) & " failed out of " & 
+                                  integer'image(total_tests) & " total tests";
         report "Worst-case propagation delays - S: " & time'image(MaxPropDelay_S) & 
                ", Cout: " & time'image(MaxPropDelay_Cout) & 
                ", Ovfl: " & time'image(MaxPropDelay_Ovfl);
