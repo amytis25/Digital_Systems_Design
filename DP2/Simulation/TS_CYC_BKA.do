@@ -6,7 +6,7 @@ transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ModelSim/Questa/CYC_BKA.vho
 vcom -work work -2008 -explicit -stats=none TB_Adder.vhd
-vcom -work work -2008 -explicit -stats=none Config_Adder.vhd
+vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_Adder.vhd
 
 # Start simulation using configuration
 echo "Starting timing simulation for Brent-Kung Adder on Cyclone IV E..."
