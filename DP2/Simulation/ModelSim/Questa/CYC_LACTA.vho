@@ -1,4 +1,4 @@
--- Copyright (C) 2024  Intel Corporation. All rights reserved.
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
 -- and other software and tools, and any partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -15,16 +15,16 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
+-- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/12/2025 16:38:06"
+-- DATE "11/15/2025 15:57:30"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
 -- 
 
 -- 
--- This VHDL file should be used for Questa Intel FPGA (VHDL) only
+-- This VHDL file should be used for ModelSim (VHDL) only
 -- 
 
 LIBRARY CYCLONEIVE;
@@ -79,10 +79,10 @@ ENTITY 	EN_Adder IS
     PORT (
 	A : IN std_logic_vector(63 DOWNTO 0);
 	B : IN std_logic_vector(63 DOWNTO 0);
-	S : OUT std_logic_vector(63 DOWNTO 0);
+	S : BUFFER std_logic_vector(63 DOWNTO 0);
 	Cin : IN std_logic;
-	Cout : OUT std_logic;
-	Ovfl : OUT std_logic
+	Cout : BUFFER std_logic;
+	Ovfl : BUFFER std_logic
 	);
 END EN_Adder;
 
@@ -377,7 +377,7 @@ SIGNAL \A[2]~input_o\ : std_logic;
 SIGNAL \B[2]~input_o\ : std_logic;
 SIGNAL \B[3]~input_o\ : std_logic;
 SIGNAL \A[3]~input_o\ : std_logic;
-SIGNAL \recur:UQ0|P[3]~0_combout\ : std_logic;
+SIGNAL \recur:UQ0|recur:P0[3]~0_combout\ : std_logic;
 SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\ : std_logic;
 SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\ : std_logic;
 SIGNAL \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\ : std_logic;
@@ -465,7 +465,7 @@ SIGNAL \A[19]~input_o\ : std_logic;
 SIGNAL \B[19]~input_o\ : std_logic;
 SIGNAL \B[20]~input_o\ : std_logic;
 SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ : std_logic;
-SIGNAL \recur:UQ1|P[3]~0_combout\ : std_logic;
+SIGNAL \recur:UQ1|recur:P0[3]~0_combout\ : std_logic;
 SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ : std_logic;
 SIGNAL \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ : std_logic;
 SIGNAL \recur:UQ1|recur:TOP_FANOUT|C~5_combout\ : std_logic;
@@ -548,7 +548,7 @@ SIGNAL \A[36]~input_o\ : std_logic;
 SIGNAL \B[36]~input_o\ : std_logic;
 SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ : std_logic;
-SIGNAL \recur:UQ2|P[3]~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:P0[3]~0_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ : std_logic;
 SIGNAL \recur:UQ2|recur:TOP_FANOUT|C~5_combout\ : std_logic;
 SIGNAL \A[37]~input_o\ : std_logic;
@@ -698,50 +698,50 @@ SIGNAL \Cout~7_combout\ : std_logic;
 SIGNAL \Cout~8_combout\ : std_logic;
 SIGNAL \Cout~9_combout\ : std_logic;
 SIGNAL \Ovfl~0_combout\ : std_logic;
+SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
+SIGNAL \recur:UQ1|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
+SIGNAL \recur:UQ1|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ0|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ0|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ0|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ0|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ0|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ0|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ1|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ0|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ3|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ0|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
-SIGNAL \recur:UQ2|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ1|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ1|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ1|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ1|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ1|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ1|recur:UQ2|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
-SIGNAL \recur:UQ2|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ1|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ1|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ1|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ2|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ0|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ0|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ2|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ2|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ2|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
+SIGNAL \recur:UQ2|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ2|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ2|recur:UQ3|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
+SIGNAL \recur:UQ2|recur:UQ3|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ0|S\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \recur:UQ3|recur:UQ1|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ1|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ1|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
 SIGNAL \recur:UQ3|recur:TOP_FANOUT|g_int\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \recur:UQ3|recur:UQ2|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ2|P\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \recur:UQ3|recur:UQ2|leaf:U_LEAF|C\ : std_logic_vector(3 DOWNTO 1);
+SIGNAL \recur:UQ3|recur:UQ3|S\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \ALT_INV_Ovfl~0_combout\ : std_logic;
 
 COMPONENT hard_block
@@ -1774,9 +1774,9 @@ PORT MAP (
 	o => \A[3]~input_o\);
 
 -- Location: LCCOMB_X1_Y33_N26
-\recur:UQ0|P[3]~0\ : cycloneive_lcell_comb
+\recur:UQ0|recur:P0[3]~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ0|P[3]~0_combout\ = \B[3]~input_o\ $ (\A[3]~input_o\)
+-- \recur:UQ0|recur:P0[3]~0_combout\ = \B[3]~input_o\ $ (\A[3]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1786,7 +1786,7 @@ GENERIC MAP (
 PORT MAP (
 	datac => \B[3]~input_o\,
 	datad => \A[3]~input_o\,
-	combout => \recur:UQ0|P[3]~0_combout\);
+	combout => \recur:UQ0|recur:P0[3]~0_combout\);
 
 -- Location: LCCOMB_X1_Y33_N16
 \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1\ : cycloneive_lcell_comb
@@ -1841,7 +1841,7 @@ PORT MAP (
 -- Location: LCCOMB_X1_Y33_N20
 \recur:UQ0|recur:UQ0|S[3]\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ0|recur:UQ0|S\(3) = \recur:UQ0|P[3]~0_combout\ $ (((\recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\) # ((\recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\ & \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\))))
+-- \recur:UQ0|recur:UQ0|S\(3) = \recur:UQ0|recur:P0[3]~0_combout\ $ (((\recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\) # ((\recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\ & \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1849,7 +1849,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \recur:UQ0|P[3]~0_combout\,
+	dataa => \recur:UQ0|recur:P0[3]~0_combout\,
 	datab => \recur:UQ0|recur:UQ0|leaf:U_LEAF|g_int~1_combout\,
 	datac => \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\,
 	datad => \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~1_combout\,
@@ -1931,7 +1931,7 @@ PORT MAP (
 -- Location: LCCOMB_X1_Y33_N18
 \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ0|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ0|P[3]~0_combout\ & (\recur:UQ0|recur:UQ0|P\(2) & \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~0_combout\)))
+-- \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ0|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ0|recur:P0[3]~0_combout\ & (\recur:UQ0|recur:UQ0|P\(2) & \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1939,7 +1939,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \recur:UQ0|P[3]~0_combout\,
+	dataa => \recur:UQ0|recur:P0[3]~0_combout\,
 	datab => \recur:UQ0|recur:UQ0|P\(2),
 	datac => \recur:UQ0|recur:blk_q0:0:Q0_BLK|g_int~0_combout\,
 	datad => \recur:UQ0|recur:blk_q0:0:Q0_BLK|Gout~0_combout\,
@@ -2271,7 +2271,7 @@ PORT MAP (
 -- Location: LCCOMB_X1_Y33_N4
 \recur:UQ0|recur:TOP_FANOUT|C~2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ0|recur:TOP_FANOUT|C~2_combout\ = (\recur:UQ0|P[3]~0_combout\ & (\recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\ & \recur:UQ0|recur:UQ0|leaf:U_LEAF|C~0_combout\)))
+-- \recur:UQ0|recur:TOP_FANOUT|C~2_combout\ = (\recur:UQ0|recur:P0[3]~0_combout\ & (\recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~combout\ & (\recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\ & \recur:UQ0|recur:UQ0|leaf:U_LEAF|C~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2279,7 +2279,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \recur:UQ0|P[3]~0_combout\,
+	dataa => \recur:UQ0|recur:P0[3]~0_combout\,
 	datab => \recur:UQ0|recur:blk_q1:0:Q1_BLK|Pout~combout\,
 	datac => \recur:UQ0|recur:UQ0|leaf:U_LEAF|C[3]~2_combout\,
 	datad => \recur:UQ0|recur:UQ0|leaf:U_LEAF|C~0_combout\,
@@ -3444,9 +3444,9 @@ PORT MAP (
 	combout => \recur:UQ1|recur:blk_q0:0:Q0_BLK|g_int~0_combout\);
 
 -- Location: LCCOMB_X89_Y69_N16
-\recur:UQ1|P[3]~0\ : cycloneive_lcell_comb
+\recur:UQ1|recur:P0[3]~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ1|P[3]~0_combout\ = \A[19]~input_o\ $ (\B[19]~input_o\)
+-- \recur:UQ1|recur:P0[3]~0_combout\ = \A[19]~input_o\ $ (\B[19]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3456,7 +3456,7 @@ GENERIC MAP (
 PORT MAP (
 	datac => \A[19]~input_o\,
 	datad => \B[19]~input_o\,
-	combout => \recur:UQ1|P[3]~0_combout\);
+	combout => \recur:UQ1|recur:P0[3]~0_combout\);
 
 -- Location: LCCOMB_X89_Y69_N20
 \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0\ : cycloneive_lcell_comb
@@ -3478,7 +3478,7 @@ PORT MAP (
 -- Location: LCCOMB_X89_Y69_N30
 \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ1|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ1|P[3]~0_combout\ & (\recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ & \recur:UQ1|recur:UQ0|P\(2))))
+-- \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ1|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ1|recur:P0[3]~0_combout\ & (\recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ & \recur:UQ1|recur:UQ0|P\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3487,7 +3487,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \recur:UQ1|recur:blk_q0:0:Q0_BLK|g_int~0_combout\,
-	datab => \recur:UQ1|P[3]~0_combout\,
+	datab => \recur:UQ1|recur:P0[3]~0_combout\,
 	datac => \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~0_combout\,
 	datad => \recur:UQ1|recur:UQ0|P\(2),
 	combout => \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\);
@@ -3651,7 +3651,7 @@ PORT MAP (
 -- Location: LCCOMB_X89_Y69_N8
 \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~1_combout\ = (\recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~0_combout\ & ((\recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\) # ((\recur:UQ1|recur:UQ0|leaf:U_LEAF|C~3_combout\ & \recur:UQ1|P[3]~0_combout\))))
+-- \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~1_combout\ = (\recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~0_combout\ & ((\recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\) # ((\recur:UQ1|recur:UQ0|leaf:U_LEAF|C~3_combout\ & \recur:UQ1|recur:P0[3]~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3660,7 +3660,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \recur:UQ1|recur:UQ0|leaf:U_LEAF|C~3_combout\,
-	datab => \recur:UQ1|P[3]~0_combout\,
+	datab => \recur:UQ1|recur:P0[3]~0_combout\,
 	datac => \recur:UQ1|recur:blk_q1:0:Q1_BLK|Pout~0_combout\,
 	datad => \recur:UQ1|recur:blk_q0:0:Q0_BLK|Gout~1_combout\,
 	combout => \recur:UQ1|recur:UQ1|leaf:U_LEAF|C~1_combout\);
@@ -5078,9 +5078,9 @@ PORT MAP (
 	combout => \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\);
 
 -- Location: LCCOMB_X58_Y4_N24
-\recur:UQ2|P[3]~0\ : cycloneive_lcell_comb
+\recur:UQ2|recur:P0[3]~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ2|P[3]~0_combout\ = \A[35]~input_o\ $ (\B[35]~input_o\)
+-- \recur:UQ2|recur:P0[3]~0_combout\ = \A[35]~input_o\ $ (\B[35]~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5090,12 +5090,12 @@ GENERIC MAP (
 PORT MAP (
 	datac => \A[35]~input_o\,
 	datad => \B[35]~input_o\,
-	combout => \recur:UQ2|P[3]~0_combout\);
+	combout => \recur:UQ2|recur:P0[3]~0_combout\);
 
 -- Location: LCCOMB_X58_Y4_N26
 \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ & (\recur:UQ2|recur:UQ0|P\(2) & \recur:UQ2|P[3]~0_combout\)))
+-- \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\ = (\recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\) # ((\recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\ & (\recur:UQ2|recur:UQ0|P\(2) & \recur:UQ2|recur:P0[3]~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5106,7 +5106,7 @@ PORT MAP (
 	dataa => \recur:UQ2|recur:blk_q0:0:Q0_BLK|g_int~0_combout\,
 	datab => \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~0_combout\,
 	datac => \recur:UQ2|recur:UQ0|P\(2),
-	datad => \recur:UQ2|P[3]~0_combout\,
+	datad => \recur:UQ2|recur:P0[3]~0_combout\,
 	combout => \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\);
 
 -- Location: LCCOMB_X58_Y4_N8
@@ -5218,7 +5218,7 @@ PORT MAP (
 -- Location: LCCOMB_X58_Y4_N12
 \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~1_combout\ = (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~0_combout\ & ((\recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\) # ((\recur:UQ2|recur:UQ0|leaf:U_LEAF|C~3_combout\ & \recur:UQ2|P[3]~0_combout\))))
+-- \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~1_combout\ = (\recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~0_combout\ & ((\recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\) # ((\recur:UQ2|recur:UQ0|leaf:U_LEAF|C~3_combout\ & \recur:UQ2|recur:P0[3]~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5227,7 +5227,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \recur:UQ2|recur:UQ0|leaf:U_LEAF|C~3_combout\,
-	datab => \recur:UQ2|P[3]~0_combout\,
+	datab => \recur:UQ2|recur:P0[3]~0_combout\,
 	datac => \recur:UQ2|recur:blk_q0:0:Q0_BLK|Gout~1_combout\,
 	datad => \recur:UQ2|recur:blk_q1:0:Q1_BLK|Pout~0_combout\,
 	combout => \recur:UQ2|recur:UQ1|leaf:U_LEAF|C~1_combout\);
