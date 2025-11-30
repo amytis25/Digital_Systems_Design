@@ -9,7 +9,7 @@ vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Adder.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Logic.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Shift.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_ExecUnit.vhd
-vcom -work work -2008 -explicit -stats=none TB_Adder.vhd
+vcom -work work -2008 -explicit -stats=none TB_ExecUnit.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_ExecUnit.vhd
 
 # Start simulation using configuration

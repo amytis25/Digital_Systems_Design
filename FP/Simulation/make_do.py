@@ -30,7 +30,7 @@ vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Adder.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Logic.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_Shift.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/EN_ExecUnit.vhd
-vcom -work work -2008 -explicit -stats=none TB_Adder.vhd
+vcom -work work -2008 -explicit -stats=none TB_ExecUnit.vhd
 vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_ExecUnit.vhd
 
 # Start simulation using configuration
@@ -67,13 +67,12 @@ def make_ts_do(family_code, family_name, adder_code, adder_name, shift_code, shi
 transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none {vho_path}
-vcom -work work -2008 -explicit -stats=none TB_Adder.vhd
-vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_Adder.vhd
+vcom -work work -2008 -explicit -stats=none TB_ExecUnit.vhd
+vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_ExecUnit.vhd
 
 # Start simulation using configuration
 echo "Starting timing simulation for {arch_name} on {family_name}..."
-vsim -t 100ps -gui -sdftyp /TB_ADDER/DUT={sdo_path} work.CFG_TIMING
-
+vsim -t 100ps -gui -sdftyp /TB_ExecUnit/DUT={sdo_path} work.CFG_TIMING
 # Set up wave window
 do wave.do
 transcript file {transcript_name}
