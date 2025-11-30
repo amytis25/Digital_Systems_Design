@@ -56,10 +56,11 @@ architecture RTL of EN_ExecUnit is
         Y <= Y_ShiftOrArith when "00",
              Y_logic 		when "01",
              Y_slt 			when "10",
-             Y_sltu 		when "11";
+             Y_sltu 		when "11",
+			 (others => 'X')when others;
 	
 	-- see if were adding or subtracting and choose Correct B
-	B_adder <= B when (AddnSub = '0') else not B;
+	B_adder <= B when AddnSub = '0' else not B;
 	
 	-- Shift muxes
 	Y_LorS 			<= S     		when ShiftFN(0) = '0' 	else Y_LL;
