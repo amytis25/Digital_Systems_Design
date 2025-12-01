@@ -5,7 +5,7 @@ import random
 from pathlib import Path
 
 N = 64
-NUM_VECTORS = 77
+NUM_VECTORS = 100
 outfile = Path("Exec00.tvs")
 
 WIDTH_HEX = (N + 3) // 4  # hex digits needed
@@ -125,7 +125,7 @@ def generate_vectors(n, count):
         Y = Y & mask64
 
         lines.append(
-            f"{to_hex(WIDTH_HEX, A_u)} {to_hex(WIDTH_HEX, B_u)} {FuncClass} {LogicFN} {ShiftFN} {AddnSub} {ExtWord} {to_hex(WIDTH_HEX, Y)} {Zero} {AltB} {AltBu}"
+            f"{to_hex(WIDTH_HEX, A_u)} {to_hex(WIDTH_HEX, B_u)} {format(FuncClass, '02b')} {format(LogicFN, '02b')} {format(ShiftFN, '02b')} {AddnSub} {ExtWord} {to_hex(WIDTH_HEX, Y)} {Zero} {AltB} {AltBu}"
         )
 
     return lines
