@@ -47,9 +47,6 @@ begin
 
     -- Device Under Test (DUT)
     DUT: TestUnit
-        generic map (
-            N => N
-        )
         port map (
             A         => TBA,
             B         => TBB,
