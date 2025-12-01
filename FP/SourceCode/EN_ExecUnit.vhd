@@ -82,7 +82,7 @@ architecture RTL of EN_ExecUnit is
 		);
 		
 	-- Output flags
-	AltB 		<= Ovfl xor S(63);
+	AltB 		<= Ovfl xor S(N-1);
 	Y_slt 	<= (N-1 downto 1 => '0' ) & AltB;
 	AltBu 	<= not Cout;
 	Y_sltu 	<= (N-1 downto 1 => '0' ) & AltBu;
@@ -100,6 +100,7 @@ architecture RTL of EN_ExecUnit is
 	
 	-- Shift Subsystem
 	Shift : EN_Shift
+		generic map (N => N)
 		port map (
 			A    			=> A,
 			ShiftCount 		=> B (5 downto 0),
