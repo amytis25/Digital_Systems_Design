@@ -6,7 +6,7 @@ transcript file ""
 # --- Compile design and testbench ---
 vcom -work work -2008 -explicit -stats=none ModelSim/Questa/CYC_RCA_IEEE_fn.vho
 vcom -work work -2008 -explicit -stats=none TB_ExecUnit.vhd
-vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_ExecUnit.vhd
+vcom -work work -2008 -explicit -stats=none ../SourceCode/Config_ExecUnit_Time.vhd
 
 # Start simulation using configuration
 echo "Starting timing simulation for Ripple-Carry Adder and Shifting unit that uses IEEE functions on Cyclone IV E..."
