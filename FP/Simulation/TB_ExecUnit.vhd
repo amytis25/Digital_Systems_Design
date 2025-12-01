@@ -5,10 +5,13 @@ use ieee.std_logic_textio.all;
 use std.textio.all;
 
 entity TB_ExecUnit is
+	generic (
+		N             : natural := 64;
+        TestVectorFile : string := "TestVectors/Exec64.tvs"  -- default
+    );
 end TB_ExecUnit;
 
 architecture behavior of TB_ExecUnit is
-    constant N : integer := 64;
 
     -- DUT ports
     signal TBA, TBB : std_logic_vector(N-1 downto 0) := (others => '0');
@@ -21,7 +24,6 @@ architecture behavior of TB_ExecUnit is
     signal TBAltBu: std_logic;
 
     -- Test-vector file
-    constant TestVectorFile : string := "TestVectors/Exec00.tvs";
     constant PreStimTime    : time   := 1 ns;
     constant PostStimTime   : time   := 100 ns;
     constant StableTime     : time   := 2 ns;  -- Time to consider signal stable
@@ -50,9 +52,7 @@ begin
 
     -- Device Under Test (DUT)
     DUT: TestUnit
-        generic map (
-            N => N
-        )
+		generic map ( N => N )
         port map (
             A         => TBA,
             B         => TBB,
