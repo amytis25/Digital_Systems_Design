@@ -86,7 +86,7 @@ architecture RTL of EN_ExecUnit is
 	Y_slt 	<= (N-1 downto 1 => '0' ) & AltB;
 	AltBu 	<= not Cout;
 	Y_sltu 	<= (N-1 downto 1 => '0' ) & AltBu;
-	Zero 		<= '1' when S = (N-1 downto 1 => '0') else '0';
+	Zero 		<= '1' when (or S) = '0' else '0';
 	
 	-- Logic Subsystem
 	Logic : entity work.EN_Logic(RTL)
