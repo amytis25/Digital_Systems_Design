@@ -146,3 +146,12 @@ incremental_db/
 cov*/
 _temp/
 _@*/
+FP/Documentation/OutputFiles/FS_CBA_Barrel_Transcript.txt
+FP/Documentation/OutputFiles/TS_ARRIA_RCA_IEEE_fn_Transcript.txt
+FP/Simulation/FP.mpf
+FP/Simulation/transcript
+FP/Simulation/work/_info
+FP/Simulation/work/_lib.qdb
+FP/Simulation/work/_lib1_15.qdb
+FP/Simulation/work/_lib1_15.qtl
+FP/Simulation/work/_vmake
