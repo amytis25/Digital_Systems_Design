@@ -27,10 +27,9 @@ architecture behavior of TB_ExecUnit is
     constant StableTime     : time   := 2 ns;  -- Time to consider signal stable
 
     -- Signal array for monitoring all outputs together
-    -- Y is N bits + 3 flag bits
     signal DUTout : std_logic_vector(N+2 downto 0);
-	
-	component TestUnit is
+    
+    component TestUnit is
         generic ( N : natural := 64 );
         port (
             A, B : in  std_logic_vector(N-1 downto 0);
@@ -41,6 +40,10 @@ architecture behavior of TB_ExecUnit is
         );
     end component;
 
+    -- Internal signals for timing measurement
+    signal start_measurement : boolean := false;
+    signal measurement_done  : boolean := false;
+    
 begin
     -- Group all outputs for stability checking
     DUTout <= TBY & TBZero & TBAltB & TBAltBu;
@@ -64,7 +67,7 @@ begin
             AltBu     => TBAltBu
         );
 
-    -- Stimulus Process with propagation delay measurement
+    -- Stimulus Process with proper propagation delay measurement
     stimulus : process
         -- Simulation variables
         file      tvf : text;
@@ -84,6 +87,8 @@ begin
         variable  OUTL       : line;
 
         -- Timing measurement variables
+        variable StartTime      : time := 0 ns;
+        variable EndTime        : time := 0 ns;
         variable PropDelay_Y      : time := 0 ns;
         variable PropDelay_Zero   : time := 0 ns;
         variable PropDelay_AltB   : time := 0 ns;
@@ -166,7 +171,7 @@ begin
             TBExtWord  <= 'X';
             wait for PreStimTime;
 
-            -- 2) Apply inputs
+            -- 2) Apply inputs and record start time
             TBA        <= vA;
             TBB        <= vB;
             TBFuncClass<= vFuncClass;
@@ -174,15 +179,44 @@ begin
             TBShiftFN  <= vShiftFN;
             TBAddnSub  <= vAddnSub;
             TBExtWord  <= vExtWord;
+            
+            StartTime := now;
 
             -- 3) Wait for outputs to become stable
-            wait until DUTout'stable(StableTime);
+            -- Wait for any change, then wait for stability
+            wait until DUTout'event for PostStimTime;
+            
+            if DUTout'event then
+                -- Signal changed, now wait for it to be stable
+                wait until DUTout'stable(StableTime) for PostStimTime;
+            end if;
+            
+            EndTime := now;
 
-            -- 4) Calculate individual propagation delays from last event
-            PropDelay_Y     := TBY'last_event;
-            PropDelay_Zero  := TBZero'last_event;
-            PropDelay_AltB  := TBAltB'last_event;
-            PropDelay_AltBu := TBAltBu'last_event;
+            -- 4) Calculate individual propagation delays
+            -- Reset delays to 0 for this measurement
+            PropDelay_Y := 0 ns;
+            PropDelay_Zero := 0 ns;
+            PropDelay_AltB := 0 ns;
+            PropDelay_AltBu := 0 ns;
+            
+            -- For each output, calculate delay from last event to start time
+            -- But only if the signal changed during this measurement
+            if TBY'last_event < (EndTime - StartTime) then
+                PropDelay_Y := TBY'last_event;
+            end if;
+            
+            if TBZero'last_event < (EndTime - StartTime) then
+                PropDelay_Zero := TBZero'last_event;
+            end if;
+            
+            if TBAltB'last_event < (EndTime - StartTime) then
+                PropDelay_AltB := TBAltB'last_event;
+            end if;
+            
+            if TBAltBu'last_event < (EndTime - StartTime) then
+                PropDelay_AltBu := TBAltBu'last_event;
+            end if;
 
             -- Track worst-case (max) delays
             if PropDelay_Y > MaxDelay_Y then
