@@ -29,6 +29,17 @@ architecture behavior of TB_ExecUnit is
     -- Signal array for monitoring all outputs together
     -- Y is N bits + 3 flag bits
     signal DUTout : std_logic_vector(N+2 downto 0);
+	
+	component TestUnit is
+        generic ( N : natural := 64 );
+        port (
+            A, B : in  std_logic_vector(N-1 downto 0);
+            FuncClass, LogicFN, ShiftFN : in std_logic_vector(1 downto 0);
+            AddnSub, ExtWord : in std_logic;
+            Y : out std_logic_vector(N-1 downto 0);
+            Zero, AltB, AltBu : out std_logic
+        );
+    end component;
 
 begin
     -- Group all outputs for stability checking
