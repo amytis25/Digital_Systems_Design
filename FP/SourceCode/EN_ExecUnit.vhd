@@ -4,7 +4,7 @@ use IEEE.numeric_std.ALL;
 use std.textio.all;
 
 Entity EN_ExecUnit is
-	Generic ( N : natural := 64 );
+	Generic ( N : natural := 32 );
 	Port ( A, B : in std_logic_vector( N-1 downto 0 );
 	FuncClass, LogicFN, ShiftFN : in std_logic_vector( 1 downto 0 );
 	AddnSub, ExtWord : in std_logic := '0';
@@ -86,7 +86,7 @@ architecture RTL of EN_ExecUnit is
 	Y_slt 	<= (N-1 downto 1 => '0' ) & AltB;
 	AltBu 	<= not Cout;
 	Y_sltu 	<= (N-1 downto 1 => '0' ) & AltBu;
-	Zero 		<= '1' when (or S) = '0' else '0';
+	Zero 		<= '1' when unsigned(S) = 0 else '0';
 	
 	-- Logic Subsystem
 	Logic : entity work.EN_Logic(RTL)
