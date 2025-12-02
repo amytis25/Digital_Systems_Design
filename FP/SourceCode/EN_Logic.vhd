@@ -19,8 +19,8 @@ architecture RTL of EN_Logic is
 	 constant N_half : integer := N / 2; 
     
 begin
-    -- Shift immediate left by 12 bits and sign extend
-    lui_result <= (N-1 downto 32 => B(19)) & B(19 downto 0) & "000000000000";
+    -- LUI done by UPI so just goes through a wire here
+    lui_result <= B;
     
     -- Compute standard logic operations
     xor_result <= A xor B;
