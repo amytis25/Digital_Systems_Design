@@ -4,7 +4,7 @@ use IEEE.numeric_std.ALL;
 use std.textio.all;
 
 Entity EN_ExecUnit is
-	Generic ( N : natural := 32 );
+	Generic ( N : natural := 16 );
 	Port ( A, B : in std_logic_vector( N-1 downto 0 );
 	FuncClass, LogicFN, ShiftFN : in std_logic_vector( 1 downto 0 );
 	AddnSub, ExtWord : in std_logic := '0';
@@ -49,7 +49,7 @@ architecture RTL of EN_ExecUnit is
 	signal B_adder,S : std_logic_vector (N-1 downto 0);
 	signal Cout, Ovfl : std_logic; 
 	signal Y_LL, Y_RL, Y_RA, Y_LorS, Y_R, Y_LorS_Ext, Y_R_Ext : std_logic_vector (N-1 downto 0);
-	
+	constant N_half : integer := N / 2;
 	begin 
 	-- final value selection mux
 	with std_logic_vector(FuncClass) select
@@ -65,8 +65,8 @@ architecture RTL of EN_ExecUnit is
 	-- Shift muxes
 	Y_LorS 			<= S     		when ShiftFN(0) = '0' 	else Y_LL;
 	Y_R    			<= Y_RL  		when ShiftFN(0) = '0' 	else Y_RA;
-	Y_LorS_Ext 		<= Y_LorS 		when ExtWord = '0' 		else (N-1 downto 32 => Y_LorS(31)) & Y_LorS(31 downto 0);
-	Y_R_Ext 		<= Y_R 			when ExtWord = '0' 		else (N-1 downto 32 => Y_R(31)) & Y_R(31 downto 0);
+	Y_LorS_Ext 		<= Y_LorS 		when ExtWord = '0' 		else (N-1 downto N_half + 1 => Y_LorS(N_half)) & Y_LorS(N_half downto 0);
+	Y_R_Ext 		<= Y_R 			when ExtWord = '0' 		else (N-1 downto N_half + 1 => Y_R(N_half)) & Y_R(N_half downto 0);
 	Y_ShiftOrArith 	<= Y_LorS_Ext 	when ShiftFN(1) = '0' 	else Y_R_Ext;
 	
 	-- Adding Subsystem
