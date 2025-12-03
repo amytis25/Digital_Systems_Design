@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/02/2025 17:54:54"
+-- DATE "12/02/2025 18:56:52"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -84,10 +84,10 @@ ENTITY 	EN_ExecUnit IS
 	ShiftFN : IN std_logic_vector(1 DOWNTO 0);
 	AddnSub : IN std_logic;
 	ExtWord : IN std_logic;
-	Y : BUFFER std_logic_vector(15 DOWNTO 0);
-	Zero : BUFFER std_logic;
-	AltB : BUFFER std_logic;
-	AltBu : BUFFER std_logic
+	Y : OUT std_logic_vector(15 DOWNTO 0);
+	Zero : OUT std_logic;
+	AltB : OUT std_logic;
+	AltBu : OUT std_logic
 	);
 END EN_ExecUnit;
 
