@@ -127,27 +127,58 @@ def main():
                         b_name = bits.get(b_code, f"{b_code}-bit")
                         make_ts_do(dev_code, dev_name, ad_code, ad_name, sh_code, sh_name, b_code, b_name)
 
-    # Create master DO files that run all generated FS_*.do and TS_*.do files
-    def make_master_do(pattern, out_filename, title):
-        files = sorted([f for f in glob.glob(pattern) if os.path.basename(f) not in ("FS_all.do", "TS_all.do")])
+    # Create per-bit master DO files (e.g. FS_64.do, TS_64.do)
+    def make_bit_master(prefix, bits_code):
+        pattern = f"{prefix}_*_{bits_code}.do" if prefix == 'FS' else f"{prefix}_*_{bits_code}.do"
+        files = sorted([f for f in glob.glob(pattern) if os.path.basename(f) not in (f"{prefix}_{bits_code}.do", f"{prefix}_all.do")])
         if not files:
-            print(f"No files found for pattern: {pattern}")
-            return
-        header = f"# ===========================\n# {out_filename}\n# {title}\n# ===========================\n\n"
+            return False
+        header = f"# ===========================\n# {prefix}_{bits_code}.do\n# All {prefix} DO files for {bits_code}-bit\n# ===========================\n\n"
         lines = [header]
-        lines.append('echo "Starting {0}..."\n'.format(title))
+        lines.append(f'echo "Starting {prefix}_{bits_code}..."\n')
         for fn in files:
-            # use forward slashes in the do file for ModelSim compatibility
             fn_norm = fn.replace('\\', '/')
             lines.append(f"do {fn_norm}\n")
-        lines.append('\necho "{0} complete."\n'.format(title))
+        lines.append(f'\necho "{prefix}_{bits_code} complete."\n')
+        out_filename = f"{prefix}_{bits_code}.do"
+        with open(out_filename, 'w', newline='\n') as f:
+            f.writelines(lines)
+        print(f"Wrote {out_filename}")
+        return True
+
+    # Generate per-bit masters for all bits known in `bits` dictionary
+    generated_fs_bits = []
+    generated_ts_bits = []
+    for b_code in bits.keys():
+        if make_bit_master('FS', b_code):
+            generated_fs_bits.append(b_code)
+        if make_bit_master('TS', b_code):
+            generated_ts_bits.append(b_code)
+
+    # Now create FS_all.do and TS_all.do that call the per-bit masters (if present)
+    def make_all_from_bits(prefix, bit_codes, out_filename, title):
+        if not bit_codes:
+            # fallback: include individual files
+            files = sorted([f for f in glob.glob(f"{prefix}_*.do") if os.path.basename(f) not in (f"{prefix}_all.do",)])
+            if not files:
+                print(f"No {prefix} files found to make {out_filename}")
+                return
+            items = files
+        else:
+            items = [f"{prefix}_{b}.do" for b in bit_codes if os.path.exists(f"{prefix}_{b}.do")]
+        header = f"# ===========================\n# {out_filename}\n# {title}\n# ===========================\n\n"
+        lines = [header]
+        lines.append(f'echo "Starting {title}..."\n')
+        for itm in items:
+            itm_norm = itm.replace('\\', '/')
+            lines.append(f"do {itm_norm}\n")
+        lines.append(f'\necho "{title} complete."\n')
         with open(out_filename, 'w', newline='\n') as f:
             f.writelines(lines)
         print(f"Wrote {out_filename}")
 
-    # Write FS_all.do and TS_all.do
-    make_master_do('FS_*.do', 'FS_all.do', 'All Functional Simulation DO files')
-    make_master_do('TS_*.do', 'TS_all.do', 'All Timing Simulation DO files')
+    make_all_from_bits('FS', generated_fs_bits, 'FS_all.do', 'All Functional Simulation DO files')
+    make_all_from_bits('TS', generated_ts_bits, 'TS_all.do', 'All Timing Simulation DO files')
 
 
 if __name__ == "__main__":
