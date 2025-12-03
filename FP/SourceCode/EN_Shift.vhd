@@ -4,14 +4,14 @@ use IEEE.numeric_std.ALL;
 use std.textio.all;
 
 Entity EN_Shift is
-	Generic ( N : natural := 64 );
+	Generic ( N : natural := 16 );
 	Port ( 
 		A : in std_logic_vector( N-1 downto 0 );
 		ShiftCount : in std_logic_vector( 5 downto 0 );
 		Y_LL , Y_RL, Y_RA : out std_logic_vector (N-1 downto 0)
 		);
 end EN_Shift;
-
+/*
 architecture IEEE_fn of EN_Shift is
 	signal shift_val : integer range 0 to N-1;
 	
@@ -29,15 +29,15 @@ architecture IEEE_fn of EN_Shift is
 		Y_RA <= std_logic_vector(shift_right(signed(A), shift_val));
 
 
-end IEEE_fn;
+end IEEE_fn; */
 
 architecture barrel of EN_Shift is 
     -- Left logical levels
-    signal ll0, ll1, ll2, ll3, ll4, ll5, ll6 : std_logic_vector(N-1 downto 0);
+    signal ll0, ll1, ll2, ll3, ll4 : std_logic_vector(N-1 downto 0);
     -- Right logical levels
-    signal rl0, rl1, rl2, rl3, rl4, rl5, rl6 : std_logic_vector(N-1 downto 0);
+    signal rl0, rl1, rl2, rl3, rl4 : std_logic_vector(N-1 downto 0);
     -- Right arithmetic levels
-    signal ra0, ra1, ra2, ra3, ra4, ra5, ra6 : std_logic_vector(N-1 downto 0);
+    signal ra0, ra1, ra2, ra3, ra4 : std_logic_vector(N-1 downto 0);
 
 	begin
     -- level 0: input
@@ -111,40 +111,40 @@ architecture barrel of EN_Shift is
 
     -- level 5: shift by 16 if ShiftCount(4) = '1'
     -- Left logical
-    ll5 <= ll4(N-17 downto 0) & (15 downto 0 => '0')
-           when ShiftCount(4) = '1' else
-           ll4;
+    --ll5 <= ll4(N-17 downto 0) & (15 downto 0 => '0')
+          -- when ShiftCount(4) = '1' else
+          -- ll4;
 
     -- Right logical
-    rl5 <= (15 downto 0 => '0') & rl4(N-1 downto 16)
-           when ShiftCount(4) = '1' else
-           rl4;
+    --rl5 <= (15 downto 0 => '0') & rl4(N-1 downto 16)
+      --     when ShiftCount(4) = '1' else
+        --   rl4;
 
     -- Right arithmetic
-    ra5 <= (15 downto 0 => ra4(N-1)) & ra4(N-1 downto 16)
-           when ShiftCount(4) = '1' else
-           ra4;
+    --ra5 <= (15 downto 0 => ra4(N-1)) & ra4(N-1 downto 16)
+           --when ShiftCount(4) = '1' else
+           --ra4;
 
     -- level 6: shift by 32 if ShiftCount(5) = '1'
     -- Left logical
-    ll6 <= ll5(N-33 downto 0) & (31 downto 0 => '0')
-           when ShiftCount(5) = '1' else
-           ll5;
+    --ll6 <= ll5(N-33 downto 0) & (31 downto 0 => '0')
+           --when ShiftCount(5) = '1' else
+           --ll5;
 
     -- Right logical
-    rl6 <= (31 downto 0 => '0') & rl5(N-1 downto 32)
-           when ShiftCount(5) = '1' else
-           rl5;
+    --rl6 <= (31 downto 0 => '0') & rl5(N-1 downto 32)
+      --     when ShiftCount(5) = '1' else
+        --   rl5;
 
     -- Right arithmetic
-    ra6 <= (31 downto 0 => ra5(N-1)) & ra5(N-1 downto 32)
-           when ShiftCount(5) = '1' else
-           ra5;
+    --ra6 <= (31 downto 0 => ra5(N-1)) & ra5(N-1 downto 32)
+      --     when ShiftCount(5) = '1' else
+        --   ra5;
 
     -- Final outputs
-    Y_LL <= ll6;
-    Y_RL <= rl6;
-    Y_RA <= ra6;
+    Y_LL <= ll4;
+    Y_RL <= rl4;
+    Y_RA <= ra4;
 
 
-end barrel;
+end barrel; 

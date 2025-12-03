@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity EN_Logic is
-    Generic ( N : natural := 64 );
+    Generic ( N : natural := 16 );
     Port ( 
         A, B : in std_logic_vector(N-1 downto 0);
         LogicFN : in std_logic_vector(1 downto 0);

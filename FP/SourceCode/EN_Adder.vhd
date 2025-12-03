@@ -6,7 +6,7 @@ use std.textio.all;
 -- naming convention for architectures: an acronym created based on the name of each topology (i.e. ripple-carry adder = RCA, etc.) 
 
 entity EN_Adder is 
-	generic (N: natural := 64);
+	generic (N: natural := 16);
 	port (
 		A, B  : in std_logic_vector (N-1 downto 0);
 		S : out std_logic_vector (N-1 downto 0);
@@ -57,7 +57,7 @@ architecture RCA of EN_Adder is
 	
 	
 end RCA;
-
+/*
 -- CSA : Conditional Sum Adder
 architecture CSA of EN_Adder is 
 	-- define size of each recursion
@@ -551,4 +551,4 @@ begin
     -- Overflow detection for signed arithmetic
 	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
     
-end architecture CBA;
+end architecture CBA; */
