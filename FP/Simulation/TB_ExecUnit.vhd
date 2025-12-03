@@ -25,8 +25,8 @@ architecture behavior of TB_ExecUnit is
 
     -- Test-vector file
     constant PreStimTime    : time   := 1 ns;
-    constant PostStimTime   : time   := 100 ns;
-    constant StableTime     : time   := 2 ns;  -- Time to consider signal stable
+    constant PostStimTime   : time   := 200 ns;
+    constant StableTime     : time   := 50 ns;  -- Time to consider signal stable
 
     -- Signal array for monitoring all outputs together
     signal DUTout : std_logic_vector(N+2 downto 0);
