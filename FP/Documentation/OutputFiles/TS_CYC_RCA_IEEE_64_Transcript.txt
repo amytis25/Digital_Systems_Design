@@ -131,3 +131,4 @@
 #    Time: 8801 ns  Iteration: 0  Instance: /tb_execunit
 # === timing Simulation for the 64-bit execution unit usingRipple-Carry Adder and Shifting unit that uses IEEE functions on Cyclone IV E Complete ===
 # TS_64 complete.
+do TS_CYC_RCA_Barrel_64.do
