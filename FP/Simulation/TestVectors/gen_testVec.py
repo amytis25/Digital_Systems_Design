@@ -6,7 +6,7 @@ from pathlib import Path
 
 N = 64
 NUM_VECTORS = 100
-outfile = Path("Exec00.tvs")
+outfile = Path("Exec64.tvs")
 
 WIDTH_HEX = (N + 3) // 4  # hex digits needed
 
@@ -97,10 +97,7 @@ def generate_vectors(n, count):
 
         # LOGIC path
         if LogicFN == 0:
-            imm20 = B_u & ((1 << 20) - 1)
-            sign = (imm20 >> 19) & 1
-            top32 = ((-sign) & ((1 << 32) - 1))
-            Y_logic = ((top32 << 32) | (imm20 << 12)) & mask64
+            Y_logic = B_u & mask64
         elif LogicFN == 1:
             Y_logic = (A_u ^ B_u) & mask64
         elif LogicFN == 2:
