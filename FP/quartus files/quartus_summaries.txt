@@ -1,103 +1,19 @@
-+----------------------------------------------------------------------------------+
-; CYC_CBA_Barrel_128 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:48:37 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,810 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 2,810 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 395 / 529 ( 75 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_CBA_IEEE_128 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:51:45 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,874 / 114,480 ( 3 % )                     ;
-;     Total combinational functions  ; 2,874 / 114,480 ( 3 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 395 / 529 ( 75 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_RCA_Barrel_128 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:46:28 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,516 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 2,516 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 395 / 529 ( 75 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_RCA_IEEE_128 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:37:50 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,656 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 2,656 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 395 / 529 ( 75 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
 +---------------------------------------------------------------------------------+
-; ARRIA_CBA_Barrel_32 Summary                                                                  ;
+; ARRIA_CBA_Barrel_16 Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:26:12 2025       ;
+; Fitter Status                     ; Successful - Tue Dec 02 19:29:26 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
 ; Family                            ; Arria II GX                                 ;
 ; Device                            ; EP2AGX45DF29C6                              ;
 ; Timing Models                     ; Final                                       ;
-; Logic utilization                 ; 2 %                                         ;
-;     Combinational ALUTs           ; 443 / 36,100 ( 1 % )                        ;
+; Logic utilization                 ; < 1 %                                       ;
+;     Combinational ALUTs           ; 179 / 36,100 ( < 1 % )                      ;
 ;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                          ;
 ;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                          ;
 ; Total registers                   ; 0                                           ;
-; Total pins                        ; 107 / 404 ( 26 % )                          ;
+; Total pins                        ; 59 / 404 ( 15 % )                           ;
 ; Total virtual pins                ; 0                                           ;
 ; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                       ;
 ; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                             ;
@@ -110,21 +26,21 @@
 +-----------------------------------+---------------------------------------------+
 
 +---------------------------------------------------------------------------------+
-; ARRIA_CBA_IEEE_32 Summary                                                                  ;
+; ARRIA_CBA_IEEE_16 Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:24:37 2025       ;
+; Fitter Status                     ; Successful - Tue Dec 02 18:38:37 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
 ; Family                            ; Arria II GX                                 ;
 ; Device                            ; EP2AGX45DF29C6                              ;
 ; Timing Models                     ; Final                                       ;
-; Logic utilization                 ; 2 %                                         ;
-;     Combinational ALUTs           ; 413 / 36,100 ( 1 % )                        ;
+; Logic utilization                 ; < 1 %                                       ;
+;     Combinational ALUTs           ; 197 / 36,100 ( < 1 % )                      ;
 ;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                          ;
 ;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                          ;
 ; Total registers                   ; 0                                           ;
-; Total pins                        ; 107 / 404 ( 26 % )                          ;
+; Total pins                        ; 59 / 404 ( 15 % )                           ;
 ; Total virtual pins                ; 0                                           ;
 ; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                       ;
 ; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                             ;
@@ -137,21 +53,21 @@
 +-----------------------------------+---------------------------------------------+
 
 +---------------------------------------------------------------------------------+
-; ARRIA_RCA_Barrel_32 Summary                                                                  ;
+; ARRIA_RCA_Barrel_16 Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:29:44 2025       ;
+; Fitter Status                     ; Successful - Tue Dec 02 18:50:05 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
 ; Family                            ; Arria II GX                                 ;
 ; Device                            ; EP2AGX45DF29C6                              ;
 ; Timing Models                     ; Final                                       ;
-; Logic utilization                 ; 1 %                                         ;
-;     Combinational ALUTs           ; 366 / 36,100 ( 1 % )                        ;
+; Logic utilization                 ; < 1 %                                       ;
+;     Combinational ALUTs           ; 162 / 36,100 ( < 1 % )                      ;
 ;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                          ;
 ;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                          ;
 ; Total registers                   ; 0                                           ;
-; Total pins                        ; 107 / 404 ( 26 % )                          ;
+; Total pins                        ; 59 / 404 ( 15 % )                           ;
 ; Total virtual pins                ; 0                                           ;
 ; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                       ;
 ; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                             ;
@@ -163,121 +79,121 @@
 ; Total DLLs                        ; 0 / 2 ( 0 % )                               ;
 +-----------------------------------+---------------------------------------------+
 
++------------------------------------------------------------------------------------+
+; ARRIA_RCA_IEEE_16 Summary                                                                     ;
++-----------------------------------+------------------------------------------------+
+; Fitter Status                     ; Successful - Tue Dec  2 04:11:45 2025          ;
+; Quartus Prime Version             ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                     ; FP                                             ;
+; Top-level Entity Name             ; EN_ExecUnit                                    ;
+; Family                            ; Arria II GX                                    ;
+; Device                            ; EP2AGX45DF29C6                                 ;
+; Timing Models                     ; Final                                          ;
+; Logic utilization                 ; < 1 %                                          ;
+;     Combinational ALUTs           ; 166 / 36,100 ( < 1 % )                         ;
+;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                             ;
+;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                             ;
+; Total registers                   ; 0                                              ;
+; Total pins                        ; 59 / 404 ( 15 % )                              ;
+; Total virtual pins                ; 0                                              ;
+; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                          ;
+; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                                ;
+; Total GXB Receiver Channel PCS    ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Receiver Channel PMA    ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Transmitter Channel PCS ; 0 / 8 ( 0 % )                                  ;
+; Total GXB Transmitter Channel PMA ; 0 / 8 ( 0 % )                                  ;
+; Total PLLs                        ; 0 / 4 ( 0 % )                                  ;
+; Total DLLs                        ; 0 / 2 ( 0 % )                                  ;
++-----------------------------------+------------------------------------------------+
+
++----------------------------------------------------------------------------------+
+; CYC_CBA_Barrel_16 Summary                                                                   ;
++------------------------------------+---------------------------------------------+
+; Fitter Status                      ; Successful - Tue Dec 02 18:56:44 2025       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; FP                                          ;
+; Top-level Entity Name              ; EN_ExecUnit                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 232 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 232 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 59 / 529 ( 11 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
++----------------------------------------------------------------------------------+
+; CYC_CBA_IEEE_16 Summary                                                                   ;
++------------------------------------+---------------------------------------------+
+; Fitter Status                      ; Successful - Tue Dec 02 19:17:08 2025       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; FP                                          ;
+; Top-level Entity Name              ; EN_ExecUnit                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 303 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 303 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 59 / 529 ( 11 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
++----------------------------------------------------------------------------------+
+; CYC_RCA_Barrel_16 Summary                                                                   ;
++------------------------------------+---------------------------------------------+
+; Fitter Status                      ; Successful - Tue Dec 02 18:56:44 2025       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; FP                                          ;
+; Top-level Entity Name              ; EN_ExecUnit                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 232 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 232 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 59 / 529 ( 11 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
++----------------------------------------------------------------------------------+
+; CYC_RCA_IEEE_16 Summary                                                                   ;
++------------------------------------+---------------------------------------------+
+; Fitter Status                      ; Successful - Tue Dec 02 19:25:23 2025       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; FP                                          ;
+; Top-level Entity Name              ; EN_ExecUnit                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 252 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 252 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 59 / 529 ( 11 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
 +---------------------------------------------------------------------------------+
-; ARRIA_RCA_IEEE_32 Summary                                                                  ;
+; ARRIA_CBA_Barrel Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:22:54 2025       ;
-; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                     ; FP                                          ;
-; Top-level Entity Name             ; EN_ExecUnit                                 ;
-; Family                            ; Arria II GX                                 ;
-; Device                            ; EP2AGX45DF29C6                              ;
-; Timing Models                     ; Final                                       ;
-; Logic utilization                 ; 1 %                                         ;
-;     Combinational ALUTs           ; 343 / 36,100 ( < 1 % )                      ;
-;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                          ;
-;     Dedicated logic registers     ; 0 / 36,100 ( 0 % )                          ;
-; Total registers                   ; 0                                           ;
-; Total pins                        ; 107 / 404 ( 26 % )                          ;
-; Total virtual pins                ; 0                                           ;
-; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                       ;
-; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                             ;
-; Total GXB Receiver Channel PCS    ; 0 / 8 ( 0 % )                               ;
-; Total GXB Receiver Channel PMA    ; 0 / 8 ( 0 % )                               ;
-; Total GXB Transmitter Channel PCS ; 0 / 8 ( 0 % )                               ;
-; Total GXB Transmitter Channel PMA ; 0 / 8 ( 0 % )                               ;
-; Total PLLs                        ; 0 / 4 ( 0 % )                               ;
-; Total DLLs                        ; 0 / 2 ( 0 % )                               ;
-+-----------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_CBA_Barrel_32 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 20:58:19 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 669 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 669 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 107 / 529 ( 20 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_CBA_IEEE_32 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 20:57:03 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 657 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 657 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 107 / 529 ( 20 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_RCA_Barrel_32 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:01:07 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 572 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 572 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 107 / 529 ( 20 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+----------------------------------------------------------------------------------+
-; CYC_RCA_IEEE_32 Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 20:53:54 2025       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; FP                                          ;
-; Top-level Entity Name              ; EN_ExecUnit                                 ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 558 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 558 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 107 / 529 ( 20 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
-
-+---------------------------------------------------------------------------------+
-; ARRIA_CBA_Barrel_64 Summary                                                                  ;
-+-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:10:35 2025       ;
+; Fitter Status                     ; Successful - Sat Nov 29 20:30:31 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
@@ -302,9 +218,9 @@
 +-----------------------------------+---------------------------------------------+
 
 +---------------------------------------------------------------------------------+
-; ARRIA_CBA_IEEE_64 Summary                                                                  ;
+; ARRIA_CBA_IEEE Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:12:30 2025       ;
+; Fitter Status                     ; Successful - Sat Nov 29 20:32:44 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
@@ -329,9 +245,9 @@
 +-----------------------------------+---------------------------------------------+
 
 +---------------------------------------------------------------------------------+
-; ARRIA_RCA_Barrel_64 Summary                                                                  ;
+; ARRIA_RCA_Barrel Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:06:04 2025       ;
+; Fitter Status                     ; Successful - Sat Nov 29 20:29:28 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
@@ -356,9 +272,9 @@
 +-----------------------------------+---------------------------------------------+
 
 +---------------------------------------------------------------------------------+
-; ARRIA_RCA_IEEE_64 Summary                                                                  ;
+; ARRIA_RCA_IEEE Summary                                                                  ;
 +-----------------------------------+---------------------------------------------+
-; Fitter Status                     ; Successful - Sun Nov 30 22:14:44 2025       ;
+; Fitter Status                     ; Successful - Sat Nov 29 20:34:03 2025       ;
 ; Quartus Prime Version             ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                     ; FP                                          ;
 ; Top-level Entity Name             ; EN_ExecUnit                                 ;
@@ -383,9 +299,9 @@
 +-----------------------------------+---------------------------------------------+
 
 +----------------------------------------------------------------------------------+
-; CYC_CBA_Barrel_64 Summary                                                                   ;
+; CYC_CBA_Barrel Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:10:36 2025       ;
+; Fitter Status                      ; Successful - Sat Nov 29 20:17:06 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FP                                          ;
 ; Top-level Entity Name              ; EN_ExecUnit                                 ;
@@ -404,9 +320,9 @@
 +------------------------------------+---------------------------------------------+
 
 +----------------------------------------------------------------------------------+
-; CYC_CBA_IEEE_64 Summary                                                                   ;
+; CYC_CBA_IEEE Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:11:58 2025       ;
+; Fitter Status                      ; Successful - Sat Nov 29 20:25:23 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FP                                          ;
 ; Top-level Entity Name              ; EN_ExecUnit                                 ;
@@ -425,9 +341,9 @@
 +------------------------------------+---------------------------------------------+
 
 +----------------------------------------------------------------------------------+
-; CYC_RCA_Barrel_64 Summary                                                                   ;
+; CYC_RCA_Barrel Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:14:36 2025       ;
+; Fitter Status                      ; Successful - Sat Nov 29 20:28:08 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FP                                          ;
 ; Top-level Entity Name              ; EN_ExecUnit                                 ;
@@ -446,9 +362,9 @@
 +------------------------------------+---------------------------------------------+
 
 +----------------------------------------------------------------------------------+
-; CYC_RCA_IEEE_64 Summary                                                                   ;
+; CYC_RCA_IEEE Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Nov 30 21:18:52 2025       ;
+; Fitter Status                      ; Successful - Sat Nov 29 20:26:31 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FP                                          ;
 ; Top-level Entity Name              ; EN_ExecUnit                                 ;

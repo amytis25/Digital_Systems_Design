@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/02/2025 18:35:46"
+-- DATE "12/02/2025 19:29:34"
 
 -- 
 -- Device: Altera EP2AGX45DF29C6 Package FBGA780
@@ -41,10 +41,10 @@ ENTITY 	EN_ExecUnit IS
 	ShiftFN : IN std_logic_vector(1 DOWNTO 0);
 	AddnSub : IN std_logic;
 	ExtWord : IN std_logic;
-	Y : BUFFER std_logic_vector(15 DOWNTO 0);
-	Zero : BUFFER std_logic;
-	AltB : BUFFER std_logic;
-	AltBu : BUFFER std_logic
+	Y : OUT std_logic_vector(15 DOWNTO 0);
+	Zero : OUT std_logic;
+	AltB : OUT std_logic;
+	AltBu : OUT std_logic
 	);
 END EN_ExecUnit;
 
@@ -406,13 +406,14 @@ SIGNAL \Add|GEN_BLOCKS:2:LACG_INST|ALT_INV_g_int~2_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_S[13]~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Equal0~2_combout\ : std_logic;
 SIGNAL \ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \Add|ALT_INV_P\ : std_logic_vector(15 DOWNTO 4);
-SIGNAL \ALT_INV_AltB~0_combout\ : std_logic;
-SIGNAL \Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_g_int~0_combout\ : std_logic;
-SIGNAL \Add|ALT_INV_G\ : std_logic_vector(13 DOWNTO 4);
-SIGNAL \Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_C~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Y_ShiftOrArith[8]~1_combout\ : std_logic;
+SIGNAL \Add|ALT_INV_S_internal\ : std_logic_vector(15 DOWNTO 15);
+SIGNAL \Shift|ALT_INV_Y_LL[15]~1_combout\ : std_logic;
+SIGNAL \Shift|ALT_INV_ll2[15]~13_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_block_carry_in[3]~5_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_block_carry_in[3]~4_combout\ : std_logic;
+SIGNAL \Add|ALT_INV_G\ : std_logic_vector(13 DOWNTO 4);
 SIGNAL \Add|ALT_INV_block_carry_in[2]~3_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_block_carry_in[2]~2_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_block_carry_in[2]~1_combout\ : std_logic;
@@ -422,6 +423,7 @@ SIGNAL \Add|GEN_BLOCKS:0:LACG_INST|ALT_INV_Pout~1_combout\ : std_logic;
 SIGNAL \Add|GEN_BLOCKS:0:LACG_INST|ALT_INV_Pout~0_combout\ : std_logic;
 SIGNAL \Add|GEN_BLOCKS:1:LACG_INST|ALT_INV_Pout~combout\ : std_logic;
 SIGNAL \Add|GEN_BLOCKS:1:LACG_INST|ALT_INV_Pout~0_combout\ : std_logic;
+SIGNAL \Add|ALT_INV_P\ : std_logic_vector(15 DOWNTO 4);
 SIGNAL \Add|GEN_BLOCKS:2:LACG_INST|ALT_INV_Pout~0_combout\ : std_logic;
 SIGNAL \ALT_INV_B_adder[15]~0_combout\ : std_logic;
 SIGNAL \Logic|ALT_INV_Mux15~0_combout\ : std_logic;
@@ -439,11 +441,6 @@ SIGNAL \ALT_INV_Mux11~5_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux10~3_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux8~2_combout\ : std_logic;
 SIGNAL \ALT_INV_Y_LorS_Ext[8]~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Y_ShiftOrArith[8]~1_combout\ : std_logic;
-SIGNAL \Add|ALT_INV_S_internal\ : std_logic_vector(15 DOWNTO 15);
-SIGNAL \Shift|ALT_INV_Y_LL[15]~1_combout\ : std_logic;
-SIGNAL \Shift|ALT_INV_ll2[15]~13_combout\ : std_logic;
 SIGNAL \Logic|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux1~3_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux1~2_combout\ : std_logic;
@@ -537,6 +534,9 @@ SIGNAL \ALT_INV_Mux14~2_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux14~1_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_Cout~1_combout\ : std_logic;
 SIGNAL \Add|ALT_INV_Cout~0_combout\ : std_logic;
+SIGNAL \ALT_INV_AltB~0_combout\ : std_logic;
+SIGNAL \Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_g_int~0_combout\ : std_logic;
+SIGNAL \Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_C~0_combout\ : std_logic;
 
 BEGIN
 
@@ -608,13 +608,11 @@ ww_devpor <= devpor;
 \Add|ALT_INV_S[13]~0_combout\ <= NOT \Add|S[13]~0_combout\;
 \ALT_INV_Equal0~2_combout\ <= NOT \Equal0~2_combout\;
 \ALT_INV_Equal0~1_combout\ <= NOT \Equal0~1_combout\;
-\Add|ALT_INV_P\(15) <= NOT \Add|P\(15);
-\ALT_INV_AltB~0_combout\ <= NOT \AltB~0_combout\;
-\Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_g_int~0_combout\ <= NOT \Add|GEN_BLOCKS:3:LACG_INST|g_int~0_combout\;
-\Add|ALT_INV_G\(12) <= NOT \Add|G\(12);
-\Add|ALT_INV_G\(13) <= NOT \Add|G\(13);
-\Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_C~0_combout\ <= NOT \Add|GEN_BLOCKS:3:LACG_INST|C~0_combout\;
-\Add|ALT_INV_P\(14) <= NOT \Add|P\(14);
+\ALT_INV_Equal0~0_combout\ <= NOT \Equal0~0_combout\;
+\ALT_INV_Y_ShiftOrArith[8]~1_combout\ <= NOT \Y_ShiftOrArith[8]~1_combout\;
+\Add|ALT_INV_S_internal\(15) <= NOT \Add|S_internal\(15);
+\Shift|ALT_INV_Y_LL[15]~1_combout\ <= NOT \Shift|Y_LL[15]~1_combout\;
+\Shift|ALT_INV_ll2[15]~13_combout\ <= NOT \Shift|ll2[15]~13_combout\;
 \Add|ALT_INV_block_carry_in[3]~5_combout\ <= NOT \Add|block_carry_in[3]~5_combout\;
 \Add|ALT_INV_block_carry_in[3]~4_combout\ <= NOT \Add|block_carry_in[3]~4_combout\;
 \Add|ALT_INV_G\(8) <= NOT \Add|G\(8);
@@ -647,11 +645,6 @@ ww_devpor <= devpor;
 \ALT_INV_Mux10~3_combout\ <= NOT \Mux10~3_combout\;
 \ALT_INV_Mux8~2_combout\ <= NOT \Mux8~2_combout\;
 \ALT_INV_Y_LorS_Ext[8]~0_combout\ <= NOT \Y_LorS_Ext[8]~0_combout\;
-\ALT_INV_Equal0~0_combout\ <= NOT \Equal0~0_combout\;
-\ALT_INV_Y_ShiftOrArith[8]~1_combout\ <= NOT \Y_ShiftOrArith[8]~1_combout\;
-\Add|ALT_INV_S_internal\(15) <= NOT \Add|S_internal\(15);
-\Shift|ALT_INV_Y_LL[15]~1_combout\ <= NOT \Shift|Y_LL[15]~1_combout\;
-\Shift|ALT_INV_ll2[15]~13_combout\ <= NOT \Shift|ll2[15]~13_combout\;
 \Logic|ALT_INV_Mux0~0_combout\ <= NOT \Logic|Mux0~0_combout\;
 \ALT_INV_Mux1~3_combout\ <= NOT \Mux1~3_combout\;
 \ALT_INV_Mux1~2_combout\ <= NOT \Mux1~2_combout\;
@@ -756,6 +749,13 @@ ww_devpor <= devpor;
 \ALT_INV_Mux14~1_combout\ <= NOT \Mux14~1_combout\;
 \Add|ALT_INV_Cout~1_combout\ <= NOT \Add|Cout~1_combout\;
 \Add|ALT_INV_Cout~0_combout\ <= NOT \Add|Cout~0_combout\;
+\Add|ALT_INV_P\(15) <= NOT \Add|P\(15);
+\ALT_INV_AltB~0_combout\ <= NOT \AltB~0_combout\;
+\Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_g_int~0_combout\ <= NOT \Add|GEN_BLOCKS:3:LACG_INST|g_int~0_combout\;
+\Add|ALT_INV_G\(12) <= NOT \Add|G\(12);
+\Add|ALT_INV_G\(13) <= NOT \Add|G\(13);
+\Add|GEN_BLOCKS:3:LACG_INST|ALT_INV_C~0_combout\ <= NOT \Add|GEN_BLOCKS:3:LACG_INST|C~0_combout\;
+\Add|ALT_INV_P\(14) <= NOT \Add|P\(14);
 
 -- Location: IOOBUF_X33_Y0_N5
 \Y[0]~output\ : arriaii_io_obuf
