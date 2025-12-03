@@ -1,6 +1,5 @@
-# gen_ts_do.py
-# Generate TS_ARRIA_*.do and TS_CYC_*.do for RCA, CBA
-
+import os
+import glob
 
 # gen_ts_do.py
 # Generate TS_ARRIA_*.do and TS_CYC_*.do for RCA, CBA
@@ -18,6 +17,7 @@ devices = {
     "CYC":   "Cyclone IV E",
 }
 bits = {
+    "16": "16-bit",
     "32": "32-bit",
     "64": "64-bit",
     "128": "128-bit",
@@ -59,7 +59,7 @@ transcript quietly
 echo "Running functional simulation for the {bits_name} execution unit using {arch_name}..."
 run -all
 
-echo "=== Functional Simulation for {arch_name} Complete ==="
+echo "=== Functional Simulation for the {bits_name} execution unit using {arch_name} Complete ==="
 transcript off
 """
 
@@ -97,7 +97,7 @@ transcript quietly
 echo "Running timing simulation for the {bits_name} execution unit using {arch_name} on {family_name}..."
 run -all
 
-echo "=== timing Simulation for {arch_name} on {family_name} Complete ==="
+echo "=== timing Simulation for the {bits_name} execution unit using{arch_name} on {family_name} Complete ==="
 transcript off
 """
 
@@ -126,6 +126,28 @@ def main():
                     for b_code in ("32", "64"):
                         b_name = bits.get(b_code, f"{b_code}-bit")
                         make_ts_do(dev_code, dev_name, ad_code, ad_name, sh_code, sh_name, b_code, b_name)
+
+    # Create master DO files that run all generated FS_*.do and TS_*.do files
+    def make_master_do(pattern, out_filename, title):
+        files = sorted([f for f in glob.glob(pattern) if os.path.basename(f) not in ("FS_all.do", "TS_all.do")])
+        if not files:
+            print(f"No files found for pattern: {pattern}")
+            return
+        header = f"# ===========================\n# {out_filename}\n# {title}\n# ===========================\n\n"
+        lines = [header]
+        lines.append('echo "Starting {0}..."\n'.format(title))
+        for fn in files:
+            # use forward slashes in the do file for ModelSim compatibility
+            fn_norm = fn.replace('\\', '/')
+            lines.append(f"do {fn_norm}\n")
+        lines.append('\necho "{0} complete."\n'.format(title))
+        with open(out_filename, 'w', newline='\n') as f:
+            f.writelines(lines)
+        print(f"Wrote {out_filename}")
+
+    # Write FS_all.do and TS_all.do
+    make_master_do('FS_*.do', 'FS_all.do', 'All Functional Simulation DO files')
+    make_master_do('TS_*.do', 'TS_all.do', 'All Timing Simulation DO files')
 
 
 if __name__ == "__main__":
