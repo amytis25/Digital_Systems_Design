@@ -72,14 +72,14 @@ end configuration CFG_EN_CBA_Barrel;
 ----------------------------------------------------------------------
 
 -- Functional config: RCA adder + IEEE_fn shifter
-configuration CFG_FUNC_RCA_IEEE_fn of TB_ExecUnit is
+configuration CFG_FUNC_RCA_IEEE of TB_ExecUnit is
     for behavior
         for DUT : TestUnit
             -- Bind DUT to EN_ExecUnit using the RCA+IEEE configuration
             use configuration work.CFG_EN_RCA_IEEE;
         end for;
     end for;
-end configuration CFG_FUNC_RCA_IEEE_fn;
+end configuration CFG_FUNC_RCA_IEEE;
 
 
 -- Functional config: RCA adder + barrel shifter
