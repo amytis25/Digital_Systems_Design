@@ -24,5 +24,5 @@ transcript quietly
 echo "Running functional simulation for the 128-bit execution unit using Ripple-Carry Adder and Barrel Shifting unit..."
 run -all
 
-echo "=== Functional Simulation for Ripple-Carry Adder and Barrel Shifting unit Complete ==="
+echo "=== Functional Simulation for the 128-bit execution unit using Ripple-Carry Adder and Barrel Shifting unit Complete ==="
 transcript off

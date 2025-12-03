@@ -19,5 +19,5 @@ transcript quietly
 echo "Running timing simulation for the 32-bit execution unit using Ripple-Carry Adder and Shifting unit that uses IEEE functions on ARRIA II..."
 run -all
 
-echo "=== timing Simulation for Ripple-Carry Adder and Shifting unit that uses IEEE functions on ARRIA II Complete ==="
+echo "=== timing Simulation for the 32-bit execution unit usingRipple-Carry Adder and Shifting unit that uses IEEE functions on ARRIA II Complete ==="
 transcript off

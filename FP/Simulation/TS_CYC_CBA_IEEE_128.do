@@ -19,5 +19,5 @@ transcript quietly
 echo "Running timing simulation for the 128-bit execution unit using Carry-Bypass Adder and Shifting unit that uses IEEE functions on Cyclone IV E..."
 run -all
 
-echo "=== timing Simulation for Carry-Bypass Adder and Shifting unit that uses IEEE functions on Cyclone IV E Complete ==="
+echo "=== timing Simulation for the 128-bit execution unit usingCarry-Bypass Adder and Shifting unit that uses IEEE functions on Cyclone IV E Complete ==="
 transcript off

@@ -24,5 +24,5 @@ transcript quietly
 echo "Running functional simulation for the 32-bit execution unit using Carry-Bypass Adder and Shifting unit that uses IEEE functions..."
 run -all
 
-echo "=== Functional Simulation for Carry-Bypass Adder and Shifting unit that uses IEEE functions Complete ==="
+echo "=== Functional Simulation for the 32-bit execution unit using Carry-Bypass Adder and Shifting unit that uses IEEE functions Complete ==="
 transcript off

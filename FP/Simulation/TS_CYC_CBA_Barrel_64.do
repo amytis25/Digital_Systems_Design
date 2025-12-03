@@ -19,5 +19,5 @@ transcript quietly
 echo "Running timing simulation for the 64-bit execution unit using Carry-Bypass Adder and Barrel Shifting unit on Cyclone IV E..."
 run -all
 
-echo "=== timing Simulation for Carry-Bypass Adder and Barrel Shifting unit on Cyclone IV E Complete ==="
+echo "=== timing Simulation for the 64-bit execution unit usingCarry-Bypass Adder and Barrel Shifting unit on Cyclone IV E Complete ==="
 transcript off

@@ -19,5 +19,5 @@ transcript quietly
 echo "Running timing simulation for the 64-bit execution unit using Ripple-Carry Adder and Barrel Shifting unit on ARRIA II..."
 run -all
 
-echo "=== timing Simulation for Ripple-Carry Adder and Barrel Shifting unit on ARRIA II Complete ==="
+echo "=== timing Simulation for the 64-bit execution unit usingRipple-Carry Adder and Barrel Shifting unit on ARRIA II Complete ==="
 transcript off
