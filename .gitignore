@@ -155,3 +155,6 @@ FP/Simulation/work/_lib.qdb
 FP/Simulation/work/_lib1_15.qdb
 FP/Simulation/work/_lib1_15.qtl
 FP/Simulation/work/_vmake
+*.qpf
+*.done
+*.smsg
