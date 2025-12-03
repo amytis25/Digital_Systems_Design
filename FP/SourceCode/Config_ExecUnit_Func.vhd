@@ -93,13 +93,13 @@ end configuration CFG_FUNC_RCA_Barrel;
 
 
 -- Functional config: CBA adder + IEEE_fn shifter
-configuration CFG_FUNC_CBA_IEEE_fn of TB_ExecUnit is
+configuration CFG_FUNC_CBA_IEEE of TB_ExecUnit is
     for behavior
         for DUT : TestUnit
             use configuration work.CFG_EN_CBA_IEEE;
         end for;
     end for;
-end configuration CFG_FUNC_CBA_IEEE_fn;
+end configuration CFG_FUNC_CBA_IEEE;
 
 
 -- Functional config: CBA adder + barrel shifter

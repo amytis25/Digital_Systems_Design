@@ -57,7 +57,7 @@ architecture RCA of EN_Adder is
 	
 	
 end RCA;
-/*
+
 -- CSA : Conditional Sum Adder
 architecture CSA of EN_Adder is 
 	-- define size of each recursion
@@ -551,4 +551,4 @@ begin
     -- Overflow detection for signed arithmetic
 	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
     
-end architecture CBA; */
+end architecture CBA; 
