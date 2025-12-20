@@ -17,6 +17,7 @@ The execution unit supports a range of operations commonly found in processor da
 - Arithmetic operations
 - Logical operations
 - Bit-shifting operations
+
 Multiple architectural variants were explored to compare:
 - Different carry-handling approaches
 - Alternative shifting implementations
@@ -42,11 +43,12 @@ This project was completed as part of a small team. My individual contributions 
 - Digital logic and computer architecture principles
 
 ## Repository Structure
+```
 Digital_Systems_Design/
 ├── addition_unit/
 │   ├── src/
 │   │   ├── EN_Adder.vhd                # Adder entity and multiple adder architectures
-│   │   └── EN_LACN4.vhd                # 4-bit Look-Ahead Carry Network block
+│   │   └── EN_LACG4.vhd                # 4-bit Look-Ahead Carry Network block
 │   ├── sim/
 │   │   ├── TB_Adder.vhd                # Functional and timing testbench
 │   │   ├── Config_Adder.vhd            # Architecture configuration file
@@ -68,8 +70,8 @@ Digital_Systems_Design/
 │   │   ├── EN_Adder.vhd                # Arithmetic submodules
 │   │   ├── EN_Logic.vhd                # Logic operation units
 │   │   ├── EN_Shift.vhd                # Shift and rotate units
-|   |   ├── Config_ExecUnit_Func.vhd    # Different Configurations for functional Simulations
-|   |   └── Config_ExecUnit_Time.vhd    # Configuration for timing simulations
+│   │   ├── Config_ExecUnit_Func.vhd    # Different Configurations for functional Simulations
+│   │   └── Config_ExecUnit_Time.vhd    # Configuration for timing simulations
 │   ├── sim/
 │   │   ├── TB_ExecUnit.vhd             # Execution unit testbench
 │   │   └── scripts/                    
@@ -83,6 +85,7 @@ Digital_Systems_Design/
 │       └── FP-Report.pdf               # Final project design report
 │
 └── README.md
+```
 
 
 
