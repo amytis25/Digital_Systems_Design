@@ -111,5 +111,3 @@
 # ** Note: Overall worst-case propagation delay: 79700 ps
 #    Time: 6978200 ps  Iteration: 0  Instance: /tb_adder
 # === timing Simulation for Carry-Bypass Adder on ARRIA II Complete ===
-# End time: 20:30:43 on Nov 16,2025, Elapsed time: 0:00:09
-# Errors: 0, Warnings: 2
