@@ -87,7 +87,57 @@ Digital_Systems_Design/
 └── README.md
 ```
 
+## Architecture Variants Explored
 
+### Addition Unit Configurations
+1. **Ripple Carry Adder** — Minimal area, sequential propagation
+2. **Carry Look-Ahead (CLA)** — Reduced critical path, increased logic
+3. **Hybrid CLA/Ripple** — Balanced area-speed tradeoff
+
+### Shift Unit Implementations
+1. **Barrel Shifter** — Single-cycle arbitrary shifts
+2. **Sequential Shifter** — Multi-cycle, reduced hardware
+3. **Bidirectional Rotator** — Circular shift support
+
+## Build & Simulate
+
+### Functional Simulation
+```bash
+cd addition_unit/sim/scripts
+vsim -do FS_run.do
+```
+
+### Timing Simulation
+```bash
+cd addition_unit/sim/scripts
+vsim -do TS_run.do
+```
+
+### Synthesis
+```bash
+cd addition_unit/quartus
+quartus_sh --flow compile DP2.qpf
+```
+
+### Run All Simulations
+```bash
+cd addition_unit/sim/scripts
+vsim -do runall.do
+```
+
+## Simulation & Validation
+
+All designs were validated using:
+- **Functional simulation** with comprehensive test vectors
+- **Timing simulation** with post-synthesis netlists
+- **Quartus synthesis** targeting Intel FPGA devices
+- **ModelSim waveform analysis** for verification
+
+Test vectors cover:
+- Edge cases (overflow, zero operands)
+- Arithmetic operations (addition, subtraction)
+- Logic operations (AND, OR, XOR, NOT)
+- Shift operations (left, right, rotate)
 
 ## Key Takeaways
 
