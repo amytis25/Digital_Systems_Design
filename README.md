@@ -25,15 +25,31 @@ Multiple architectural variants were explored to compare:
 
 All designs were simulated and validated using Quartus and ModelSim.
 
-## My Contributions
+## Contributions
 
-This project was completed as part of a small team. My individual contributions included:
+This project was completed as part of a small team. Each persons contributions are listed below can be verified in work log records under documentation.
 
-- Designing and implementing arithmetic, logic, and shifting modules in VHDL
-- Exploring and implementing multiple carry-handling and bit-shift strategies
-- Simulating and validating execution and addition unit variants using Quartus and ModelSim
-- Analyzing functional correctness and architectural trade-offs across different designs
-- Contributing to technical documentation and design reasoning
+### Amytis Saghafi
+- Designed and implemented VHDL architectures for arithmetic and execution-unit components
+- Integrated adder, logic, and shifting subsystems into a top-level execution unit
+- Developed functional and timing testbenches, configuration files, and simulation scripts in ModelSim
+- Performed FPGA synthesis, timing simulation, and critical-path analysis for Cyclone IV and Arria II devices
+- Conducted cost estimation, resource utilization analysis, and performance comparisons across design candidates
+- Generated figures, tables, and analysis used in both project reports
+- Authored and edited report sections including experimental procedures, design analysis, and conclusions
+- Organized project directory structure, simulation outputs, and documentation
+
+### Simon Schaufele
+- Designed and implemented VHDL components for arithmetic and execution-unit subsystems
+- Contributed to integration of adder, logic, and shifting blocks within the execution unit
+- Assisted with development and validation of functional and timing testbenches
+- Ran Quartus synthesis and ModelSim simulations for selected design candidates
+- Participated in timing analysis, waveform inspection, and interpretation of simulation results
+- Contributed written material, figures, and revisions to both Design Project 2 and Final Project reports
+
+### Sahill Singh
+- Participated in project meetings and discussions
+- Contributed to report review and submission preparation
 
 ## Tools & Technologies
 
@@ -90,14 +106,19 @@ Digital_Systems_Design/
 ## Architecture Variants Explored
 
 ### Addition Unit Configurations
-1. **Ripple Carry Adder** — Minimal area, sequential propagation
-2. **Carry Look-Ahead (CLA)** — Reduced critical path, increased logic
-3. **Hybrid CLA/Ripple** — Balanced area-speed tradeoff
+1. **Ripple-Carry Adder (RCA)** — Baseline design with minimal area; carry propagates sequentially, resulting in the longest critical path.
 
-### Shift Unit Implementations
-1. **Barrel Shifter** — Single-cycle arbitrary shifts
-2. **Sequential Shifter** — Multi-cycle, reduced hardware
-3. **Bidirectional Rotator** — Circular shift support
+2. **Carry Look-Ahead–Based Adders (LACTA / Prefix)** — Parallel carry generation significantly reduces critical path at the cost of increased logic and area.
+
+3. **Hybrid Architectures (e.g., Carry-Bypass, Conditional-Sum)** — Intermediate designs that selectively accelerate carry propagation, achieving a balanced area–performance trade-off across evaluated candidates.
+
+### Shifting Unit Configurations
+
+1. **Manual Barrel Shifter** — Explicit multi-stage mux design enabling single-cycle variable shifts
+
+2. **IEEE-Inferred Barrel Shifter** — Uses IEEE shift functions with synthesis-inferred hardware
+
+3. **Shift Operations Supported** — Logical left, logical right, and arithmetic right shifts
 
 ## Build & Simulate
 
