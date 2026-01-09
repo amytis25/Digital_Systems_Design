@@ -74,18 +74,19 @@ are listed below and can be verified through work logs in the documentation.
 
 ### Amytis Saghafi
 - Designed and implemented VHDL architectures for arithmetic and execution-unit components
-- Integrated adder, logic, and shifting subsystems into a top-level execution unit
+- Led integration of adder, logic, and shifting subsystems into a top-level execution unit
 - Developed functional and timing testbenches, configuration files, and simulation scripts in ModelSim
+- Developed Python scripts for test-vector generation and ModelSim automation to support functional and timing verification
 - Performed FPGA synthesis, timing simulation, and critical-path analysis for Cyclone IV and Arria II devices
 - Conducted cost estimation, resource utilization analysis, and performance comparisons across design candidates
 - Generated figures, tables, and analysis used in both project reports
-- Authored and edited report sections including experimental procedures, design analysis, and conclusions
+- Authored and edited report sections, including experimental procedures, design analysis, and conclusions
 - Organized project directory structure, simulation outputs, and documentation
 
 ### Simon Schaufele
 - Designed and implemented VHDL components for arithmetic and execution-unit subsystems
-- Contributed to integration of adder, logic, and shifting blocks within the execution unit
-- Assisted with development and validation of functional and timing testbenches
+- Contributed to the integration of adder, logic, and shifting blocks within the execution unit
+- Assisted with the development and validation of functional and timing testbenches
 - Ran Quartus synthesis and ModelSim simulations for selected design candidates
 - Participated in timing analysis, waveform inspection, and interpretation of simulation results
 - Contributed written material, figures, and revisions to both Design Project 2 and Final Project reports
